@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
+
 
 @Component({
     selector: 'app-user-gender',
@@ -6,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
     styleUrls: ['./user-gender.component.css']
 })
 export class UserGenderComponent implements OnInit {
+    @Output() newItemEvent = new EventEmitter<string>();
 
     @Input() userGender;
 
@@ -13,6 +15,10 @@ export class UserGenderComponent implements OnInit {
     }
 
     ngOnInit() {
+    }
+
+    addNewItem() {
+        this.newItemEvent.emit();
     }
 
 }

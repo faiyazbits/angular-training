@@ -11,30 +11,30 @@ import {Component} from '@angular/core';
 export class UserListComponent {
     users = [
         {
-            name: 'mohamed',
-            designation: 'B.E',
+            name: 'umar',
+            designation: 'Senior Software Developer',
             gender: 'male',
             age: 35
         },
         {
             name: 'gopi',
-            designation: 'MCA',
+            designation: 'Senior Software Developer',
             gender: 'male',
             age: 28
         },
         {
             name: 'mani',
-            designation: 'MA',
+            designation: 'Ui Developer',
             gender: 'male',
             age: 25
         },
         {
             name: 'salma',
-            designation: 'BE',
+            designation: 'Software Developer',
             gender: 'female',
             age: 23
         },
-    ]
+    ];
 
     constructor() {
     }
