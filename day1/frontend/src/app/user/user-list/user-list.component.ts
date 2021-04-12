@@ -11,25 +11,25 @@ import { Component } from '@angular/core';
 export class UserListComponent {
   users = [
     {
-      name: 'Sheerin',
+      name: 'sheerin',
       designation: 'Software Trainee',
       gender: 'female',
       age: 28
     },
     {
-      name: 'Umar Farook',
+      name: 'umar farook',
       designation: 'Senior Software Developer',
       gender: 'male',
       age: 31
     },
     {
-      name: 'Marzooka',
+      name: 'marzooka',
       designation: 'Software Trainee',
       gender: 'female',
       age: 25
     },
     {
-      name: 'Buhari',
+      name: 'buhari',
       designation: 'Software Trainee',
       gender: 'male',
       age: 23

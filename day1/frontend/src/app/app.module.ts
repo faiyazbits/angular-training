@@ -1,3 +1,4 @@
+import { UserGenderComponent } from './user/user-gender/user-gender.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +16,8 @@ import { ProjectTypeComponent } from './project/project-type/project-type.compon
     AppComponent,
     UserListComponent,
     ProjectListComponent,
-    ProjectTypeComponent
+    ProjectTypeComponent,
+    UserGenderComponent
   ],
   imports: [
     BrowserModule,

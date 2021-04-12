@@ -1,19 +1,20 @@
 <table class="u-full-width">
     <thead>
-      <tr>
-        <th>Name</th>
-        <th>Designation</th>
-        <th>Gender</th>
-        <th>Age</th>
-      </tr>
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.name }}</td>
-        <td>{{ user.designation }}</td>
-        <td >{{ user.gender }}</td>
-        <td >{{ user.age }}</td>
-      </tr>
+        <tr *ngFor="let user of users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.designation }}</td>
+            <td>
+                <app-user-gender [userGender]="user.gender"></app-user-gender>
+            </td>
+            <td>{{ user.age }}</td>
+        </tr>
     </tbody>
-  </table>
-  
+</table>
