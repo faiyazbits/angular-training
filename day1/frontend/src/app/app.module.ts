@@ -9,13 +9,17 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { ProjectListComponent } from './project/project-list/project-list.component';
 import { RouterModule } from '@angular/router';
 import { ProjectTypeComponent } from './project/project-type/project-type.component';
+import { GenderListComponent } from './user/user-gender/user-gender.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     ProjectListComponent,
-    ProjectTypeComponent
+    ProjectTypeComponent,
+    GenderListComponent
+   
+
   ],
   imports: [
     BrowserModule,
