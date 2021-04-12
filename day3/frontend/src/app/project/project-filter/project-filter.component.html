@@ -1,0 +1,50 @@
+<div class="filter-container">
+
+  <div class="search-filter filter">
+    <input type="search" class="form-control" placeholder="Search By Name"
+           [(ngModel)]="searchText"
+           (ngModelChange)="onSearchByName()"/>
+  </div>
+
+  <div class="select-filter filter">
+    <select name="projectType" class="form-control" id="projectType" [(ngModel)]="projectTypeValue"
+            (change)="onFilterByType($event)">
+      <option value=""> --Filter By Type-- </option>
+      <option [value]="projectType.SCRUM"> {{projectType.SCRUM}}</option>
+      <option [value]="projectType.KANBAN"> {{projectType.KANBAN}}</option>
+    </select>
+  </div>
+
+  <div class="radio-filter filter">
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="status" id="progress" [(ngModel)]="statusModel.projectStatus"
+             (change)="onFilterByStatus()"
+             value="in_progress">
+      <label class="form-check-label" for="progress">
+        Progress
+      </label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="status" id="completed" [(ngModel)]="statusModel.projectStatus"
+             (change)="onFilterByStatus()"
+             value="completed">
+      <label class="form-check-label" for="completed">
+        Completed
+      </label>
+    </div>
+
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="status" id="all" [(ngModel)]="statusModel.projectStatus"
+             (change)="onFilterByStatus()"
+             value="all">
+      <label class="form-check-label" for="all">
+        All
+      </label>
+    </div>
+
+  </div>
+
+</div>

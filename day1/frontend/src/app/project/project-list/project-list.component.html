@@ -1,0 +1,20 @@
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Owner</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects">
+      <td>{{ project.name }}</td>
+      <td>{{ project.description }}</td>
+      <td >{{ project.owner }}</td>
+      <td>
+        <app-project-type [projectType]="project.type"></app-project-type>
+      </td>
+    </tr>
+  </tbody>
+</table>

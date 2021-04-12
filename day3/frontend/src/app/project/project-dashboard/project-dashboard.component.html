@@ -1,0 +1,21 @@
+<!-- Starts Project Summary -->
+<app-project-summary></app-project-summary>
+<!--End Project Summary-->
+
+
+<!-- Starts Project List -->
+<div class="project-list">
+  <app-project-list
+    (projectSelected)="onProjectSelect($event)"
+    [selectedProject]="selectedProject"></app-project-list>
+</div>
+<!-- End Project List -->
+
+
+<!-- Starts Project Details -->
+<div class="project-detail">
+  <button class="btn btn-primary mr-3" [routerLink]="['reactive-form-add']">Add Project Using Reactive Form</button>
+  <button class="btn btn-primary" [routerLink]="['template-form-add']">Add Project Using Template Driven Form</button>
+  <app-project-details [project]="selectedProject"></app-project-details>
+</div>
+<!-- End Project Details -->

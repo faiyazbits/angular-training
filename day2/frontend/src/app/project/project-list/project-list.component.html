@@ -1,0 +1,24 @@
+<app-project-filter (searchProject)="onSearchProject($event)"
+                    (filterByStatus)="onFilterByProjectStatus($event)"
+                    (filterByType)="onFilterByProjectType($event)"></app-project-filter>
+
+<table class="u-full-width">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Type</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let project of projects"
+      (click)="onProjectClick(project)"
+      [ngClass]="{'active-project':getActiveProjectClass(project)}">
+    <td>{{ project.name }}</td>
+    <td >{{ project.status }}</td>
+    <td>
+      <app-project-type [projectType]="project.type"></app-project-type>
+    </td>
+  </tr>
+  </tbody>
+</table>
