@@ -10,38 +10,46 @@ import { Component } from '@angular/core';
 })
 export class UserListComponent {
   
+selectedUserId:string;
+
   users = [
     {
+      id:1,
       name:"Buhari",
       designation: "Software Engineer",
       gender:"male",
       age:23
     },
     {
+      id:2,
       name:"Ithris Shabi",
       designation: "Software Engineer",
       gender:"male",
       age:35
     },
     {
+      id:3,
       name:" Sheerin",
       designation: "Software Engineer",
       gender:"Female",
       age:35
     },
     {
+      id:4,
       name:" Sumiaya",
       designation: "Software Engineer",
       gender:"Female",
       age:35
     },
     {
+      id:5,
       name:" vinoth ",
       designation: "Software Engineer",
       gender:"male",
       age:35
     },
     {
+      id:6,
       name:" Rahmath Marzooka ",
       designation: "Software Engineer",
       gender:"Female",
@@ -51,4 +59,15 @@ export class UserListComponent {
   ]
 
   constructor() {}
+
+
+  // Attaching the click in Parent 
+  userGenderHighlight(userId) {
+    this.selectedUserId = userId;
+    // console.log(userId)
+  }
+
+  getColor(user) {
+    return user.id === this.selectedUserId ? "beige":"white"
+  }
 }

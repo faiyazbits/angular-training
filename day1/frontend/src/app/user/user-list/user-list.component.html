@@ -9,14 +9,19 @@
       </tr>
     </thead>
 
+    <!-- NOTE 
+    we can use ngClass ngStyle for styling 
+    -->
     <tbody>
-      <tr *ngFor="let user of users">
+      <tr *ngFor="let user of users" [style.backgroundColor]="getColor(user)">
         <td>{{ user.name | uppercase }}</td>
         <td>{{ user.designation }}</td>
         <td>{{ user.gender }}</td>
         <td>{{ user.age }}</td>
         <td>
-          <user-gender [userGender]="user.gender"></user-gender>
+          <user-gender [userGender]="user.gender" (userSelected)="userGenderHighlight($event)" [userId]="user.id"
+          
+          ></user-gender>
         </td>
       </tr>
     </tbody>

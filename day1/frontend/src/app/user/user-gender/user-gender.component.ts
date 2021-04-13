@@ -1,4 +1,4 @@
-import { Component , Input , OnInit } from '@angular/core';
+import { Component , Input , OnInit, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -8,12 +8,17 @@ import { Component , Input , OnInit } from '@angular/core';
 })
 export class GenderListComponent implements OnInit {
   
-    @Input() userGender;
+    @Input() userGender 
+    @Input() userId;
+
+    @Output() userSelected = new EventEmitter<any>();
 
   constructor() {}
 
-  highlight() {
-      alert('Event Binding')
+
+  // CLICK EVENT 
+  userGenderHighlight() {
+      this.userSelected.emit(this.userId);  // whenever the userGenderHighlight is clicked Im emiting an event called userSelected
   }
 
   ngOnInit() {

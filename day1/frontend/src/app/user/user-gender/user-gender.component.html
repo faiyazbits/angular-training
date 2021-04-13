@@ -1,10 +1,10 @@
-<div *ngIf="userGender=='male'" (click)="highlight()">
+<div *ngIf="userGender=='male'" (click)="userGenderHighlight()">
     <img width="36px" height="36px"
       src="../../../assets/images/male.png" >
     <div>{{userGender}}</div>
   </div>
   
-  <div *ngIf="userGender=='Female'"  (click)="highlight()">
+  <div *ngIf="userGender=='Female'"  (click)="userGenderHighlight()">
     <img width="36px" height="36px"
          src="../../../assets/images/female.png"   >
     <div>{{userGender}}</div>
