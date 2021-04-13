@@ -1,7 +1,7 @@
 <table class="u-full-width">
     <thead>
     <tr>
-        <th>Index</th>
+
         <th>Name</th>
         <th>Designation</th>
         <th>Age</th>
@@ -9,14 +9,14 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let user of users; let id = index" [ngClass]=
-            "{'hightlightRow' : id ==selectedUserRowId }">
-        <td>{{id}}</td>
+    <tr *ngFor="let user of users" [ngClass]=
+            "{'hightLightRow' : user.id ==selectedUserRowId }">
         <td>{{ user.name | uppercase }}</td>
         <td>{{ user.designation }}</td>
-        <td >{{ user.age }}</td>
+        <td>{{ user.age }}</td>
         <td>
-            <app-user-gender [userId]="id" [userGender]="user.gender" (sendToParent)="receivedItem($event)"></app-user-gender>
+            <app-user-gender [userId]="user.id" [userGender]="user.gender"
+                             (userIdSelectionEvent)="onUserRowSelected($event)"></app-user-gender>
         </td>
     </tr>
     </tbody>

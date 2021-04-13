@@ -1,11 +1,11 @@
-<div *ngIf="userGender=='female'" (click)="this.addNewItem()">
+<div *ngIf="userGender=='female'" (click)="onUserGenderSelectionClick()">
 
   <img width="36px" height="36px"
        src="../../../assets/images/female.png">
   <div>{{userGender}}</div>
 </div>
 
-<div *ngIf="userGender=='male'" (click)="this.addNewItem()">
+<div *ngIf="userGender=='male'" (click)="onUserGenderSelectionClick()">
   <img width="36px" height="36px"
        src="../../../assets/images/male.png" >
   <div>{{userGender}}</div>

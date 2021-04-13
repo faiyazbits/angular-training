@@ -12,24 +12,28 @@ export class UserListComponent {
     selectedUserRowId: string = '';
     users = [
         {
+            id: 1,
             name: 'umar',
             designation: 'Senior Software Developer',
             gender: 'male',
             age: 35
         },
         {
+            id: 2,
             name: 'gopi',
             designation: 'Senior Software Developer',
             gender: 'male',
             age: 28
         },
         {
+            id: 3,
             name: 'mani',
             designation: 'Ui Developer',
             gender: 'male',
             age: 25
         },
         {
+            id: 4,
             name: 'salma',
             designation: 'Software Developer',
             gender: 'female',
@@ -40,7 +44,7 @@ export class UserListComponent {
     constructor() {
     }
 
-    receivedItem(id) {
-       this.selectedUserRowId = id;
+    onUserRowSelected(id) {
+        this.selectedUserRowId = id;
     }
 }
