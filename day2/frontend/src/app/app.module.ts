@@ -16,6 +16,12 @@ import { ProjectDetailsComponent } from "./project/project-details/project-detai
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
 
+
+import { UserDashboard } from './user/user-dashboard/user-dashboard.component';
+import { UserSummaryComponent } from './user/user-summary/user-summary.component';
+
+    
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -26,7 +32,11 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
         ProjectTypeComponent,
         ProjectSummaryComponent,
         ProjectDetailsComponent,
-        ProjectFilterComponent
+        ProjectFilterComponent,
+
+        // User-Classes
+        UserSummaryComponent,
+        UserDashboard
     ],
     imports: [
         BrowserModule,
