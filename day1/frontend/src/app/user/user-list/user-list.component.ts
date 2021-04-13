@@ -9,5 +9,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
+
+  userDetails =[
+    {
+      name:"Vinoth Kumar",
+      designation: "Software Trainee",
+      gender: "Male",
+      age: 24
+
+    },{
+      name:"Subhashini",
+      designation: "Media Developer",
+      gender: "Female",
+      age: 25
+
+    },{
+      name:"Sahana",
+      designation: "Probationary Officer",
+      gender: "Female",
+      age: 26
+
+    },{
+      name:"Mohamed Umar",
+      designation: "Software Developer",
+      gender: "Male",
+      age:27
+
+    },{
+      name:"Dhanu Chandran",
+      designation: "Central Intelligence",
+      gender: "Male",
+      age: 28
+
+    }
+  ]
   constructor() {}
 }
