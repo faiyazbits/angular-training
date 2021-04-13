@@ -1,0 +1,14 @@
+<!-- Starts User List -->
+<div class="user-list">
+  <app-user-list
+    (userSelected)="onUserSelect($event)"
+    [selectedUser]="selectedUser"></app-user-list>
+</div>
+<!-- End User List -->
+
+
+<!-- Starts User Details -->
+<div class="user-detail">
+  <app-user-details [user]="selectedUser"></app-user-details>
+</div>
+<!-- End User Details -->

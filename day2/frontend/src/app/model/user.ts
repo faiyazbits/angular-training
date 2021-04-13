@@ -1,6 +1,9 @@
+import { UserGender } from "./user.gender"
+
 export interface User {
-    id:number,
+    id: number,
     name: string,
-    age: number,
-    gender: string
+    designation: string,
+    gender: UserGender,
+    age: number
 }
