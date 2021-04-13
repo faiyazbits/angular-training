@@ -7,7 +7,7 @@ import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
     styleUrls: ['./user-gender.component.css']
 })
 export class UserGenderComponent implements OnInit {
-    @Output() newItemEvent = new EventEmitter<string>();
+    @Output() sendToParent = new EventEmitter<any>();
 
     @Input() userGender;
 
@@ -18,7 +18,7 @@ export class UserGenderComponent implements OnInit {
     }
 
     addNewItem() {
-        this.newItemEvent.emit();
+        this.sendToParent.emit();
     }
 
 }
