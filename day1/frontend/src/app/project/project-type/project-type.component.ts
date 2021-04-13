@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-project-type',
@@ -8,12 +8,18 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProjectTypeComponent implements OnInit {
 
   @Input() projectType;
+  @Input() projectId;
+  @Output() projectSelected = new EventEmitter<any>();
 
   constructor() {
   }
 
   ngOnInit() {
 
+  }
+
+  onProjectTypeClick(){
+    this.projectSelected.emit(this.projectId);
   }
 
 }

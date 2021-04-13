@@ -8,12 +8,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let project of projects">
+    <tr *ngFor="let project of projects" [style.backgroundColor]="getRowColor(project)">
       <td>{{ project.name }}</td>
       <td>{{ project.description }}</td>
       <td >{{ project.owner }}</td>
       <td>
-        <app-project-type [projectType]="project.type"></app-project-type>
+        <app-project-type 
+        (projectSelected)="onProjectSelected($event)"
+        [projectType]="project.type"
+        [projectId]="project.id"
+        ></app-project-type>
       </td>
     </tr>
   </tbody>

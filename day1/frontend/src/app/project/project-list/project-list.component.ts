@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent {
+  selectedProjectId:string = "";
   projects = [
     {
       id: '1',
@@ -45,4 +46,12 @@ export class ProjectListComponent {
   ];
 
   constructor() {}
+
+  onProjectSelected(projectId){
+    this.selectedProjectId = projectId;
+  }
+
+  getRowColor(project){
+    return project.id === this.selectedProjectId ? "aquamarine" : "white";
+  }
 }
