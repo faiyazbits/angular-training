@@ -10,7 +10,7 @@ export class UserGenderComponent implements OnInit {
     @Output() sendToParent = new EventEmitter<any>();
 
     @Input() userGender;
-
+    @Input() userId;
     constructor() {
     }
 
@@ -18,7 +18,7 @@ export class UserGenderComponent implements OnInit {
     }
 
     addNewItem() {
-        this.sendToParent.emit();
+        this.sendToParent.emit(this.userId);
     }
 
 }

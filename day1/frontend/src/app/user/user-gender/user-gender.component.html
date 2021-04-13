@@ -5,7 +5,7 @@
   <div>{{userGender}}</div>
 </div>
 
-<div *ngIf="userGender=='male'">
+<div *ngIf="userGender=='male'" (click)="this.addNewItem()">
   <img width="36px" height="36px"
        src="../../../assets/images/male.png" >
   <div>{{userGender}}</div>

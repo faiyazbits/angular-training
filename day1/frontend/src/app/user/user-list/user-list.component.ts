@@ -9,6 +9,7 @@ import {Component} from '@angular/core';
     styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
+    selectedUserRowId: string = '';
     users = [
         {
             name: 'umar',
@@ -39,7 +40,7 @@ export class UserListComponent {
     constructor() {
     }
 
-    receivedItem() {
-
+    receivedItem(id) {
+       this.selectedUserRowId = id;
     }
 }
