@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from  '../model/user'
+import { User } from '../model/user'
 import { UserGender } from '../model/user.gender'
 
 const users: User[] = [
@@ -57,11 +57,29 @@ const users: User[] = [
   providedIn: 'root'
 })
 export class UserService {
-  selectedUser : User = users[0];
-  
+  selectedUser: User = users[0];
+
   constructor() { }
 
-  getUserList(){
+  getUserList() {
     return users;
+  }
+
+  getTotalUserCount() {
+    return users.length;
+  }
+
+  getFemaleUserCount() {
+    const femaleUsers = users.filter((user) => {
+      return user.gender == UserGender.FEMALE
+    });
+    return femaleUsers.length;
+  }
+
+  getMaleUserCount() {
+    const maleUsers = users.filter((user) => {
+      return user.gender == UserGender.MALE
+    });
+    return maleUsers.length;
   }
 }
