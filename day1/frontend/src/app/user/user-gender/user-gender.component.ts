@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user-gender',
@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class UserGenderComponent implements OnInit {
 
   @Input() userGender;
+  @Input() userId;
+  @Output() userSelected = new EventEmitter<any>();
 
   constructor() {
   }
@@ -15,5 +17,9 @@ export class UserGenderComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  onUserGenderClick(){
+    this.userSelected.emit(this.userId);
+}
 
 }
