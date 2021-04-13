@@ -1,10 +1,10 @@
-<div *ngIf="projectType=='kanban'">
+<div *ngIf="projectType=='kanban'" (click)="onProjectTypeClick()">
   <img width="36px" height="36px"
     src="../../../assets/images/kanban.png" >
   <div>{{projectType}}</div>
 </div>
 
-<div *ngIf="projectType=='scrum'">
+<div *ngIf="projectType=='scrum'"  (click)="onProjectTypeClick()" >
   <img width="36px" height="36px"
        src="../../../assets/images/scrum.png" >
   <div>{{projectType}}</div>
