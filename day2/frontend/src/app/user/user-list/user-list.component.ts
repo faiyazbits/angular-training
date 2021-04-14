@@ -2,20 +2,25 @@
 // name should be capitalized when rendered
 // gender should be an icon (use user-gender component)
 
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {User} from "../../model/user";
 import {UserService} from "../user.service";
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+    selector: 'app-user-list',
+    templateUrl: './user-list.component.html',
+    styleUrls: ['./user-list.component.css']
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent {
+    users: User [] = [];
+    @Input() selectedUser;
+    @Output() userSelected = new EventEmitter<User>();
 
-  users: User [] = [];
-  constructor(private userService: UserService) {
-    this.users = this.userService.getUserList();
+    constructor(private userService: UserService) {
+        this.users = this.userService.getUserList();
+    }
+  onUserClick(user) {
+      this.userSelected.emit(user);
   }
-  ngOnInit() {}
+
 }

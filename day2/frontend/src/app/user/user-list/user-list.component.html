@@ -2,13 +2,15 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Designation</th>
       <th>Status</th>
       <th>Gender</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users" (click)="onUserClick(user)">
       <td>{{ user.name }}</td>
+      <td>{{user.designation}}</td>
       <td>{{ user.status }}</td>
       <td><app-user-gender [gender]="user.gender"></app-user-gender></td>
     </tr>

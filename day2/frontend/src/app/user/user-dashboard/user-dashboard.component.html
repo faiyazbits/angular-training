@@ -1,0 +1,12 @@
+<!-- user list -->
+<div class="user-list">
+    <app-user-list
+            (userSelected)="onUserSelect($event)"
+            [selectedUser]="selectedUser">
+
+    </app-user-list>
+</div>
+
+<div class ="user-details">
+    <app-user-details [user]="selectedUser"></app-user-details>
+</div>

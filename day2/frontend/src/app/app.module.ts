@@ -16,6 +16,7 @@ import { ProjectDetailsComponent } from "./project/project-details/project-detai
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
 import {UserDetailsComponent} from "./user/user-details/user-details.component";
+import {UserDashboardComponent} from "./user/user-dashboard/user-dashboard.component";
 import {UserService} from "./user/user.service";
 
 @NgModule({
@@ -29,7 +30,8 @@ import {UserService} from "./user/user.service";
         ProjectSummaryComponent,
         ProjectDetailsComponent,
         ProjectFilterComponent,
-        UserDetailsComponent
+        UserDetailsComponent,
+        UserDashboardComponent
     ],
     imports: [
         BrowserModule,

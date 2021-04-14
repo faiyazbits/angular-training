@@ -24,7 +24,7 @@ const users: User[] = [
         id: 3,
         name: 'Preethi Chawla',
         age: 40,
-        designation: 'Project Manager',
+        designation: 'Senior Software Developer',
         gender: UserType.FEMALE,
         status: UserStatus.DDS
     },
