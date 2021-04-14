@@ -1,1 +1,22 @@
-<div>implement user list here</div>
+<table class="u-full-width">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users" [ngStyle]="{'backgroundColor': getRowColor(user)}">
+            <td>{{ user.name | uppercase}}</td>
+            <td>{{ user.designation}}</td>
+            <td>{{ user.gender}}</td>
+            <td>
+                <app-user-gender [userGender]="user.gender" (selectedUserGender)="onUserGenderSelect($event)"
+                    [userId]="user.id">
+                </app-user-gender>
+            </td>
+        </tr>
+    </tbody>
+</table>
