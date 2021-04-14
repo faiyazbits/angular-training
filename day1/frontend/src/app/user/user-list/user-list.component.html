@@ -9,10 +9,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of userList" >
-        <td>{{ user.name }}</td>
-        <td>{{ user.designation }}</td>
-        <td >{{ user.gender }}</td>
-        <td >{{ user.age }}</td>
+        <td>{{ user.name |titlecase }}</td>
+        <td>{{ user.designation | uppercase }}</td>
+        <td>
+            <app-user-gender [gender]="user.gender"></app-user-gender>
+        </td>
+        <td>{{ user.age }}</td>
       </tr>
     </tbody>
   </table>
