@@ -1,45 +1,59 @@
 <div class="filter-container">
-
   <div class="search-filter filter">
-    <input type="search" placeholder="Search By Name"
-           [(ngModel)]="searchText"
-           (ngModelChange)="onSearchByName()"/>
+    <input
+      type="search"
+      placeholder="Search By Name"
+      [(ngModel)]="searchText"
+      (ngModelChange)="onSearchByName()"
+    />
   </div>
 
   <div class="select-filter filter">
-    <select name="projectType" id="projectType" [(ngModel)]="projectTypeValue"
-            (change)="onFilterByType($event)">
-      <option value=""> --Filter By Type-- </option>
-      <option [value]="projectType.SCRUM"> {{projectType.SCRUM}}</option>
-      <option [value]="projectType.KANBAN"> {{projectType.KANBAN}}</option>
+    <select
+      name="projectType"
+      id="projectType"
+      [(ngModel)]="projectTypeValue"
+      (change)="onFilterByType($event)"
+    >
+      <option value="">--Filter By Type--</option>
+      <option [value]="projectType.SCRUM">{{ projectType.SCRUM }}</option>
+      <option [value]="projectType.KANBAN">{{ projectType.KANBAN }}</option>
     </select>
   </div>
 
   <div class="radio-filter filter">
     <label for="progress">
-      <input type="radio" name="status"
-             id="progress"
-             [(ngModel)]="statusModel.projectStatus"
-             (change)="onFilterByStatus()"
-             value="in_progress"/>
-      <span >Progress</span>
+      <input
+        type="radio"
+        name="status"
+        id="progress"
+        [(ngModel)]="statusModel.projectStatus"
+        (change)="onFilterByStatus()"
+        value="in_progress"
+      />
+      <span>Progress</span>
     </label>
     <label for="completed">
-      <input type="radio" name="status"
-             id="completed"
-             [(ngModel)]="statusModel.projectStatus"
-             (change)="onFilterByStatus()"
-             value="completed"/>
-      <span >Completed</span>
+      <input
+        type="radio"
+        name="status"
+        id="completed"
+        [(ngModel)]="statusModel.projectStatus"
+        (change)="onFilterByStatus()"
+        value="completed"
+      />
+      <span>Completed</span>
     </label>
     <label for="all">
-      <input type="radio" name="status"
-             id="all"
-             [(ngModel)]="statusModel.projectStatus"
-             (change)="onFilterByStatus()"
-             value="all"/>
-      <span >All</span>
+      <input
+        type="radio"
+        name="status"
+        id="all"
+        [(ngModel)]="statusModel.projectStatus"
+        (change)="onFilterByStatus()"
+        value="all"
+      />
+      <span>All</span>
     </label>
   </div>
-
 </div>

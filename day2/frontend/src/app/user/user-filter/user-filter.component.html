@@ -1,0 +1,75 @@
+<div class="filter-container">
+  <!-- INPUT BOX STARTS -->
+
+  <div class="search-filter filter">
+    <!-- USING 2Way Binding and Event Binding  -->
+    <input
+      type="search"
+      placeholder="Search By Username"
+      [(ngModel)]="searchUser"
+      (ngModelChange)="onSearchByName()"
+    />
+  </div>
+  <!-- INPUT BOX STARTS -->
+
+  <!-- SELECT DROPDOWN STARTS -->
+  <div class="select-filter filter">
+    <select
+      name="Usergender"
+      id="projectType"
+      [(ngModel)]="userGenderValue"
+      (change)="filterByGender($event)"
+    >
+      <option value="">-- Filter By Gender --</option>
+      <option [value]="userGender.MALE">{{ userGender.MALE }}</option>
+      <option [value]="userGender.FEMALE">{{ userGender.FEMALE }}</option>
+    </select>
+  </div>
+  <!-- SELECT DROPDOWN STARTS -->
+
+
+
+  <!-- RADIO BUTTONS STARTS -->
+  <div class="radio-filter filter">
+    <label for="active">
+      <input
+        type="radio"
+        name="status"
+        id="progress"
+        [(ngModel)]="statusView.userStatus"
+        (change)="filterByStatus()"
+        value="active" 
+      />
+      <!-- KNOW THE POWER OF VALUE ATTRIBUTE -->
+      <span>Active</span>
+    </label>
+
+    <label for="Inactive">
+      <input
+        type="radio"
+        name="status"
+        id="completed"
+        [(ngModel)]="statusView.userStatus"
+        (change)="filterByStatus()"
+        value="inactive"
+      />
+      <span>Inactive</span>
+    </label>
+
+    <label for="all">
+      <input
+        type="radio"
+        name="all"
+        id="all"
+        [(ngModel)]="statusView.userStatus"
+        (change)="filterByStatus()"
+        value="all"
+      />
+      <span>All</span>
+    </label>
+  </div>
+  <!-- RADIO BUTTONS STARTS ENDS -->
+
+
+  
+</div>
