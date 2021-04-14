@@ -17,7 +17,10 @@ import { ProjectDashboardComponent } from "./project/project-dashboard/project-d
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
 import {UserDetailsComponent} from "./user/user-details/user-details.component";
 import {UserDashboardComponent} from "./user/user-dashboard/user-dashboard.component";
+import {UserSummaryComponent} from "./user/user-summary/user-summary.component";
 import {UserService} from "./user/user.service";
+import {UserFilterComponent} from "./user/user-filter/user-filter.component";
+
 
 @NgModule({
     declarations: [
@@ -31,7 +34,9 @@ import {UserService} from "./user/user.service";
         ProjectDetailsComponent,
         ProjectFilterComponent,
         UserDetailsComponent,
-        UserDashboardComponent
+        UserDashboardComponent,
+        UserSummaryComponent,
+        UserFilterComponent
     ],
     imports: [
         BrowserModule,

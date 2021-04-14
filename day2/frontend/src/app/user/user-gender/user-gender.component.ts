@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {UserGender} from "../../model/user.gender";
 
 @Component({
   selector: 'app-user-gender',
@@ -10,4 +11,11 @@ export class UserGenderComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  isMaleUser() {
+  return this.gender === UserGender.MALE;
+  }
+  isFemaleUser() {
+    return this.gender === UserGender.FEMALE;
+  }
 }

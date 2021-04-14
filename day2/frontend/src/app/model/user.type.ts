@@ -1,4 +1,4 @@
 export enum UserType {
-    MALE= 'male',
-    FEMALE= 'female',
+    FULLTIME = 'fullTime',
+    CONTRACT_BASED = 'contractBased'
 }

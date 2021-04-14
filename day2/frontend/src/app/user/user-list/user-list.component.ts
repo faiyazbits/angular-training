@@ -22,5 +22,22 @@ export class UserListComponent {
   onUserClick(user) {
       this.userSelected.emit(user);
   }
+    onSearchUser(searchText) {
+        this.users = this.userService.fetchUserBySearchText(searchText);
+        this.userSelected.emit(this.users[0]);
+    }
+    onFilterByGender(gender) {
+    if(gender =='all') {
+        this.users = this.userService.getUserList();
+        this.userSelected.emit(this.users[0]);
+        return;
+    }
+        this.users = this.userService.fetchUserByGender(gender);
+        this.userSelected.emit(this.users[0]);
+    }
+    onFilterByType(type) {
+    this.users = this.userService.fetchUserByType(type);
+    this.userSelected.emit(this.users[0]);
+    }
 
 }

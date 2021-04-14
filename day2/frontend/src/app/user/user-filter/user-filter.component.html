@@ -1,0 +1,44 @@
+<div class="filter-container">
+
+    <div class="search-filter filter">
+        <input type="search" placeholder="Search By Name"
+               [(ngModel)]="searchText"
+               (ngModelChange)="onSearchByName()"/>
+    </div>
+
+    <div class="select-filter filter">
+        <select name="userType" id="userType" [(ngModel)]="userTypeValue"
+                (change)="onFilterByType($event)">
+            <option value=""> --Filter By Type-- </option>
+            <option [value]="userType.FULLTIME"> {{userType.FULLTIME}}</option>
+            <option [value]="userType.CONTRACT_BASED"> {{userType.CONTRACT_BASED}}</option>
+        </select>
+    </div>
+    <div class="radio-filter filter">
+        <label for="male">
+            <input type="radio" name="gender"
+                   id="male"
+                   [(ngModel)]="genderStatusModel.genderStatus"
+                   (change)="onFilterByGender()"
+                   value="male"/>
+            <span >Male</span>
+        </label>
+        <label for="female">
+            <input type="radio" name="gender"
+                   id="female"
+                   [(ngModel)]="genderStatusModel.genderStatus"
+                   (change)="onFilterByGender()"
+                   value="female"/>
+            <span >Female</span>
+        </label>
+        <label for="all">
+            <input type="radio" name="gender"
+                   id="all"
+                   [(ngModel)]="genderStatusModel.genderStatus"
+                   (change)="onFilterByGender()"
+                   value="all"/>
+            <span >All</span>
+        </label>
+    </div>
+
+</div>
