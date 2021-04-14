@@ -13,6 +13,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserGenderComponent } from './user/user-gender/user-gender.component';
 import { UserSummaryComponent } from './user/user-summary/user-summary.component';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
+import { UserFilterComponent } from './user/user-filter/user-filter.component';
 
 import { ProjectListComponent } from './project/project-list/project-list.component';
 import { ProjectTypeComponent } from './project/project-type/project-type.component';
@@ -22,6 +23,7 @@ import { ProjectDetailsComponent } from "./project/project-details/project-detai
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
 
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -30,12 +32,13 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
         UserGenderComponent,
         UserDetailsComponent,
         UserSummaryComponent,
+        UserFilterComponent ,
         ProjectDashboardComponent,
         ProjectListComponent,
         ProjectTypeComponent,
         ProjectSummaryComponent,
         ProjectDetailsComponent,
-        ProjectFilterComponent  
+        ProjectFilterComponent   
     ],
     imports: [
         BrowserModule,

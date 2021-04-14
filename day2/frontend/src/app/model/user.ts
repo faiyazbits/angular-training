@@ -5,5 +5,6 @@ export interface User {
     name: string,
     designation: string,
     gender: UserGender,
-    age: number
+    age: number,
+    salary: number
 }
