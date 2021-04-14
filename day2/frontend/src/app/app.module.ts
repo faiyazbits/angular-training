@@ -15,6 +15,8 @@ import { ProjectSummaryComponent } from "./project/project-summary/project-summa
 import { ProjectDetailsComponent } from "./project/project-details/project-details.component";
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
+import {UserDetailsComponent} from "./user/user-details/user-details.component";
+import {UserService} from "./user/user.service";
 
 @NgModule({
     declarations: [
@@ -26,7 +28,8 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
         ProjectTypeComponent,
         ProjectSummaryComponent,
         ProjectDetailsComponent,
-        ProjectFilterComponent
+        ProjectFilterComponent,
+        UserDetailsComponent
     ],
     imports: [
         BrowserModule,
@@ -35,7 +38,7 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
         AppRoutesModule,
         RouterModule
     ],
-    providers: [ ProjectService ],
+    providers: [ ProjectService, UserService],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {
