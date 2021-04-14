@@ -8,11 +8,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of userList" >
+      <tr *ngFor="let user of userList" [ngClass]="{'highlight': user.id===selectedUserId}">
         <td>{{ user.name |titlecase }}</td>
         <td>{{ user.designation | uppercase }}</td>
         <td>
-            <app-user-gender [gender]="user.gender"></app-user-gender>
+            <app-user-gender 
+            [userId]="user.id"
+            [gender]="user.gender"
+            (userSelected)="selectedUser($event)">
+        </app-user-gender>
         </td>
         <td>{{ user.age }}</td>
       </tr>

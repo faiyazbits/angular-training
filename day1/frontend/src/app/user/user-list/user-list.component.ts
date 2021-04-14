@@ -11,29 +11,39 @@ import { Component } from '@angular/core';
 export class UserListComponent {
 
   userList = [ {
+    id:1,
     name: "jasmin",
     designation: "developer",
     gender: "female",
     age: 23
   },
   {
+    id:2,
     name: "rizwan",
     designation: "manager",
     gender: "male",
     age: 28
   },
   {
+    id:3,
     name: "sumaiya",
     designation: "trainee",
     gender: "female",
     age: 25
   },
   {
+    id:4,
     name: "afrin",
     designation: "developer",
     gender: "female",
     age: 20
   }];
 
+  selectedUserId:string = "";
+
   constructor() {}
+
+  selectedUser(userId) {
+    this.selectedUserId = userId;
+  }
 }
