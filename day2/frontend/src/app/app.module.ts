@@ -1,3 +1,4 @@
+import { AuthGuard } from './user/auth-guard.service';
 import { UserService } from './user/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { UserGenderComponent } from './user/user-gender/user-gender.component';
 import { UserSummaryComponent } from './user/user-summary/user-summary.component';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { UserFilterComponent } from './user/user-filter/user-filter.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 import { ProjectListComponent } from './project/project-list/project-list.component';
 import { ProjectTypeComponent } from './project/project-type/project-type.component';
@@ -22,6 +24,7 @@ import { ProjectSummaryComponent } from "./project/project-summary/project-summa
 import { ProjectDetailsComponent } from "./project/project-details/project-details.component";
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
+
 
 @NgModule({
     declarations: [
@@ -32,13 +35,13 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
         UserDetailsComponent,
         UserSummaryComponent,
         UserFilterComponent ,
+        UserLoginComponent,
         ProjectDashboardComponent,
         ProjectListComponent,
         ProjectTypeComponent,
         ProjectSummaryComponent,
         ProjectDetailsComponent,
-        ProjectFilterComponent
-         
+        ProjectFilterComponent   
     ],
     imports: [
         BrowserModule,
@@ -49,7 +52,8 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
     ],
     providers: [
         ProjectService,
-        UserService
+        UserService,
+        AuthGuard
     ],
     bootstrap: [AppComponent]
 })

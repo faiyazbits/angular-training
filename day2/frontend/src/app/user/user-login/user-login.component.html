@@ -1,0 +1,17 @@
+<div class="container">
+  <div *ngIf="invalidLogin" class="alert alert-danger">
+    Invalid Username and/or Password
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="inputEmail">Email</label>
+      <input type="email" [(ngModel)]="userEmail" name="email" class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input type="password" [(ngModel)]="userPassword" name="password" class="form-control" id="inputPassword"
+        placeholder="Password">
+    </div>
+    <button type="button" class="btn btn-primary btn-block" (click)="navigateToUserPage()">Sign in</button>
+  </form>
+</div>

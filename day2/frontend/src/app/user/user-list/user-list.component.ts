@@ -1,7 +1,7 @@
 import { UserService } from '../../user/user.service';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { User } from '../../model/user'
-import { Router } from '@angular/router';
+//import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -24,10 +24,6 @@ export class UserListComponent implements OnInit {
 
   onUserClick(user) {
     this.userSelected.emit(user);
-  }
-
-  getActiveUserClass(user) {
-    return user.id === this.selectedUser.id;
   }
 
   onSearchByName(searchTerm) {

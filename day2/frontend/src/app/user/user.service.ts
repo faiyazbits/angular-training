@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { User } from '../model/user'
-import { UserGender } from '../model/user.gender'
+import { User } from '../model/user';
+import { UserGender } from '../model/user.gender';
 
 const users: User[] = [
   {
@@ -60,12 +60,16 @@ const users: User[] = [
     salary: 500
   }
 ];
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   selectedUser: User = users[0];
-
+  credentials = {
+    username: 'sheerin@provility.com',
+    password: 'sheerin@1992'
+  }
   constructor() { }
 
   getUserList() {
