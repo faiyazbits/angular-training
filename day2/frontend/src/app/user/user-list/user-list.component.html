@@ -12,7 +12,8 @@
   <tbody>
     <tr *ngFor="let user of users" 
     (click) ="onUserClick(user)" 
-    [ngClass]="{'active-user': getActiveUserClass(user)}">
+    [ngClass]="{'active-user': getActiveUserClass(user)}"
+    [routerLink]="['/users', user.id]">
       <td>{{ user.name | titlecase }}</td>
       <td>{{ user.designation }}</td>
       <td>

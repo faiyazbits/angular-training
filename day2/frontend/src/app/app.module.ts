@@ -23,7 +23,6 @@ import { ProjectDetailsComponent } from "./project/project-details/project-detai
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -38,7 +37,8 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
         ProjectTypeComponent,
         ProjectSummaryComponent,
         ProjectDetailsComponent,
-        ProjectFilterComponent   
+        ProjectFilterComponent
+         
     ],
     imports: [
         BrowserModule,

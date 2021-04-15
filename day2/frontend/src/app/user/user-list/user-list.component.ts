@@ -27,27 +27,27 @@ export class UserListComponent implements OnInit {
   }
 
   getActiveUserClass(user) {
-    return user.id === this.selectedUser.id; 
+    return user.id === this.selectedUser.id;
   }
 
   onSearchByName(searchTerm) {
     this.users = this.userService.fetchUsersBySearchText(searchTerm);
     this.userSelected.emit(this.users[0]);
-}
+  }
 
-onFilterByDesignation(designation){
-    if(designation=='all'){
-        this.users = this.userService.getUserList();
-        this.userSelected.emit(this.users[0]);
-        return;
+  onFilterByDesignation(designation) {
+    if (designation == 'all') {
+      this.users = this.userService.getUserList();
+      this.userSelected.emit(this.users[0]);
+      return;
     }
     this.users = this.userService.fetchUsersByDesignation(designation);
     this.userSelected.emit(this.users[0]);
-}
+  }
 
-onFilterByGender(gender){
+  onFilterByGender(gender) {
     this.users = this.userService.fetchUsersByGender(gender);
     this.userSelected.emit(this.users[0]);
-}
+  }
 
 }

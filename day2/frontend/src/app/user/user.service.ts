@@ -92,19 +92,25 @@ export class UserService {
 
   fetchUsersBySearchText(searchText) {
     return users.filter((user) => {
-        return user.name.includes(searchText);
+      return user.name.includes(searchText);
     });
-}
+  }
 
-fetchUsersByDesignation(designation) {
+  fetchUsersByDesignation(designation) {
     return users.filter((user) => {
-        return user.designation == designation;
+      return user.designation == designation;
     });
-}
+  }
 
-fetchUsersByGender(gender) {
+  fetchUsersByGender(gender) {
     return users.filter((user) => {
-        return user.gender == gender;
+      return user.gender == gender;
     });
-}
+  }
+  findUserById(id) {
+    return users.find((user) => {
+      return user.id == id;
+    })
+  }
+
 }
