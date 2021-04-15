@@ -114,4 +114,10 @@ export class UserService {
             return user.type === type;
         });
     }
+
+    findUserById(userId) {
+        return users.find((user) => {
+            return user.id = userId;
+        });
+    }
 }
