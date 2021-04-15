@@ -1,4 +1,11 @@
-.project-list {
+.user-summary {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.user-list {
   width: 50%;
   border-right: 3px solid navy;
   float: left;
@@ -6,7 +13,7 @@
   padding: 10px;
 }
 
-.project-detail {
+.user-detail {
   width: 50%;
   float: left;
   box-sizing: border-box;

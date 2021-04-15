@@ -1,0 +1,19 @@
+<!-- Starts user Summary -->
+<app-user-summary class="user-summary"></app-user-summary>
+<!--End user Summary -->
+
+
+<!-- Starts user List -->
+<div class="user-list">
+  <app-user-list
+    (userSelected)="onUserSelect($event)"
+    [selectedUser]="selectedUser"></app-user-list>
+</div>
+<!-- End user List -->
+
+
+<!-- Starts user Details -->
+<div class="user-detail">
+  <app-user-details [user]="selectedUser"></app-user-details>
+</div>
+<!-- End user Details -->

@@ -15,12 +15,19 @@ import { ProjectSummaryComponent } from "./project/project-summary/project-summa
 import { ProjectDetailsComponent } from "./project/project-details/project-details.component";
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
+import { UserService } from './user/user.service';
+import { UserSummaryComponent } from './user/user-summary/user-summary.component';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { UserDetailsComponent } from './user/user-details/user-details.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        UserDashboardComponent,
         UserListComponent,
+        UserSummaryComponent,
         UserGenderComponent,
+        UserDetailsComponent,
         ProjectDashboardComponent,
         ProjectListComponent,
         ProjectTypeComponent,
@@ -35,8 +42,8 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
         AppRoutesModule,
         RouterModule
     ],
-    providers: [ ProjectService ],
-    bootstrap: [ AppComponent ]
+    providers: [ProjectService, UserService],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

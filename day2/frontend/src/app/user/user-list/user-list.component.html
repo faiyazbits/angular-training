@@ -7,7 +7,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users" (click)="onUserClick(user)"
+    [ngClass]="{'active-user-row':isActiveUserRow(user)}">
       <td>{{ user.name }}</td>
       <td>{{ user.designation }}</td>
       <td><app-user-gender [gender]="user.gender"></app-user-gender></td>

@@ -1,0 +1,16 @@
+.summary-box {
+  width: 30%;
+  margin: 0 1.5% 1.5% 1.5%;
+  height: 120px;
+  border: 1px solid #f3f3f3;
+  box-shadow: 0 0 5px #f3f3f3;
+  box-sizing: border-box;
+  float: left;
+  padding: 10px;
+}
+
+.summary-box * {
+  text-align: center;
+  margin: 0;
+  color: #668c6f;
+}
