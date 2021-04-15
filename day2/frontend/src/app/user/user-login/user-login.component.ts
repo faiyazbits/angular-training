@@ -23,7 +23,6 @@ export class UserLoginComponent implements OnInit {
       this.router.navigateByUrl('/users');
     } else {
       this.invalidLogin = true;
-      localStorage.clear();
     }
     
   }
