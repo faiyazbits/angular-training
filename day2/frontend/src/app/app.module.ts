@@ -20,7 +20,7 @@ import {UserSummaryComponent} from "./user/user-summary/user-summary.component";
 import {UserService} from "./user/user.service";
 import {UserFilterComponent} from "./user/user-filter/user-filter.component";
 import {LoginComponent} from "./login/login.component";
-import {AuthenticationService} from "./authentication.service";
+import {AuthenticationService} from "./user/authentication.service";
 
 
 @NgModule({

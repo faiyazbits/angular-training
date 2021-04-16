@@ -4,13 +4,13 @@ import {ProjectDashboardComponent} from "./project/project-dashboard/project-das
 import {UserDashboardComponent} from "./user/user-dashboard/user-dashboard.component";
 import {UserDetailsComponent} from "./user/user-details/user-details.component";
 import {LoginComponent} from "./login/login.component";
-import {AuthGuard} from "./auth.guard";
+import {AuthGuard} from "./user/auth.guard";
 
 const appRoutes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: 'login'},
     {path: 'login', component: LoginComponent},
+    {path: 'users/:id', component: UserDetailsComponent},
     {path: 'users', component: UserDashboardComponent, canActivate: [AuthGuard]},
-    {path: 'users/:id', component: UserDetailsComponent, canActivate: [AuthGuard]},
     {path: 'projects', component: ProjectDashboardComponent, canActivate: [AuthGuard]},
 ];
 

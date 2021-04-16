@@ -12,7 +12,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users" (click)="onUserClick(user)">
+    <tr *ngFor="let user of users"
+        (click)="onUserClick(user)"
+        [routerLink]="['/users',user.id]">
       <td>{{ user.name }}</td>
       <td>{{user.designation}}</td>
       <td>{{ user.type }}</td>

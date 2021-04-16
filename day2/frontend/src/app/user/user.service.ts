@@ -115,9 +115,9 @@ export class UserService {
         });
     }
 
-    findUserById(userId) {
+    findUserById(id) {
         return users.find((user) => {
-            return user.id = userId;
+            return user.id === id;
         });
     }
 }
