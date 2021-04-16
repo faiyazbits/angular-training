@@ -134,6 +134,11 @@ export class UserService {
     this.router.navigateByUrl('/users');
   }
 
+  navigateToLoginPage() {
+    this.router.navigateByUrl('/login');
+    this.clearLocalStorage();
+  }
+
   checkForValidCredentials(username, password) {
     if (this.credentials.username == username && this.credentials.password == password) {
       this.setLocalStorage();
@@ -142,10 +147,5 @@ export class UserService {
       this.clearLocalStorage();
       this.invalidLogin = true;
     }
-  }
-
-  navigateToLoginPage() {
-    this.router.navigateByUrl('/login');
-    this.clearLocalStorage();
   }
 }
