@@ -9,12 +9,16 @@ import { UserService } from '../user.service';
 export class UserSummaryComponent implements OnInit {
 
     totalUserCount: number;
+    totalMaleUserCount: number;
+    totalFemaleUserCount: number;
 
     constructor(private userService: UserService) {
     }
 
     ngOnInit() {
         this.totalUserCount = this.userService.getUserList().length;
+        this.totalMaleUserCount = this.userService.getMaleUserCount();
+        this.totalFemaleUserCount = this.userService.getFemaleUserCount();
     }
 
 }

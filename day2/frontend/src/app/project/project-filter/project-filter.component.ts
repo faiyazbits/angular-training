@@ -4,7 +4,7 @@ import { ProjectType } from "../../model/project.type";
 @Component({
     selector: 'app-project-filter',
     templateUrl: './project-filter.component.html',
-    styleUrls: [ './project-filter.component.css' ]
+    styleUrls: ['./project-filter.component.css']
 })
 export class ProjectFilterComponent implements OnInit {
 

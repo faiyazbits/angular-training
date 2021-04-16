@@ -56,4 +56,18 @@ export class UserService {
   getUserList(): User[] {
     return this.userList;
   }
+
+  getMaleUserCount(): number {
+    const maleUsers = this.userList.filter((user) => {
+      return user.gender == "male";
+    });
+    return maleUsers.length;
+  }
+
+  getFemaleUserCount(): number {
+    const femaleUsers = this.userList.filter((user) => {
+      return user.gender == "female";
+    });
+    return femaleUsers.length;
+  }
 }
