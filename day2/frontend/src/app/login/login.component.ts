@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         return this.loginForm.controls;
     }
 
-    login() {
+    onSubmit() {
         if (this.authenticationService.login(this.loginForm.value)) {
             this.router.navigateByUrl('/users');
         } else {

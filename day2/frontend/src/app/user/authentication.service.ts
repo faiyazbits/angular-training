@@ -12,15 +12,17 @@ export class AuthenticationService {
     }
 
     public login(userInfo: LoginUser) {
-        localStorage.setItem('email', JSON.stringify('ithirisshabi@gmail.com'));
-        localStorage.setItem('password', JSON.stringify('admin@123'));
-        if ((userInfo.email === JSON.parse(localStorage.getItem('email'))) && (userInfo.password === JSON.parse(localStorage.getItem('password')))) {
+        const authenticationUserInfo = {email: 'ithirisshabi@gmail.com', password: 'admin@123'};
+        localStorage.setItem('authInfoToken', JSON.stringify(authenticationUserInfo));
+        if ((userInfo.email === JSON.parse(localStorage.getItem('authInfoToken')).email)
+            && (userInfo.password === JSON.parse(localStorage.getItem('authInfoToken')).password)) {
             this.isloggedIn = true;
-        }
-        return this.isloggedIn;
     }
-    public logout() {
-        localStorage.removeItem('email');
-      localStorage.removeItem('password');
-    }
+    return this.isloggedIn;
+}
+
+public logout() {
+    localStorage.removeItem('authInfoToken');
+
+}
 }

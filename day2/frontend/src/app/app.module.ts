@@ -46,7 +46,9 @@ import {AuthenticationService} from "./user/authentication.service";
         ReactiveFormsModule,
         HttpClientModule,
         AppRoutesModule,
-        RouterModule
+        RouterModule,
+        ReactiveFormsModule,
+        ReactiveFormsModule
     ],
     providers: [ ProjectService, UserService, AuthenticationService],
     bootstrap: [ AppComponent ]
