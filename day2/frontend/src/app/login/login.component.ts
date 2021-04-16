@@ -10,14 +10,14 @@ import {AuthenticationService} from "../user/authentication.service";
 })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
-
+    submitted = false;
 
     constructor(private authenticationService: AuthenticationService, private router: Router, private formBuilder: FormBuilder) {
     }
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
-            email: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]
         });
     }
@@ -27,12 +27,17 @@ export class LoginComponent implements OnInit {
     }
 
     onSubmit() {
+        this.submitted = true;
+        // stop here if form is invalid
+        if (this.loginForm.invalid) {
+            return;
+        }
         if (this.authenticationService.login(this.loginForm.value)) {
             this.router.navigateByUrl('/users');
         } else {
+            this.submitted = false;
             this.loginForm.reset();
             this.router.navigateByUrl('/login');
         }
-
     }
 }
