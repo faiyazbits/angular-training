@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { AppRoutesModule } from './app-routes.module';
 import { UserListComponent } from './user/user-list/user-list.component';
@@ -20,6 +19,8 @@ import {UserDashboardComponent} from "./user/user-dashboard/user-dashboard.compo
 import {UserSummaryComponent} from "./user/user-summary/user-summary.component";
 import {UserService} from "./user/user.service";
 import {UserFilterComponent} from "./user/user-filter/user-filter.component";
+import {LoginComponent} from "./login/login.component";
+import {AuthenticationService} from "./authentication.service";
 
 
 @NgModule({
@@ -36,16 +37,18 @@ import {UserFilterComponent} from "./user/user-filter/user-filter.component";
         UserDetailsComponent,
         UserDashboardComponent,
         UserSummaryComponent,
-        UserFilterComponent
+        UserFilterComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpClientModule,
         AppRoutesModule,
         RouterModule
     ],
-    providers: [ ProjectService, UserService],
+    providers: [ ProjectService, UserService, AuthenticationService],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {
