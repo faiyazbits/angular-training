@@ -1,17 +1,21 @@
-table{
+@import "~bootstrap/dist/css/bootstrap.css";
+table {
     border-collapse: collapse;
 }
 
-table thead{
+table thead {
     background-color: navy;
     color: white;
 }
 
-th:first-child, td:first-child{
+th:first-child, td:first-child {
     padding-left: 15px;
 }
 
-table tbody tr{
+table tbody tr {
     cursor: pointer;
 }
 
+.btn {
+    font-size: 2rem;
+}

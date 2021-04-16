@@ -1,5 +1,4 @@
 import { UserService } from './../user.service';
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,22 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
-  userEmail="";
-  userPassword="";
+  userEmail = "";
+  userPassword = "";
   invalidLogin: boolean;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
+
   navigateToUserPage() {
-    const credentials = this.userService.credentials;
-    if(credentials.username == this.userEmail && credentials.password == this.userPassword){
-      localStorage.setItem('userToken', 'sheerin');
-      this.router.navigateByUrl('/users');
-    } else {
-      this.invalidLogin = true;
-    }
-    
+    this.userService.checkForValidCredentials(this.userEmail, this.userPassword);
+    this.invalidLogin = this.userService.invalidLogin;
   }
 }

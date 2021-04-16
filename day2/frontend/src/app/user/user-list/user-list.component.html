@@ -1,6 +1,5 @@
-<app-user-filter (searchUser)="onSearchByName($event)"
-                    (filterByDesignation)="onFilterByDesignation($event)"
-                    (filterByGender)="onFilterByGender($event)"></app-user-filter>
+<app-user-filter (searchUser)="onSearchByName($event)" (filterByDesignation)="onFilterByDesignation($event)"
+  (filterByGender)="onFilterByGender($event)"></app-user-filter>
 <table class="u-full-width">
   <thead>
     <tr>
@@ -10,14 +9,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users" 
-    (click) ="onUserClick(user)" 
-    [routerLink]="['/users', user.id]">
+    <tr *ngFor="let user of users" (click)="onUserClick(user)" [routerLink]="['/users', user.id]">
       <td>{{ user.name | titlecase }}</td>
       <td>{{ user.designation }}</td>
       <td>
-          <app-user-gender  [userGender]="user.gender"></app-user-gender>
+        <app-user-gender [userGender]="user.gender"></app-user-gender>
       </td>
-  </tr>
+    </tr>
   </tbody>
 </table>
+<button type="button" class="btn btn-primary" (click)="navigateToLoginPage()">Sign Out</button>

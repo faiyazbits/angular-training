@@ -45,5 +45,8 @@ export class UserListComponent implements OnInit {
     this.users = this.userService.fetchUsersByGender(gender);
     this.userSelected.emit(this.users[0]);
   }
-
+  
+  navigateToLoginPage() {
+    this.userService.navigateToLoginPage();
+  }
 }

@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { Credentials } from './../model/credentials';
 import { Injectable } from '@angular/core';
 import { User } from '../model/user';
 import { UserGender } from '../model/user.gender';
@@ -66,11 +68,13 @@ const users: User[] = [
 })
 export class UserService {
   selectedUser: User = users[0];
-  credentials = {
+  credentials: Credentials = {
     username: 'sheerin@provility.com',
     password: 'sheerin@1992'
-  }
-  constructor() { }
+  };
+  invalidLogin: boolean;
+
+  constructor(private router: Router) { }
 
   getUserList() {
     return users;
@@ -111,10 +115,37 @@ export class UserService {
       return user.gender == gender;
     });
   }
+
   findUserById(id) {
     return users.find((user) => {
       return user.id == id;
     })
   }
 
+  setLocalStorage() {
+    localStorage.setItem('userToken', 'sheerin');
+  }
+
+  clearLocalStorage() {
+    localStorage.clear();
+  }
+
+  navigateToUserPage() {
+    this.router.navigateByUrl('/users');
+  }
+
+  checkForValidCredentials(username, password) {
+    if (this.credentials.username == username && this.credentials.password == password) {
+      this.setLocalStorage();
+      this.navigateToUserPage();
+    } else {
+      this.clearLocalStorage();
+      this.invalidLogin = true;
+    }
+  }
+
+  navigateToLoginPage() {
+    this.router.navigateByUrl('/login');
+    this.clearLocalStorage();
+  }
 }

@@ -9,7 +9,7 @@ import { ProjectDashboardComponent } from "./project/project-dashboard/project-d
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: UserLoginComponent},
-  { path: 'users/:id', component: UserDetailsComponent },
+  { path: 'users/:id', component: UserDetailsComponent, canActivate: [AuthGuard]  },
   { path: 'users', component: UserDashboardComponent, canActivate: [AuthGuard] },
   { path: 'projects', component: ProjectDashboardComponent }
 ];
