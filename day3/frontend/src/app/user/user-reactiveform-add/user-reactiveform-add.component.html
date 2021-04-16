@@ -1,0 +1,65 @@
+<!-- main app container -->
+<div class="container mt-5">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+
+        <h5 class="mb-4">Project Creation - Reactive Form with Validation</h5>
+
+        <form [formGroup]="userCreationForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label>User Name</label>
+            <input type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && controls.userName.errors }" />
+            <div *ngIf="submitted && controls.userName.errors" class="invalid-feedback">
+              <div *ngIf="controls.userName.errors.required">User Name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>User Designation</label>
+            <select class="custom-select" formControlName="userDesignation" [ngClass]="{ 'is-invalid': submitted && controls.userDesignation.errors }">
+              <option value="">Select user designation</option>
+              <option *ngFor="let designation of designations" [ngValue]="designation">{{designation}}</option>
+            </select>
+            <div *ngIf="submitted && controls.userDesignation.errors" class="invalid-feedback">
+              <div *ngIf="controls.userDesignation.errors.required">User Designation is required</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>User Gender</label>
+            <select class="custom-select" formControlName="userGender" [ngClass]="{ 'is-invalid': submitted && controls.userGender.errors }">
+              <option value="">Select user gender</option>
+              <option [value]="userGenderOptions.FEMALE"> {{userGenderOptions.FEMALE}}</option>
+              <option [value]="userGenderOptions.MALE"> {{userGenderOptions.MALE}}</option>
+            </select>
+            <div *ngIf="submitted && controls.userGender.errors" class="invalid-feedback" >
+              <div *ngIf="controls.userGender.errors.required">User Gender is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>User Age</label>
+            <input type="number" formControlName="userAge" class="form-control" [ngClass]="{ 'is-invalid': submitted && controls.userAge.errors }" />
+            <div *ngIf="submitted && controls.userAge.errors" class="invalid-feedback">
+              <div *ngIf="controls.userAge.errors.required">User Age is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>User Salary</label>
+            <input type="number" formControlName="userSalary" class="form-control" [ngClass]="{ 'is-invalid': submitted && controls.userSalary.errors }" />
+            <div *ngIf="submitted && controls.userSalary.errors" class="invalid-feedback">
+              <div *ngIf="controls.userSalary.errors.required">User Salary is required</div>
+            </div>
+          </div>
+
+          <div class="form-group text-right">
+            <button class="btn btn-primary mt-3">Create New</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

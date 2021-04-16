@@ -1,0 +1,14 @@
+.user-list{
+    width: 55%;
+    border-right: 3px solid navy;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.user-detail{
+    width: 45%;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+}

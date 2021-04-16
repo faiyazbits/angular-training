@@ -2,5 +2,7 @@ export interface User {
     id:number,
     name: string,
     designation: string,
-    gender: string
+    gender: string,
+    age: number,
+    salary: number
 }

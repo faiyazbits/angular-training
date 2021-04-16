@@ -1,0 +1,56 @@
+<div class="filter-container">
+
+  <div class="search-filter filter">
+    <input type="search" class="form-control" placeholder="Search By Name" [(ngModel)]="searchText"
+      (ngModelChange)="onSearchByName()" />
+  </div>
+
+  <div class="select-filter filter">
+    <select name="userGender" class="form-control" id="userGender" [(ngModel)]="userGenderValue"
+      (change)="onFilterByGender($event)">
+      <option value=""> --Filter By Gender-- </option>
+      <option [value]="userGender.FEMALE"> {{userGender.FEMALE}}</option>
+      <option [value]="userGender.MALE"> {{userGender.MALE}}</option>
+    </select>
+  </div>
+
+  <div class="radio-filter filter">
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="designation" id="manager"
+        [(ngModel)]="userHierarchy.userDesignation" (change)="onFilterByDesignation()" value="Project Manager" />
+      <label class="form-check-label" for="manager">
+        Manager
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="designation" id="lead"
+        [(ngModel)]="userHierarchy.userDesignation" (change)="onFilterByDesignation()" value="Team Leader" />
+      <label class="form-check-label" for="lead">
+        Team Lead
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="designation" id="delivery head"
+        [(ngModel)]="userHierarchy.userDesignation" (change)="onFilterByDesignation()" value="Project Delivery Head" />
+      <label class="form-check-label" for="deliver head">
+        Delivery Head
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="designation" id="architect"
+        [(ngModel)]="userHierarchy.userDesignation" (change)="onFilterByDesignation()" value="Project Architect" />
+      <label class="form-check-label" for="architect">
+        Architect
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="designation" id="all"
+        [(ngModel)]="userHierarchy.userDesignation" (change)="onFilterByDesignation()" value="all" />
+      <label class="form-check-label" for="all">
+        All
+      </label>
+    </div>
+  </div>
+
+</div>

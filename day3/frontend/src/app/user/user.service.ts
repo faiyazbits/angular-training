@@ -1,62 +1,110 @@
 import { Injectable } from '@angular/core';
-import { User } from "../model/user";
+import { User } from '../model/user'
+import { UserGender } from '../model/user.gender'
 
-const users:User[] = [
-    {
-        id: 1,
-        name: 'John Watson',
-        designation: 'Project Manager',
-        gender: 'male'
-    },
-    {
-        id: 2,
-        name: 'Raja Sekar',
-        designation: 'Team Leader',
-        gender: 'male'
-    },
-    {
-        id: 3,
-        name: 'Preethi Chawla',
-        designation: 'Project Manager',
-        gender: 'female'
-    },
-    {
-        id: 4,
-        name: 'Ashraf',
-        designation: 'Project Delivery Head',
-        gender: 'male'
-    },
-    {
-        id: 5,
-        name: 'John Watson',
-        designation: 'Project Architect',
-        gender: 'male'
-    },
-    {
-        id: 6,
-        name: 'Emma Tom',
-        designation: 'Project Manager',
-        gender: 'female'
-    },
-    {
-        id: 7,
-        name: 'Nick',
-        designation: 'Team Leader',
-        gender: 'male'
-    }
+const users: User[] = [
+  {
+    id: 1,
+    name: 'John Watson',
+    designation: 'Project Manager',
+    gender: UserGender.MALE,
+    age: 35,
+    salary: 700
+  },
+  {
+    id: 2,
+    name: 'Raja Sekar',
+    designation: 'Team Leader',
+    gender: UserGender.MALE,
+    age: 31,
+    salary: 500
+  },
+  {
+    id: 3,
+    name: 'Preethi Chawla',
+    designation: 'Project Manager',
+    gender: UserGender.FEMALE,
+    age: 28,
+    salary: 750
+  },
+  {
+    id: 4,
+    name: 'Ashraf',
+    designation: 'Project Delivery Head',
+    gender: UserGender.MALE,
+    age: 45,
+    salary: 1000
+  },
+  {
+    id: 5,
+    name: 'John Watson',
+    designation: 'Project Architect',
+    gender: UserGender.MALE,
+    age: 37,
+    salary: 950
+  },
+  {
+    id: 6,
+    name: 'Emma Tom',
+    designation: 'Project Manager',
+    gender: UserGender.FEMALE,
+    age: 30,
+    salary: 700
+  },
+  {
+    id: 7,
+    name: 'Nick',
+    designation: 'Team Leader',
+    gender: UserGender.MALE,
+    age: 29,
+    salary: 500
+  }
 ];
-
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService {
+  selectedUser: User = users[0];
 
-    constructor() {
-    }
+  constructor() { }
 
-    getUserList() {
-        return users;
-    }
+  getUserList() {
+    return users;
+  }
 
-    getTotalUsersCount() {
-        return users.length;
-    }
+  getTotalUserCount() {
+    return users.length;
+  }
+
+  getFemaleUserCount() {
+    const femaleUsers = users.filter((user) => {
+      return user.gender == UserGender.FEMALE
+    });
+    return femaleUsers.length;
+  }
+
+  getMaleUserCount() {
+    const maleUsers = users.filter((user) => {
+      return user.gender == UserGender.MALE
+    });
+    return maleUsers.length;
+  }
+
+  fetchUsersBySearchText(searchText) {
+    return users.filter((user) => {
+        return user.name.includes(searchText);
+    });
+}
+
+fetchUsersByDesignation(designation) {
+    return users.filter((user) => {
+        return user.designation == designation;
+    });
+}
+
+fetchUsersByGender(gender) {
+    return users.filter((user) => {
+        return user.gender == gender;
+    });
+}
 }
