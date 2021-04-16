@@ -1,19 +1,21 @@
-<div class="det-row">
-  <strong>User Name: </strong>
-  <span>{{ user.name }}</span>
-</div>
-
-<div class="det-row">
-  <strong>Role: </strong>
-  <span>{{ user.designation }}</span>
-</div>
-
-<div class="det-row">
-  <strong>Gender: </strong>
-  <span>{{ user.gender }}</span>
-</div>
-
-<div class="det-row">
-  <strong>User Status: </strong>
-  <span>{{ user.status }}</span>
+<div class="wrapper">
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>User Name</th>
+        <th>Role</th>
+        <th>Gender</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ user.name }}</th>
+        <td>{{ user.designation }}</td>
+        <td>{{ user.gender }}</td>
+        <td>{{ user.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" [routerLink]="['/users']">Go Back</button>
 </div>

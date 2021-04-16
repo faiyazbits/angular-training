@@ -2,26 +2,20 @@
 <app-user-summary></app-user-summary>
 <!-- User Summary Ends  -->
 
-
-
 <!-- Starts Project List -->
 <div class="user-list">
-    <app-user-list 
-    (onSelected)="onUserSelected($event)" 
+  <app-user-list
+    (onSelected)="onUserSelected($event)"
     [selectedUser]="selectedUser"
-    
-    ></app-user-list>
+  ></app-user-list>
 </div>
 <!-- End Project List -->
 
 
-
 <!-- Starts Project Details -->
-<div class="user-detail">
+<!-- <div class="user-detail">
     <app-user-details
     [user]="selectedUser"
-    
     ></app-user-details>
-</div>
+</div> -->
 <!-- End Project Details -->
-

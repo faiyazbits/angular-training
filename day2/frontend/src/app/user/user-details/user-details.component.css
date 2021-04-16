@@ -2,3 +2,26 @@
     padding: 20px;
     font-size: 20px;
 }
+.wrapper {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+table{
+    border-collapse: collapse;
+    width: 40%
+    /* border-right: 2px solid gray; */
+   
+}
+
+table thead{
+    background-color: black;
+    color: white;
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+    transition: 0.1s ease-in;
+}

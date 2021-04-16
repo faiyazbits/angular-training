@@ -1,10 +1,8 @@
-
-
-<app-user-filter
-  (searchName)="onSearchUser($event)"
+<app-user-filter 
+  (searchName)="onSearchUser($event)" 
   (filteringByStatus)="onfilterByStatus($event)"
-  (filteringByGender)="onfilterByGender($event)"
-></app-user-filter>
+  (filteringByGender)="onfilterByGender($event)">
+</app-user-filter>
 
 <table>
   <thead>
@@ -15,10 +13,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr
-      *ngFor="let user of users"
-      (click)="onUserClick(user)"
-      [ngClass]="{'active-user':getActiveUser(user)}">
+    <tr *ngFor="let user of users" (click)="onUserClick(user)" 
+        [ngClass]="{'active-user':getActiveUser(user)}"
+        [routerLink]="['/users',user.id]">
+
       <td>{{ user.name }}</td>
       <td>{{ user.status }}</td>
       <td>
@@ -27,4 +25,3 @@
     </tr>
   </tbody>
 </table>
-
