@@ -1,6 +1,7 @@
+import { Router } from '@angular/router';
 import { UserGender } from './../../model/user.gender';
 import { UserService } from './../user.service';
-import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,19 +14,19 @@ export class UserReactiveformAddComponent implements OnInit {
   submitted = false;
   userGenderOptions;
   designations = ['Team Leader', 'Project Manager', 'Project Architect', 'Project Delivery Head'];
-
-  constructor(private formBuilder: FormBuilder, private userService: UserService) {
-    this.userGenderOptions = UserGender
-   }
+  
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
+    this.userGenderOptions = UserGender;
+  }
 
   ngOnInit() {
     this.userCreationForm = this.formBuilder.group({
-      userName: ['', [Validators.required, Validators.minLength(6)]],
-      userDesignation: ['', Validators.required],
-      userGender: ['', [Validators.required]],
-      userAge: ['', [Validators.required]],
-      userSalary: ['', [Validators.required]]
-  });
+      name: ['', [Validators.required, Validators.minLength(6)]],
+      designation: ['', Validators.required],
+      gender: ['', [Validators.required]],
+      age: ['', [Validators.required]],
+      salary: ['', [Validators.required]]
+    });
   }
   get controls() { return this.userCreationForm.controls; }
 
@@ -34,9 +35,16 @@ export class UserReactiveformAddComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.userCreationForm.invalid) {
-        return;
+      return;
     }
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.userCreationForm.value))
-}
+     let newUser = {...this.userCreationForm.value, id: this.generateId()};
+     this.userService.createNewUser(newUser);
+     this.userCreationForm.reset();
+     this.router.navigateByUrl('/users');
+
+  }
+  generateId() {
+    return Math.floor(Math.random() * 100);
+  }
 }
