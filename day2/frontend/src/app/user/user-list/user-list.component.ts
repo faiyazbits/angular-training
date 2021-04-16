@@ -1,7 +1,7 @@
 import { UserService } from '../../user/user.service';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { User } from '../../model/user'
-//import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -16,7 +16,7 @@ export class UserListComponent implements OnInit {
 
   @Output() userSelected = new EventEmitter<User>();
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
     this.users = this.userService.getUserList();
   }
 
@@ -47,6 +47,7 @@ export class UserListComponent implements OnInit {
   }
   
   navigateToLoginPage() {
-    this.userService.navigateToLoginPage();
+    this.router.navigateByUrl('/login');
+    this.userService.clearLocalStorage();
   }
 }

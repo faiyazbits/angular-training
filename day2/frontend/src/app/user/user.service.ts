@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { Credentials } from './../model/credentials';
 import { Injectable } from '@angular/core';
 import { User } from '../model/user';
@@ -74,7 +73,7 @@ export class UserService {
   };
   invalidLogin: boolean;
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   getUserList() {
     return users;
@@ -130,19 +129,9 @@ export class UserService {
     localStorage.clear();
   }
 
-  navigateToUserPage() {
-    this.router.navigateByUrl('/users');
-  }
-
-  navigateToLoginPage() {
-    this.router.navigateByUrl('/login');
-    this.clearLocalStorage();
-  }
-
   checkForValidCredentials(username, password) {
     if (this.credentials.username == username && this.credentials.password == password) {
       this.setLocalStorage();
-      this.navigateToUserPage();
     } else {
       this.clearLocalStorage();
       this.invalidLogin = true;

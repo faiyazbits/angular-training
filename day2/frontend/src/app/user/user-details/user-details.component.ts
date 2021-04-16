@@ -22,6 +22,6 @@ export class UserDetailsComponent implements OnInit {
   }
 
   goToUserPage() {
-    this.userService.navigateToUserPage();
+    this.router.navigateByUrl('/users');
   }
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,13 +12,14 @@ export class UserLoginComponent implements OnInit {
   userPassword = "";
   invalidLogin: boolean;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
 
   navigateToUserPage() {
     this.userService.checkForValidCredentials(this.userEmail, this.userPassword);
+    this.router.navigateByUrl('/users');
     this.invalidLogin = this.userService.invalidLogin;
   }
 }
