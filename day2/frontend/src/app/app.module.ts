@@ -15,7 +15,7 @@ import { ProjectDetailsComponent } from "./project/project-details/project-detai
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
 import {UserDetailsComponent} from "./user/user-details/user-details.component";
-import {UserDashboardComponent} from "./user/user-dashboard/user-dashboard.component";
+import {UserDashboardComponent} from "../../../../day3/frontend/src/app/user/user-dashboard/user-dashboard.component";
 import {UserSummaryComponent} from "./user/user-summary/user-summary.component";
 import {UserService} from "./user/user.service";
 import {UserFilterComponent} from "./user/user-filter/user-filter.component";

@@ -9,22 +9,14 @@
 
 .filter{
     float: left;
-    width: 27%;
+    width: 24%;
     line-height: 2.5;
     margin: 0 0.5%;
     text-align: center;
 }
 
 .radio-filter{
-    width: 42%;
-}
-
-.radio-filter .form-check{
-    display: inline-block;
-}
-
-.radio-filter .form-check .form-check-input{
-    margin-top: 12px;
+    width: 49%;
 }
 
 .filter select,
