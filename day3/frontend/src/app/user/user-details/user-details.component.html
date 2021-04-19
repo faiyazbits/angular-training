@@ -1,24 +1,24 @@
 <div class = "det-row">
   <strong>User Name: </strong>
-  <span>{{user.name}}</span>
+  <span>{{user && user.name}}</span>
 </div>
 
 <div class = "det-row">
   <strong>User Designation: </strong>
-  <span>{{user.designation}}</span>
+  <span>{{user && user.designation}}</span>
 </div>
 
 <div class = "det-row">
   <strong>User Gender: </strong>
-  <span>{{user.gender | titlecase}}</span>
+  <span>{{user && user.gender | titlecase}}</span>
 </div>
 
 <div class = "det-row">
   <strong>User Age: </strong>
-  <span>{{user.age}}</span>
+  <span>{{user && user.age}}</span>
 </div>
 
 <div class = "det-row">
   <strong>User Salary: </strong>
-  <span>{{user.salary | currency}}</span>
+  <span>{{user && user.salary | currency}}</span>
 </div>

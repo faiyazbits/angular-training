@@ -7,6 +7,8 @@
       <th>Name</th>
       <th>Designation</th>
       <th>Gender</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +20,8 @@
       <td>
           <app-user-gender  [userGender]="user.gender"></app-user-gender>
       </td>
+      <td><i class="fa fa-pencil-square-o"></i></td>
+      <td (click) ="onClickDeleteUser(user.id)"><i class="fa fa-times "></i></td>
   </tr>
   </tbody>
 </table>

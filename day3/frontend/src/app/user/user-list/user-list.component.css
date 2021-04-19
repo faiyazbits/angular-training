@@ -15,6 +15,12 @@ table tbody tr{
     cursor: pointer;
 }
 
+tbody{
+
+    justify-content: center;
+    text-align: center;
+}
+
 .active-user{
     background-color: #f3f3f3;
 }

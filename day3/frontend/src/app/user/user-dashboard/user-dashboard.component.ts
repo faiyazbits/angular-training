@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class UserDashboardComponent implements OnInit {
   users: User[];
   selectedUser: User;
-
+ 
   constructor(private userService: UserService) { }
 
   ngOnInit() {

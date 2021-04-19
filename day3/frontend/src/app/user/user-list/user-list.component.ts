@@ -17,37 +17,43 @@ export class UserListComponent implements OnInit {
   @Output() userSelected = new EventEmitter<User>();
 
   constructor(private userService: UserService) {
-    this.users = this.userService.getUserList();
+   
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.users = this.userService.getUserList();
+  }
 
   onUserClick(user) {
     this.userSelected.emit(user);
   }
 
   getActiveUserClass(user) {
-    return user.id === this.selectedUser.id; 
+    return user.id === this.selectedUser.id;
   }
 
   onSearchByName(searchTerm) {
     this.users = this.userService.filterUsersBySearchText(searchTerm);
     this.userSelected.emit(this.users[0]);
-}
+  }
 
-onFilterByDesignation(designation){
-    if(designation=='all'){
-        this.users = this.userService.getUserList();
-        this.userSelected.emit(this.users[0]);
-        return;
+  onFilterByDesignation(designation) {
+    if (designation == 'all') {
+      this.users = this.userService.getUserList();
+      this.userSelected.emit(this.users[0]);
+      return;
     }
     this.users = this.userService.filterUsersByDesignation(designation);
     this.userSelected.emit(this.users[0]);
-}
+  }
 
-onFilterByGender(gender){
+  onFilterByGender(gender) {
     this.users = this.userService.filterUsersByGender(gender);
     this.userSelected.emit(this.users[0]);
-}
+  }
+
+  onClickDeleteUser(userId){
+    this.userService.deleteUser(userId);
+  }
 
 }
