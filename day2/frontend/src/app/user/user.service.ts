@@ -97,19 +97,19 @@ export class UserService {
     return maleUsers.length;
   }
 
-  fetchUsersBySearchText(searchText) {
+  filterUsersBySearchText(searchText) {
     return users.filter((user) => {
       return user.name.includes(searchText);
     });
   }
 
-  fetchUsersByDesignation(designation) {
+  filterUsersByDesignation(designation) {
     return users.filter((user) => {
       return user.designation == designation;
     });
   }
 
-  fetchUsersByGender(gender) {
+  filterUsersByGender(gender) {
     return users.filter((user) => {
       return user.gender == gender;
     });
