@@ -31,7 +31,7 @@ export class UserListComponent implements OnInit {
   }
 
   onSearchByName(searchTerm) {
-    this.users = this.userService.fetchUsersBySearchText(searchTerm);
+    this.users = this.userService.filterUsersBySearchText(searchTerm);
     this.userSelected.emit(this.users[0]);
 }
 
@@ -41,12 +41,12 @@ onFilterByDesignation(designation){
         this.userSelected.emit(this.users[0]);
         return;
     }
-    this.users = this.userService.fetchUsersByDesignation(designation);
+    this.users = this.userService.filterUsersByDesignation(designation);
     this.userSelected.emit(this.users[0]);
 }
 
 onFilterByGender(gender){
-    this.users = this.userService.fetchUsersByGender(gender);
+    this.users = this.userService.filterUsersByGender(gender);
     this.userSelected.emit(this.users[0]);
 }
 
