@@ -23,6 +23,7 @@ import { UserFilterComponent } from './user/user-filter/user-filter.component';
 import { UserGenderComponent } from './user/user-gender/user-gender.component'
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserService } from './user/user.service';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 
     
@@ -38,6 +39,7 @@ import { UserService } from './user/user.service';
          UserFilterComponent,
          UserGenderComponent,
          UserListComponent,
+         UserLoginComponent,
 
         AppComponent,
         ProjectDashboardComponent,

@@ -6,6 +6,7 @@ import { UserDashboard } from './user/user-dashboard/user-dashboard.component';
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { UserListComponent } from "./user/user-list/user-list.component";
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 
 const appRoutes: Routes = [
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
   { path: 'users' , component: UserDashboard },
   { path: 'users/list', component: UserListComponent },
   { path: 'users/:id' , component: UserDetailsComponent},
+  { path: 'login' , component: UserLoginComponent}
   
  
  

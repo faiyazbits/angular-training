@@ -15,7 +15,10 @@
   <tbody>
     <tr *ngFor="let user of users" (click)="onUserClick(user)" 
         [ngClass]="{'active-user':getActiveUser(user)}"
-        [routerLink]="['/users',user.id]">
+        
+        [routerLink]="['/users',user.id]"
+        routerLinkActive="active-link"
+        >
 
       <td>{{ user.name }}</td>
       <td>{{ user.status }}</td>

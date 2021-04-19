@@ -127,7 +127,7 @@ export class UserService {
     });
   }
 
-  findUserById(userId) {
+  findUserByName(userId) {
     return users.find((user) => {
       return user.id == userId;
     });

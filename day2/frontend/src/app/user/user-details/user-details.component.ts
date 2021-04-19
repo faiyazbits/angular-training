@@ -15,10 +15,10 @@ export class UserDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-
       this.route.params.subscribe(params => {
       let userId = +params['id'];
-      this.user = this.userservice.findUserById(userId);
+      console.log(params);
+      this.user = this.userservice.findUserByName(userId);
     });
   }
 
