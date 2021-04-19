@@ -54,7 +54,7 @@ const projects: Project[] = [
 @Injectable()
 export class ProjectService {
 
-    selectedProject: Project = projects[ 0 ];
+    selectedProject: Project = projects[0];
 
     constructor() {
     }
@@ -96,6 +96,12 @@ export class ProjectService {
     fetchProjectsByProjectType(type) {
         return projects.filter((project) => {
             return project.type == type;
+        });
+    }
+
+    getProjectById(projectId: string): Project {
+        return projects.find((project) => {
+            return project.id == projectId
         });
     }
 }

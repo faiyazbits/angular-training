@@ -12,7 +12,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let project of projects"
-      (click)="onProjectClick(project)"
+      (click)="onProjectClick(project.id)"
       [ngClass]="{'active-project':getActiveProjectClass(project)}">
     <td>{{ project.name }}</td>
     <td >{{ project.status }}</td>

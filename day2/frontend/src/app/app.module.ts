@@ -19,6 +19,9 @@ import { UserService } from './user/user.service';
 import { UserSummaryComponent } from './user/user-summary/user-summary.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './guard/auth.service';
+import { ResolveService } from './resolve/resolve.service';
 
 @NgModule({
     declarations: [
@@ -33,7 +36,8 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
         ProjectTypeComponent,
         ProjectSummaryComponent,
         ProjectDetailsComponent,
-        ProjectFilterComponent
+        ProjectFilterComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
@@ -42,7 +46,12 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
         AppRoutesModule,
         RouterModule
     ],
-    providers: [ProjectService, UserService],
+    providers: [
+        ProjectService,
+        UserService,
+        AuthService,
+        ResolveService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

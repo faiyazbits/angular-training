@@ -5,6 +5,7 @@ import { ProjectDashboardComponent } from "./project/project-dashboard/project-d
 import { ProjectTemplateformAddComponent } from "./project/project-templateform-add/project-templateform-add.component";
 import { ProjectReactiveformAddComponent } from "./project/project-reactiveform-add/project-reactiveform-add.component";
 
+
 const appRoutes: Routes = [
     { path: '', redirectTo: '/projects', pathMatch: 'full' },
     { path: 'users', component: UserListComponent },
@@ -14,8 +15,8 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [ RouterModule.forRoot(appRoutes) ],
-    exports: [ RouterModule ]
+    imports: [RouterModule.forRoot(appRoutes)],
+    exports: [RouterModule]
 })
 export class AppRoutesModule {
 }

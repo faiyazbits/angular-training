@@ -41,8 +41,8 @@ import { UserService } from "./user/user.service";
         AppRoutesModule,
         RouterModule
     ],
-    providers: [ ProjectService, UserService ],
-    bootstrap: [ AppComponent ]
+    providers: [ProjectService, UserService],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

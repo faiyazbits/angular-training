@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { Project } from "../../model/project";
-import { ProjectType } from "../../model/project.type";
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-project-list',
     templateUrl: './project-list.component.html',
-    styleUrls: [ './project-list.component.css' ]
+    styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent {
 
@@ -16,12 +16,12 @@ export class ProjectListComponent {
 
     @Output() projectSelected = new EventEmitter<Project>();
 
-    constructor(private projectService: ProjectService) {
+    constructor(private projectService: ProjectService, private router: Router) {
         this.projects = this.projectService.getProjectList();
     }
 
-    onProjectClick(project) {
-        this.projectSelected.emit(project);
+    onProjectClick(id) {
+        this.router.navigate(['/project-detail', id]);
     }
 
     getActiveProjectClass(project) {
@@ -33,8 +33,8 @@ export class ProjectListComponent {
         this.projectSelected.emit(this.projects[0]);
     }
 
-    onFilterByProjectStatus(status){
-        if(status=='all'){
+    onFilterByProjectStatus(status) {
+        if (status == 'all') {
             this.projects = this.projectService.getProjectList();
             this.projectSelected.emit(this.projects[0]);
             return;
@@ -43,7 +43,7 @@ export class ProjectListComponent {
         this.projectSelected.emit(this.projects[0]);
     }
 
-    onFilterByProjectType(type){
+    onFilterByProjectType(type) {
         this.projects = this.projectService.fetchProjectsByProjectType(type);
         this.projectSelected.emit(this.projects[0]);
     }
