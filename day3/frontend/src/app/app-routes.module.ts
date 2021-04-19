@@ -10,11 +10,11 @@ import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.compo
 const appRoutes: Routes = [
     {path: '', redirectTo: '/projects', pathMatch: 'full'},
     {path: 'users', component: UserDashboardComponent},
+    {path: 'users/reactive-form-add', component: UserReactiveformAddComponent},
+    {path: 'users/template-form-add', component: UserTemplateformAddComponent},
     {path: 'projects', component: ProjectDashboardComponent},
     {path: 'projects/reactive-form-add', component: ProjectReactiveformAddComponent},
-    {path: 'projects/template-form-add', component: ProjectTemplateformAddComponent},
-    {path: 'users/reactive-form-add', component: UserReactiveformAddComponent},
-    {path: 'users/template-form-add', component: UserTemplateformAddComponent}
+    {path: 'projects/template-form-add', component: ProjectTemplateformAddComponent}
 ];
 
 @NgModule({

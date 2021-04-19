@@ -40,7 +40,7 @@ export class ProjectReactiveformAddComponent implements OnInit {
             return;
         }
 
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.projectCreationForm.value))
+        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.projectCreationForm.value));
     }
 
 }

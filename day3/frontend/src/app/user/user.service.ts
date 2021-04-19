@@ -114,4 +114,7 @@ export class UserService {
             return user.type === type;
         });
     }
+    createNewUser(newUser) {
+        return users.push(newUser);
+    }
 }

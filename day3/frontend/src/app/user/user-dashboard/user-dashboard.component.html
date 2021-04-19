@@ -12,5 +12,7 @@
 <!-- user list -->
 
 <div class="user-details">
+    <button class="btn btn-primary mr-3" [routerLink]="['reactive-form-add']">Add User Using Reactive Form</button>
+    <button class="btn btn-primary" [routerLink]="['template-form-add']">Add user Using Template Driven Form</button>
     <app-user-details [user]="selectedUser"></app-user-details>
 </div>
