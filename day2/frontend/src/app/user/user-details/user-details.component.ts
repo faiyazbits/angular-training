@@ -21,6 +21,4 @@ export class UserDetailsComponent implements OnInit {
       this.user = this.userservice.findUserByName(userId);
     });
   }
-
-
 }

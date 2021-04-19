@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { UserService } from "../user.service";
 import { User } from "../../model/user";
-import { Gender } from "../../model/user.gender";
+
 
 @Component({
   selector: "app-user-list",
@@ -19,7 +19,7 @@ export class UserListComponent {
   @Output() onSelected = new EventEmitter<User>();
 
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService ) {
     this.users = this.userService.getUserList();
   }
 

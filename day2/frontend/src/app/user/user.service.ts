@@ -6,6 +6,7 @@ import { Injectable } from "@angular/core";
 import { User } from "../model/user";
 import { Gender } from "../model/user.gender";
 import { UserStatus } from "../model/user.status";
+import { LoginInfo } from "../model/loginInfo";
 
 const users: User[] = [
   {
@@ -83,7 +84,15 @@ const users: User[] = [
 // By this dependancy injection we can use this anywhere in the app in any components
 @Injectable()
 export class UserService {
+
   selectedUser: User = users[0];
+
+  loginInfo: LoginInfo = {
+    username : "buharisahith@gmail.com",
+    password : "123"
+  };
+
+  invalidLogin:boolean;
 
   constructor() {}
 
@@ -132,4 +141,23 @@ export class UserService {
       return user.id == userId;
     });
   }
+
+  setLocalStorage() {
+    localStorage.setItem('userToken', 'buhari');
+  }
+
+  clearLocalStorage() {
+    localStorage.clear();
+  }
+
+
+  checkForValidCredentials(username, password) {
+    if (this.loginInfo.username == username && this.loginInfo.password == password) {
+      this.setLocalStorage();
+    } else {
+      this.clearLocalStorage();
+      this.invalidLogin = true;
+    }
+  }
 }
+

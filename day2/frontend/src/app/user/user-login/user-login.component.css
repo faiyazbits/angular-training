@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 371px;
+  height: 400px;
+  padding: 35px 55px 40px !important;
+  border: 1px solid #223c53;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 1px rgb(0 0 0 / 50%);
+}
+
+input[type] {
+  padding: 20px;
+  width: 340px;
+}
+
+label {
+  font-size: 2rem;
+}
+
+button {
+  width: 340px;
+}
+
+.invalidBox {
+  color: red;
+}

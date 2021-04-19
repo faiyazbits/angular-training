@@ -4,3 +4,9 @@
 .links a.active {
   background-color: grey;
 }
+
+h1 {
+  display: inline-block;
+  width: 90%; 
+ 
+}

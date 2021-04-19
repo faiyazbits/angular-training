@@ -1,21 +1,26 @@
+import { Router } from '@angular/router';
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
-// import { FormBuilder , FormControl , Validators } from "@angular/forms";
-// import { ActivatedRoute , Router } from "@angular/router";
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css']
-
 })
 
 export class UserLoginComponent implements OnInit {
+  userEmail = "";
+  userPassword = "";
+  invalidLogin: boolean;
 
+  constructor(private userService: UserService, private router: Router) { }
 
+  ngOnInit() {
+  }
 
-constructor() {
-  
-}
-
+  navigateToUserPage() {
+    this.userService.checkForValidCredentials(this.userEmail, this.userPassword);
+    this.router.navigateByUrl('/users');
+    this.invalidLogin = this.userService.invalidLogin;
+  }
 }

@@ -1,0 +1,19 @@
+<div class="container">
+    <h3>Login</h3>
+    <form>
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" [(ngModel)]="userEmail" name="email" class="form-control"
+                placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" [(ngModel)]="userPassword" name="password" class="form-control"
+                placeholder="Password">
+        </div>
+        <button type="button" class="button button-primary" (click)="navigateToUserPage()">Sign in</button>
+    </form>
+    <div *ngIf="invalidLogin" class="invalidBox">
+        Invalid username/password
+    </div>
+</div>

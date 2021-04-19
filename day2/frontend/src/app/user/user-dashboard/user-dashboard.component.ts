@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../../model/user'
 import { UserService } from '../user.service';
 
@@ -14,7 +15,7 @@ export class UserDashboard implements OnInit {
   selectedUser:User;
   
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService , private router :Router) {
   }
 
   ngOnInit() {
@@ -26,5 +27,6 @@ export class UserDashboard implements OnInit {
   onUserSelected(user: User) {
     this.selectedUser =  user;
   }
-
+  
+ 
 }

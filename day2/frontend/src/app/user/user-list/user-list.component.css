@@ -1,8 +1,6 @@
 table{
     border-collapse: collapse;
     width: 100%;
-    /* border-right: 2px solid gray; */
-   
 }
 
 table thead{
@@ -21,3 +19,4 @@ table tbody tr{
 .active-user{
     background-color: #f3f3f3;
 }
+

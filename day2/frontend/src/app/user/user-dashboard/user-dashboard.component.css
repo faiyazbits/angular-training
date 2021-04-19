@@ -11,3 +11,9 @@
     box-sizing: border-box;
     padding: 10px;
 }
+
+.signOut:hover {
+background-color: black;
+color: white;
+
+}

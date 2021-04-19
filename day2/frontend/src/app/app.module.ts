@@ -15,7 +15,6 @@ import { ProjectDetailsComponent } from "./project/project-details/project-detai
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
 
-
 import { UserDashboard } from './user/user-dashboard/user-dashboard.component';
 import { UserSummaryComponent } from './user/user-summary/user-summary.component';
 import { UserDetailsComponent  } from './user/user-details/user-details.component';
@@ -24,15 +23,13 @@ import { UserGenderComponent } from './user/user-gender/user-gender.component'
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserService } from './user/user.service';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { AuthGuard } from "./user/auth-guard.service";
 
-
-    
 
 @NgModule({
     declarations: [
 
          // User-Classes
-        
          UserDashboard,
          UserSummaryComponent,
          UserDetailsComponent,
@@ -42,6 +39,7 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
          UserLoginComponent,
 
         AppComponent,
+            
         ProjectDashboardComponent,
         ProjectListComponent,
         ProjectTypeComponent,
@@ -59,7 +57,7 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
         RouterModule
     ],
     
-    providers: [ ProjectService , UserService ],
+    providers: [ ProjectService , UserService , AuthGuard],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {

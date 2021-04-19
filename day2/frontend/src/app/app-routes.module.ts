@@ -7,14 +7,14 @@ import { ProjectDashboardComponent } from "./project/project-dashboard/project-d
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { UserListComponent } from "./user/user-list/user-list.component";
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { AuthGuard } from "./user/auth-guard.service";
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/projects', pathMatch: 'full' },
   { path: 'projects', component: ProjectDashboardComponent } ,
-  { path: 'users' , component: UserDashboard },
-  { path: 'users/list', component: UserListComponent },
-  { path: 'users/:id' , component: UserDetailsComponent},
+  { path: 'users' , component: UserDashboard , canActivate:[AuthGuard]},
+  { path: 'users/:id' , component: UserDetailsComponent , canActivate:[AuthGuard]},
   { path: 'login' , component: UserLoginComponent}
   
  
