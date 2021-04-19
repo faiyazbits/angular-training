@@ -8,7 +8,7 @@ let users: User[] = [];
   providedIn: 'root'
 })
 export class UserService {
-  
+
   selectedUser: User = users[0];
 
   constructor() { }
@@ -66,18 +66,31 @@ export class UserService {
     this.setLocalStorage(users);
   }
 
-  deleteUser(userId){
-    const foundUser = users.find((user) =>{
+  deleteUser(userId) {
+    const foundUser = users.find((user) => {
       return user.id == userId;
     });
     const index = users.indexOf(foundUser);
-    users.splice(index,1);
+    users.splice(index, 1);
     this.setLocalStorage(users);
   }
 
+  findUserById(id) {
+    return users.find((user) => {
+      return user.id == id;
+    })
+  }
 
-  setLocalStorage1(users) {
-    localStorage.setItem('users', JSON.stringify(users));
+  updateUser(userToBeUpdated) {
+    const foundUser = users.find((user) => {
+      return user.id == userToBeUpdated.id;
+    });
+    foundUser.name = userToBeUpdated.name;
+    foundUser.designation = userToBeUpdated.designation;
+    foundUser.gender = userToBeUpdated.gender;
+    foundUser.age = userToBeUpdated.age;
+    foundUser.salary = userToBeUpdated.salary;
+    this.setLocalStorage(users);
   }
 
 }

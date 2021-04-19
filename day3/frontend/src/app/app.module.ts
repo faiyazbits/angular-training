@@ -24,6 +24,7 @@ import { ProjectTemplateformAddComponent } from "./project/project-templateform-
 import { UserService } from "./user/user.service";
 import { UserTemplateformAddComponent } from './user/user-templateform-add/user-templateform-add.component';
 import { UserReactiveformAddComponent } from './user/user-reactiveform-add/user-reactiveform-add.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import { UserReactiveformAddComponent } from './user/user-reactiveform-add/user-
         ProjectReactiveformAddComponent,
         ProjectTemplateformAddComponent,
         UserTemplateformAddComponent,
-        UserReactiveformAddComponent
+        UserReactiveformAddComponent,
+        UserEditComponent
     ],
     imports: [
         BrowserModule,

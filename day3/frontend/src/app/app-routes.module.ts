@@ -1,3 +1,4 @@
+import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserReactiveformAddComponent } from './user/user-reactiveform-add/user-reactiveform-add.component';
 import { UserTemplateformAddComponent } from './user/user-templateform-add/user-templateform-add.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
@@ -9,6 +10,7 @@ import { ProjectReactiveformAddComponent } from "./project/project-reactiveform-
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/projects', pathMatch: 'full' },
+    { path: 'edit/users/:id', component: UserEditComponent },
     { path: 'users', component: UserDashboardComponent },
     { path: 'users/reactive-form-add', component: UserReactiveformAddComponent },
     { path: 'users/template-form-add', component: UserTemplateformAddComponent },
