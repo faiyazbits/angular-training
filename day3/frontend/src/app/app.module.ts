@@ -23,7 +23,7 @@ import { UserService } from "./user/user.service";
 import {UserDashboardComponent} from "./user/user-dashboard/user-dashboard.component";
 import {UserReactiveformAddComponent} from "./user/user-reactiveform-add/user-reactiveform-add.component";
 import {UserTemplateformAddComponent} from "./user/user-templateform-add/user-templateform-add.component";
-
+import {EditUserComponent} from './user/edit-user/edit-user.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -42,7 +42,8 @@ import {UserTemplateformAddComponent} from "./user/user-templateform-add/user-te
         ProjectReactiveformAddComponent,
         ProjectTemplateformAddComponent,
         UserReactiveformAddComponent,
-        UserTemplateformAddComponent
+        UserTemplateformAddComponent,
+        EditUserComponent
     ],
     imports: [
         BrowserModule,

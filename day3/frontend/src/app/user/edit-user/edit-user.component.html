@@ -1,0 +1,20 @@
+<table class="table table-bordered w-100">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Designation</th>
+    <th>Type</th>
+    <th>Gender</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{user.name}}</td>
+    <td>{{user.designation}}</td>
+    <td>{{ user.type }}</td>
+    <td><app-user-gender [gender]="user.gender"></app-user-gender></td>
+  </tr>
+
+
+  </tbody>
+</table>

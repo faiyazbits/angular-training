@@ -3,7 +3,7 @@ import {UserType} from "./user.type";
 import {UserGender} from "./user.gender";
 
 export interface User {
-    id: number | string,
+    id: number,
     name: string,
     age: number,
     designation: string,
