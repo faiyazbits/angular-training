@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../user.service';
 import {UserGender} from '../../model/user.gender';
+import {UserType} from '../../model/user.type';
 
 @Component({
     selector: 'app-user-reactiveform-add',
@@ -13,11 +14,13 @@ export class UserReactiveformAddComponent implements OnInit {
     userCreationForm: FormGroup;
     submitted = false;
     userGenderOptions;
+    userTypeOptions;
     designations = ['Project Manager', 'Team Leader', 'Senior Software Developer', 'Project Delivery Head',
         'Project Architect', 'Project Manager'];
 
     constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
         this.userGenderOptions = UserGender;
+        this.userTypeOptions = UserType;
     }
 
     ngOnInit() {
@@ -25,6 +28,7 @@ export class UserReactiveformAddComponent implements OnInit {
             name: ['', [Validators.required, Validators.minLength(6)]],
             designation: ['', Validators.required],
             gender: ['', [Validators.required]],
+            type: ['', [Validators.required]],
             age: ['', [Validators.required]]
         });
     }

@@ -9,6 +9,8 @@
     <th>Designation</th>
     <th>Type</th>
     <th>Gender</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
   </thead>
   <tbody>
@@ -19,6 +21,8 @@
     <td>{{user.designation}}</td>
     <td>{{ user.type }}</td>
     <td><app-user-gender [gender]="user.gender"></app-user-gender></td>
+    <td><button class="btn btn-primary mt-2">Edit</button> </td>
+    <td><button class="btn btn-danger mt-2" (click)="removeItem(user.id)">Delete</button></td>
   </tr>
   </tbody>
 </table>

@@ -37,6 +37,18 @@
                             <div *ngIf="controls.gender.errors.required">User Gender is required</div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label>user Type</label>
+                        <select class="custom-select" formControlName="type"
+                                [ngClass]="{ 'is-invalid': submitted && controls.type.errors }">
+                            <option value="">Select user working type</option>
+                            <option [value]="userTypeOptions.FULLTIME"> {{userTypeOptions.FULLTIME}}</option>
+                            <option [value]="userTypeOptions.CONTRACT_BASED"> {{userTypeOptions.CONTRACT_BASED}}</option>
+                        </select>
+                        <div *ngIf="submitted && controls.type.errors" class="invalid-feedback">
+                            <div *ngIf="controls.type.errors.required">User Type is required</div>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label>User Age</label>
