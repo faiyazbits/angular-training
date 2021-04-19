@@ -7,18 +7,19 @@ import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
     styleUrls: ['./user-gender.component.css']
 })
 export class UserGenderComponent implements OnInit {
-    @Output() sendToParent = new EventEmitter<any>();
+    
 
     @Input() userGender;
+  @Input() userId;
+  @Output() sendToParent = new EventEmitter<any>();
 
     constructor() {
     }
 
     ngOnInit() {
     }
-
-    newItem() {
-        this.sendToParent.emit();
-    }
+     onUserGenderClick(){
+    this.sendToParent.emit(this.userId);
+}    
 
 }
