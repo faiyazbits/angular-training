@@ -1,9 +1,9 @@
-<div *ngIf="gender == 'male'">
-  <img width="36px" height="36px" src="../../../assets/images/male.png" />
-  <div>{{ gender }}</div>
+<div *ngIf="isMaleUser()">
+  <img width="24px" height="24" src="../../../assets/images/male.png" />
+  <div>{{ userGender | titlecase }}</div>
 </div>
 
-<div *ngIf="gender == 'female'">
-  <img width="36px" height="36px" src="../../../assets/images/female.png" />
-  <div>{{ gender }}</div>
+<div *ngIf="isFemaleUser()">
+  <img width="24" height="24" src="../../../assets/images/female.png" />
+  <div>{{ userGender | titlecase }}</div>
 </div>

@@ -1,59 +1,52 @@
-// user should have 4 attributes name,designation,gender,age;
-// name should be capitalized when rendered
-// gender should be an icon (use user-gender component)
-
-import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../user/user.service';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { User } from '../../model/user'
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-export class UserListComponent implements OnInit {
-  users = [
-    {
-      id: 1,
-      name: 'John Watson',
-      designation: 'Project Manager',
-      gender: 'male'
-    },
-    {
-      id: 2,
-      name: 'Raja Sekar',
-      designation: 'Team Leader',
-      gender: 'male'
-    },
-    {
-      id: 3,
-      name: 'Preethi Chawla',
-      designation: 'Project Manager',
-      gender: 'female'
-    },
-    {
-      id: 4,
-      name: 'Ashraf',
-      designation: 'Project Delivery Head',
-      gender: 'male'
-    },
-    {
-      id: 5,
-      name: 'John Watson',
-      designation: 'Project Architect',
-      gender: 'male'
-    },
-    {
-      id: 6,
-      name: 'Emma Tom',
-      designation: 'Project Manager',
-      gender: 'female'
-    },
-    {
-      id: 7,
-      name: 'Nick',
-      designation: 'Team Leader',
-      gender: 'male'
+
+export class UserListComponent {
+  users: User[] = [];
+
+  @Input() selectedUser;
+
+  @Output() userSelected = new EventEmitter<User>();
+
+  constructor(private userService: UserService) {
+    this.users = this.userService.getUserList();
+  }
+
+
+  onUserClick(user) {
+    this.userSelected.emit(user);
+  }
+
+  getActiveUserClass(user) {
+    return this.selectedUser && user.id === this.selectedUser.id;
+  }
+
+  onSearchUser(searchTerm) {
+    this.users = this.userService.fetchUsersBySearchText(searchTerm);
+    this.userSelected.emit(this.users[0]);
+  }
+
+  onFilterByDesignation(designation) {
+    if (designation == 'all') {
+      this.users = this.userService.getUserList();
+      this.userSelected.emit(this.users[0]);
+      return;
     }
-  ];
-  constructor() {}
-  ngOnInit() {}
+    this.users = this.userService.fetchUsersByDesignation(designation);
+    this.userSelected.emit(this.users[0]);
+  }
+
+  onFilterByGender(gender) {
+    this.users = this.userService.fetchUsersByGender(gender);
+    this.userSelected.emit(this.users[0]);
+  }
+
 }
