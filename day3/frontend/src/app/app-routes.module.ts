@@ -7,6 +7,7 @@ import {UserReactiveformAddComponent} from './user/user-reactiveform-add/user-re
 import {UserTemplateformAddComponent} from './user/user-templateform-add/user-templateform-add.component';
 import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
 import {EditUserComponent} from './user/edit-user/edit-user.component';
+import {UserPostComponent} from './user/user-post/user-post.component';
 
 const appRoutes: Routes = [
     {path: '', redirectTo: '/projects', pathMatch: 'full'},
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
     {path: 'users/template-form-add', component: UserTemplateformAddComponent},
     {path: 'projects', component: ProjectDashboardComponent},
     {path: 'projects/reactive-form-add', component: ProjectReactiveformAddComponent},
-    {path: 'projects/template-form-add', component: ProjectTemplateformAddComponent}
+    {path: 'projects/template-form-add', component: ProjectTemplateformAddComponent},
+    {path: 'posts', component: UserPostComponent}
 ];
 
 @NgModule({

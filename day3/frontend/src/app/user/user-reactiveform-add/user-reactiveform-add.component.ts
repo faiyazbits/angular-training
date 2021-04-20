@@ -28,7 +28,7 @@ export class UserReactiveformAddComponent implements OnInit {
             name: ['', [Validators.required, Validators.minLength(6)]],
             designation: ['', Validators.required],
             gender: ['', [Validators.required]],
-            type: ['', [Validators.required]],
+            userType: ['', [Validators.required]],
             age: ['', [Validators.required]]
         });
     }

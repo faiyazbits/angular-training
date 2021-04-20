@@ -49,8 +49,8 @@ export class UserListComponent {
         this.userSelected.emit(this.users[0]);
     }
 
-    removeItem(id) {
-        this.users = this.users.filter(item => item.id !== id);
+    onDeleteUserId(id) {
+        this.userService.deleteUserId(id);
     }
 
     editUser(id) {

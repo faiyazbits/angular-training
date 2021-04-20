@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import {User} from '../model/user';
-import {UserType} from '../model/user.type';
-import {UserStatus} from '../model/user.status';
 import {UserGender} from '../model/user.gender';
+import {UserStatus} from '../model/user.status';
+import {UserType} from '../model/user.type';
+import {HttpClient} from '@angular/common/http';
 
 const users: User[] = [
     {
@@ -69,10 +70,11 @@ const users: User[] = [
         type: UserType.FULLTIME
     }
 ];
+const Base_URL = 'https://jsonplaceholder.typicode.com/';
 
 @Injectable()
 export class UserService {
-    constructor() {
+    constructor(private http: HttpClient) {
     }
 
     getUserList() {
@@ -119,9 +121,25 @@ export class UserService {
         return users.push(newUser);
     }
 
+    deleteUserId(userId) {
+        const userIndexObj = users.find((user) => {
+            return user.id === userId;
+        });
+        const index = users.indexOf(userIndexObj);
+        users.splice(index, 1);
+    }
+
     findUserById(id) {
         return users.find((user) => {
             return user.id === id;
         });
+    }
+
+    fetchUserPost() {
+        return this.http.get(Base_URL + 'posts');
+    }
+
+    fetchUserPostComments(id) {
+        return this.http.get(Base_URL + 'posts/' + id + '/comments');
     }
 }

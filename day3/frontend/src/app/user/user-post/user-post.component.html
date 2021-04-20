@@ -1,0 +1,19 @@
+<table class="table table-bordered w-50">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>postMessage</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let post of posts">
+        <td>{{ post.id }}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+        <td><button (click)=toggleDisplayComments()>comments</button></td>
+        <td><app-post-comment (selectedPost)="onPostSelected($event)"></app-post-comment></td>
+    </tr>
+    </tbody>
+</table>

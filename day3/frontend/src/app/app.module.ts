@@ -24,6 +24,8 @@ import {UserDashboardComponent} from "./user/user-dashboard/user-dashboard.compo
 import {UserReactiveformAddComponent} from "./user/user-reactiveform-add/user-reactiveform-add.component";
 import {UserTemplateformAddComponent} from "./user/user-templateform-add/user-templateform-add.component";
 import {EditUserComponent} from './user/edit-user/edit-user.component';
+import {UserPostComponent} from './user/user-post/user-post.component';
+import {PostCommentComponent} from './user/post-comment/post-comment.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -43,7 +45,9 @@ import {EditUserComponent} from './user/edit-user/edit-user.component';
         ProjectTemplateformAddComponent,
         UserReactiveformAddComponent,
         UserTemplateformAddComponent,
-        EditUserComponent
+        EditUserComponent,
+        UserPostComponent,
+        PostCommentComponent
     ],
     imports: [
         BrowserModule,
