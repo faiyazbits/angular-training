@@ -25,3 +25,11 @@ button {
 button:hover {
   opacity: 0.8;
 }
+
+.invalid-feedback {
+  color: red;
+}
+
+.is-invalid {
+  border: 1px solid red !important;
+}
