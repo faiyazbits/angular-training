@@ -1,0 +1,18 @@
+
+<div *ngIf="post" class="post-container" id="post-container">
+  <div *ngFor="let post of post" class="post">
+    <div class="number">{{post.id}}</div>
+    <div class="post-info">
+      <h2 class="post-title">{{post.title}}</h2>
+      <p class="post-content">{{post.body}}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Loading symbol -->
+<div class="loader">
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</div>
+

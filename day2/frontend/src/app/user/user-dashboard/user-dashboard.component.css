@@ -12,8 +12,17 @@
     padding: 10px;
 }
 
+.signOut {
+    margin: 0px 10px 0px 10px ;
+}
 .signOut:hover {
 background-color: black;
 color: white;
 
 }
+.blog:hover {
+    background-color: black;
+    color: white;
+    
+    }
+

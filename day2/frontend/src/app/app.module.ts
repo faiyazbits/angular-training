@@ -24,6 +24,8 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserService } from './user/user.service';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { AuthGuard } from "./user/auth-guard.service";
+import { PostComponent } from './post/post.component';
+import { PostService } from "./post/post.service";
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { AuthGuard } from "./user/auth-guard.service";
          UserGenderComponent,
          UserListComponent,
          UserLoginComponent,
+         PostComponent,
 
         AppComponent,
             
@@ -57,7 +60,7 @@ import { AuthGuard } from "./user/auth-guard.service";
         RouterModule
     ],
     
-    providers: [ ProjectService , UserService , AuthGuard],
+    providers: [ ProjectService , UserService , PostService, AuthGuard],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {
