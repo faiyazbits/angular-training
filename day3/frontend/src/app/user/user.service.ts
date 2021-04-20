@@ -14,7 +14,10 @@ export class UserService {
   
   selectedUser: User = users[0];
 
-  constructor() { }
+  constructor() { 
+    users = this.getUserList();
+    this.users$.next(users);
+  }
 
   getUserList() {
     users = JSON.parse(localStorage.getItem('users'));
