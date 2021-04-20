@@ -26,6 +26,8 @@ import {UserTemplateformAddComponent} from "./user/user-templateform-add/user-te
 import {EditUserComponent} from './user/edit-user/edit-user.component';
 import {UserPostComponent} from './user/user-post/user-post.component';
 import {PostCommentComponent} from './user/post-comment/post-comment.component';
+import {PostService} from './user/post.service';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -57,7 +59,7 @@ import {PostCommentComponent} from './user/post-comment/post-comment.component';
         AppRoutesModule,
         RouterModule
     ],
-    providers: [ ProjectService, UserService ],
+    providers: [ ProjectService, UserService ,PostService ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {

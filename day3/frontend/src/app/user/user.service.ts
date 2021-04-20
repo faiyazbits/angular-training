@@ -3,7 +3,7 @@ import {User} from '../model/user';
 import {UserGender} from '../model/user.gender';
 import {UserStatus} from '../model/user.status';
 import {UserType} from '../model/user.type';
-import {HttpClient} from '@angular/common/http';
+
 
 const users: User[] = [
     {
@@ -70,11 +70,11 @@ const users: User[] = [
         type: UserType.FULLTIME
     }
 ];
-const Base_URL = 'https://jsonplaceholder.typicode.com/';
+
 
 @Injectable()
 export class UserService {
-    constructor(private http: HttpClient) {
+    constructor() {
     }
 
     getUserList() {
@@ -133,13 +133,5 @@ export class UserService {
         return users.find((user) => {
             return user.id === id;
         });
-    }
-
-    fetchUserPost() {
-        return this.http.get(Base_URL + 'posts');
-    }
-
-    fetchUserPostComments(id) {
-        return this.http.get(Base_URL + 'posts/' + id + '/comments');
     }
 }

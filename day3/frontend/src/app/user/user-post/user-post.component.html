@@ -12,8 +12,6 @@
         <td>{{ post.id }}</td>
         <td>{{post.title}}</td>
         <td>{{post.body}}</td>
-        <td><button (click)=toggleDisplayComments()>comments</button></td>
-        <td><app-post-comment (selectedPost)="onPostSelected($event)"></app-post-comment></td>
     </tr>
     </tbody>
 </table>

@@ -1,5 +1,5 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {UserService} from '../user.service';
+import {Component, OnInit} from '@angular/core';
+import {PostService} from '../post.service';
 
 
 @Component({
@@ -9,24 +9,14 @@ import {UserService} from '../user.service';
 })
 export class UserPostComponent implements OnInit {
     posts;
-    @Output() selectedPost = new EventEmitter<any>();
 
-    constructor(private userService: UserService) {
+    constructor(private postService: PostService) {
     }
 
     ngOnInit() {
-        const postObservable = this.userService.fetchUserPost();
-        postObservable.subscribe((posts) => {
+        const postObservable = this.postService.fetchUserPost();
+        postObservable.subscribe(posts => {
             this.posts = posts;
-
         });
-    }
-
-    toggleDisplayComments() {
-
-    }
-
-    onPostSelected(posts) {
-        this.selectedPost = posts;
     }
 }
