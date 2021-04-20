@@ -10,6 +10,7 @@
       <th>Name</th>
       <th>Status</th>
       <th>Gender</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,9 @@
       <td>
         <app-user-gender [gender]="user.gender"></app-user-gender>
       </td>
+      <!-- <td><button (click)="deleteUser(user.name)">Delete</button></td> -->
+      <td><button (click)="deleteUser(user.id)">Delete</button></td>
+      <td><button>Edit</button></td>
     </tr>
   </tbody>
 </table>

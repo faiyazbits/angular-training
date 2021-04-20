@@ -84,15 +84,14 @@ const users: User[] = [
 // By this dependancy injection we can use this anywhere in the app in any components
 @Injectable()
 export class UserService {
-
   selectedUser: User = users[0];
 
   loginInfo: LoginInfo = {
-    username : "buharisahith@gmail.com",
-    password : "123"
+    username: "buharisahith@gmail.com",
+    password: "123",
   };
 
-  invalidLogin:boolean;
+  invalidLogin: boolean;
 
   constructor() {}
 
@@ -143,21 +142,38 @@ export class UserService {
   }
 
   setLocalStorage() {
-    localStorage.setItem('userToken', 'buhari');
+    localStorage.setItem("userToken", "buhari");
   }
 
   clearLocalStorage() {
     localStorage.clear();
   }
 
-
   checkForValidCredentials(username, password) {
-    if (this.loginInfo.username == username && this.loginInfo.password == password) {
+    if (
+      this.loginInfo.username == username &&
+      this.loginInfo.password == password
+    ) {
       this.setLocalStorage();
     } else {
       this.clearLocalStorage();
       this.invalidLogin = true;
     }
   }
-}
 
+  /*deleteUserByName(name) {
+    const clicked = users.filter((user) => user.name === name);
+    console.log(clicked);
+    const findIndexOfClicked = users.indexOf(clicked[0]);
+    users.splice(findIndexOfClicked, 1);
+  }
+  Key Learnt : Always prefer Id to delete the employee because there will be multiple objectUser with same name 
+  */
+
+  deleteUserById(id) {
+    const clicked = users.filter((user) => user.id === id);
+    console.log(clicked);
+    const findIndexOfClicked = users.indexOf(clicked[0]);
+    users.splice(findIndexOfClicked, 1);
+  }
+}

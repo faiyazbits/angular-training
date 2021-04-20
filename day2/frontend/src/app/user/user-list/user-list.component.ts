@@ -51,6 +51,9 @@ export class UserListComponent {
     this.users = this.userService.fetchUserByGender(gender);
     this.onSelected.emit(this.users[0])
   }
+  deleteUser(userId) {
+    this.userService.deleteUserById(userId)
+  }
 
   ngOnInit() {}
 }
