@@ -1,0 +1,42 @@
+.post-box{
+    width: 97%;
+    margin: 20px auto;
+    border: 1px solid grey;
+    box-shadow: 0 0 5px grey;
+    box-sizing: border-box;
+    padding: 10px;
+    cursor: pointer;
+}
+
+span{
+    padding-left: 20px;
+}
+
+.comment-box{
+    width: 97%;
+    margin: 20px auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.email{
+    font-weight: 600;
+    white-space: nowrap;
+    color: #385898;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.comment{
+    font-size: 14px;
+    line-height: 1.358;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+.action-container a{ 
+    font-size: 12px;
+    line-height: 1.358;
+    padding-top: 2px;
+    color: #4267b2;
+    margin-right: 10px;
+}

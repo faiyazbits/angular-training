@@ -1,3 +1,4 @@
+import { FetchPostComponent } from './post/fetch-post/fetch-post.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserReactiveformAddComponent } from './user/user-reactiveform-add/user-reactiveform-add.component';
 import { UserTemplateformAddComponent } from './user/user-templateform-add/user-templateform-add.component';
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
     { path: 'users', component: UserDashboardComponent },
     { path: 'users/reactive-form-add', component: UserReactiveformAddComponent },
     { path: 'users/template-form-add', component: UserTemplateformAddComponent },
+    { path: 'posts', component: FetchPostComponent },
     { path: 'projects', component: ProjectDashboardComponent },
     { path: 'projects/reactive-form-add', component: ProjectReactiveformAddComponent },
     { path: 'projects/template-form-add', component: ProjectTemplateformAddComponent }

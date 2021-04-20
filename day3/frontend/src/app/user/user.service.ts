@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { User } from '../model/user'
 import { UserGender } from '../model/user.gender'
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 let users: User[] = [];
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  users$ : BehaviorSubject<User[]> = new BehaviorSubject([]);
+  
   selectedUser: User = users[0];
 
   constructor() { }
@@ -20,27 +23,6 @@ export class UserService {
 
   setLocalStorage(users) {
     localStorage.setItem('users', JSON.stringify(users));
-  }
-
-  getTotalUserCount() {
-    users = this.getUserList();
-    return users.length;
-  }
-
-  getFemaleUserCount() {
-    users = this.getUserList();
-    const femaleUsers = users.filter((user) => {
-      return user.gender == UserGender.FEMALE
-    });
-    return femaleUsers.length;
-  }
-
-  getMaleUserCount() {
-    users = this.getUserList();
-    const maleUsers = users.filter((user) => {
-      return user.gender == UserGender.MALE
-    });
-    return maleUsers.length;
   }
 
   filterUsersBySearchText(searchText) {
@@ -57,12 +39,14 @@ export class UserService {
 
   filterUsersByGender(gender) {
     return users.filter((user) => {
-      return user.gender == gender;
+      return user.gender == gender; 
     });
   }
 
   createNewUser(newUser) {
+    users = this.getUserList();
     users.push(newUser);
+    this.users$.next(users);
     this.setLocalStorage(users);
   }
 
@@ -72,6 +56,7 @@ export class UserService {
     });
     const index = users.indexOf(foundUser);
     users.splice(index, 1);
+    this.users$.next(users);
     this.setLocalStorage(users);
   }
 
@@ -90,6 +75,7 @@ export class UserService {
     foundUser.gender = userToBeUpdated.gender;
     foundUser.age = userToBeUpdated.age;
     foundUser.salary = userToBeUpdated.salary;
+    this.users$.next(users);
     this.setLocalStorage(users);
   }
 
