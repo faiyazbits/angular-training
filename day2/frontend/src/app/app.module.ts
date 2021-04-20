@@ -23,6 +23,7 @@ import { UserGenderComponent } from './user/user-gender/user-gender.component';
 import { UserSummaryComponent } from './user/user-summary/user-summary.component';
 import { UserDetailsComponent } from './user/user-detail/user-details.component';
 import { UserFilterComponent } from './user/user-filter/user-filter.component';
+
 @NgModule({
     declarations: [
         AppComponent,

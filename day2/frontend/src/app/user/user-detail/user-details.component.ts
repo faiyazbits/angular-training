@@ -1,5 +1,7 @@
 import { User } from '../../model/user';
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
     selector: 'app-user-details',
@@ -8,11 +10,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-    @Input() user: User;
+    user: User;
 
-    constructor() { }
+    constructor(private route: ActivatedRoute, private userService: UserService) { }
 
     ngOnInit() {
+        this.route.params.subscribe(params => {
+            let id = + params['id']
+            this.user = this.userService.fetchUsersById(id)
+        })
     }
 
 }

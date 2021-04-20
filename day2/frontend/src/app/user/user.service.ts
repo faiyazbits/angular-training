@@ -57,7 +57,6 @@ const users: User[] = [{
 export class UserService {
     selectedUser: User = users[0]
 
-
     constructor() { }
 
     getUserList() {
@@ -99,4 +98,10 @@ export class UserService {
             return user.gender == gender;
         });
     }
+    fetchUsersById(id) {
+        return users.find((user) => {
+            return user.id == id;
+        })
+    }
 }
+

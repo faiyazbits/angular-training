@@ -9,9 +9,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users" 
-    (click)="onUserClick(user)" 
-    [ngClass]="{'active-user': getActiveUserClass(user)}">
+    <tr *ngFor="let user of users" (click)="onUserClick(user)" [routerLink]="['/users', user.id]"
+      [ngClass]="{'active-user': getActiveUserClass(user)}">
       <td>{{ user.name | titlecase }}</td>
       <td>{{ user.designation }}</td>
       <td>
