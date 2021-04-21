@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Project } from "../model/project";
 import { ProjectType } from "../model/project.type";
 import { ProjectStatus } from "../model/project.status";
+import { HttpClient } from '@angular/common/http';
 
 const projects: Project[] = [
     {
@@ -51,12 +52,21 @@ const projects: Project[] = [
     }
 ];
 
+const BASE_URL = "https://jsonplaceholder.typicode.com";
+
 @Injectable()
 export class ProjectService {
 
-    selectedProject: Project = projects[ 0 ];
+    selectedProject: Project = projects[0];
 
-    constructor() {
+    constructor(private http: HttpClient) { }
+
+    fetchPosts() {
+        return this.http.get(BASE_URL + "/posts");
+    }
+
+    getPostComments(postId) {
+        return this.http.get(BASE_URL + "/posts/" + postId + "/comments");
     }
 
     getProjectList() {

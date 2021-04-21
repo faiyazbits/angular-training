@@ -1,0 +1,39 @@
+
+
+
+<div class="title">POSTS</div>
+
+<div class="loader" id="loader" *ngIf="loading">
+  <div class="sk-circle1 sk-circle"></div>
+  <div class="sk-circle2 sk-circle"></div>
+  <div class="sk-circle3 sk-circle"></div>
+  <div class="sk-circle4 sk-circle"></div>
+  <div class="sk-circle5 sk-circle"></div>
+  <div class="sk-circle6 sk-circle"></div>
+  <div class="sk-circle7 sk-circle"></div>
+  <div class="sk-circle8 sk-circle"></div>
+  <div class="sk-circle9 sk-circle"></div>
+  <div class="sk-circle10 sk-circle"></div>
+  <div class="sk-circle11 sk-circle"></div>
+  <div class="sk-circle12 sk-circle"></div>
+</div>
+
+<div *ngIf="!loading">
+  <ul>
+    <li *ngFor="let post of posts" [ngClass]="{'active-post':getActivePost(post)}"
+      (click)="onPostSelected(post)">
+      {{post.id + ". " + post.title }}
+
+      <div>
+        <ol *ngIf="getActivePost(post)">
+          <li *ngFor="let comment of comments">
+            {{comment.name}}
+          </li>
+        </ol>
+      </div>
+    </li>
+  </ul>
+</div>
+
+  
+

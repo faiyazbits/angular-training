@@ -5,7 +5,7 @@ import { ProjectService } from "../project.service";
 @Component({
     selector: 'app-project-dashboard',
     templateUrl: './project-dashboard.component.html',
-    styleUrls: [ './project-dashboard.component.css' ]
+    styleUrls: ['./project-dashboard.component.css']
 })
 export class ProjectDashboardComponent implements OnInit {
 
@@ -16,12 +16,11 @@ export class ProjectDashboardComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.projects = this.projectService.getProjectList();
-      this.selectedProject = this.projects[0];
+        this.projects = this.projectService.getProjectList();
+        this.selectedProject = this.projects[0];
     }
 
     onProjectSelect(project: Project) {
         this.selectedProject = project;
     }
-
 }

@@ -18,6 +18,7 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
 import { ProjectReactiveformAddComponent } from "./project/project-reactiveform-add/project-reactiveform-add.component";
 import { ProjectTemplateformAddComponent } from "./project/project-templateform-add/project-templateform-add.component";
 import { UserService } from "./user/user.service";
+import { ProjectPostComponent } from './project/project-post/project-post.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import { UserService } from "./user/user.service";
         ProjectDetailsComponent,
         ProjectFilterComponent,
         ProjectReactiveformAddComponent,
-        ProjectTemplateformAddComponent
+        ProjectTemplateformAddComponent,
+        ProjectPostComponent
     ],
     imports: [
         BrowserModule,
