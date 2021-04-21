@@ -1,3 +1,10 @@
+<div *ngIf = "spinner">
+    <app-atom-spinner
+            [animationDuration]="1000"
+            [size]="60"
+            [color]="'#ff1d5e'">
+    </app-atom-spinner>
+</div>
 <table class="table table-bordered w-50">
     <thead>
     <tr>
@@ -13,9 +20,9 @@
         <td>{{post.body}}</td>
         <td *ngIf="display && post.id === selectedPost.id">
         <span *ngFor="let comment of comments">
-            <h1>Email</h1>
-        <span class="email">{{comment.email}}</span>
-             <h1>Body</h1>
+            <h6>posted By:</h6>
+        <span class="name">{{comment.name}}</span>
+             <h6>Comments:</h6>
         <span class="body">{{comment.body}}</span>
           </span>
         </td>

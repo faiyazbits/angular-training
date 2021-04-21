@@ -26,6 +26,8 @@ import {UserTemplateformAddComponent} from "./user/user-templateform-add/user-te
 import {EditUserComponent} from './user/edit-user/edit-user.component';
 import {UserPostComponent} from './user-post/user-post.component';
 import {PostService} from './user-post/post.service';
+import {AtomSpinnerModule} from 'angular-epic-spinners';
+
 
 @NgModule({
     declarations: [
@@ -55,7 +57,8 @@ import {PostService} from './user-post/post.service';
         FormsModule,
         HttpClientModule,
         AppRoutesModule,
-        RouterModule
+        RouterModule,
+        AtomSpinnerModule
     ],
     providers: [ ProjectService, UserService , PostService ],
     bootstrap: [ AppComponent ]
