@@ -10,4 +10,7 @@ export class PostService {
   fetchPost() {
     return this.http.get(POST_URL + "/posts");
   }
+  fetchPostByComments(postId) {
+    return this.http.get(POST_URL +  '/posts/' + postId +  '/comments');
+}
 }
