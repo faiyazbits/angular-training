@@ -9,7 +9,11 @@ export class PostService {
     constructor(private http: HttpClient) {
     }
 
-    fetchUserPost() {
+    fetchUserPosts() {
         return this.http.get(Base_URL + 'posts');
+    }
+
+    fetchPostsCommentsById(postId) {
+        return this.http.get(Base_URL +  'posts/' + postId +  '/comments');
     }
 }

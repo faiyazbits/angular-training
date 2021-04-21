@@ -24,9 +24,8 @@ import {UserDashboardComponent} from "./user/user-dashboard/user-dashboard.compo
 import {UserReactiveformAddComponent} from "./user/user-reactiveform-add/user-reactiveform-add.component";
 import {UserTemplateformAddComponent} from "./user/user-templateform-add/user-templateform-add.component";
 import {EditUserComponent} from './user/edit-user/edit-user.component';
-import {UserPostComponent} from './user/user-post/user-post.component';
-import {PostCommentComponent} from './user/post-comment/post-comment.component';
-import {PostService} from './user/post.service';
+import {UserPostComponent} from './user-post/user-post.component';
+import {PostService} from './user-post/post.service';
 
 @NgModule({
     declarations: [
@@ -48,8 +47,7 @@ import {PostService} from './user/post.service';
         UserReactiveformAddComponent,
         UserTemplateformAddComponent,
         EditUserComponent,
-        UserPostComponent,
-        PostCommentComponent
+        UserPostComponent
     ],
     imports: [
         BrowserModule,
@@ -59,7 +57,7 @@ import {PostService} from './user/post.service';
         AppRoutesModule,
         RouterModule
     ],
-    providers: [ ProjectService, UserService ,PostService ],
+    providers: [ ProjectService, UserService , PostService ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {

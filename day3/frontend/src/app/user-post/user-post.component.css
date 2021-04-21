@@ -1,0 +1,14 @@
+span {
+    padding-left:10px;
+}
+
+.email {
+    font-weight: 600;
+    color:black;
+    text-decoration: none;
+}
+.body {
+    font-size: 15px;
+    color: red;
+    text-decoration: underline;
+}
