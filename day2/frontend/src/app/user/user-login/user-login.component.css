@@ -1,0 +1,28 @@
+button:hover {
+    opacity: 0.8;
+  }
+  
+  .invalid-feedback {
+    color: red;
+  }
+  
+  .is-invalid {
+    border: 1px solid red !important;
+  }
+  
+  .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height:40vh;
+      border: 1px solid black;
+      width: 50%;
+      background-color: cornsilk;
+  }
+  h2{
+      text-align: center;
+  }
+.btn{
+    text-align: center;
+}
+
