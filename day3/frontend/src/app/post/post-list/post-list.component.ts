@@ -1,18 +1,19 @@
-import { PostsService } from './../posts.service';
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from '../posts.service';
 
 @Component({
-  selector: 'app-fetch-post',
-  templateUrl: './fetch-post.component.html',
-  styleUrls: ['./fetch-post.component.css']
+  selector: 'app-post-list',
+  templateUrl: './post-list.component.html',
+  styleUrls: ['./post-list.component.css']
 })
-export class FetchPostComponent implements OnInit {
-  
-  posts;
-  comments;
+export class PostListComponent implements OnInit {
+
+  posts: any = [];
+  comments: any = [];
   selectedPost;
   show: boolean = false;
-
+  loading: boolean = false;
+ 
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
@@ -21,12 +22,15 @@ export class FetchPostComponent implements OnInit {
       this.posts = posts;
     })
   }
+
   onClickShowComments(post) {
     this.selectedPost = post;
+    this.loading = true;
     const commentsObservable = this.postsService.fetchCommentsByPostId(post.id);
     commentsObservable.subscribe((comments) => {
       this.comments = comments;
-      this.show = true;
+      this.loading = false;
     });
+    this.show = !this.show;
   }
 }

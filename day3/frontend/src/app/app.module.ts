@@ -1,3 +1,4 @@
+import { PostsService } from './post/posts.service';
 import { UserSummaryComponent } from './user/user-summary/user-summary.component';
 import { UserFilterComponent } from './user/user-filter/user-filter.component';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
@@ -25,7 +26,7 @@ import { UserService } from "./user/user.service";
 import { UserTemplateformAddComponent } from './user/user-templateform-add/user-templateform-add.component';
 import { UserReactiveformAddComponent } from './user/user-reactiveform-add/user-reactiveform-add.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
-import { FetchPostComponent } from './post/fetch-post/fetch-post.component';
+import { PostListComponent } from './post/post-list/post-list.component';
 
 @NgModule({
     declarations: [
@@ -47,7 +48,7 @@ import { FetchPostComponent } from './post/fetch-post/fetch-post.component';
         UserTemplateformAddComponent,
         UserReactiveformAddComponent,
         UserEditComponent,
-        FetchPostComponent
+        PostListComponent
     ],
     imports: [
         BrowserModule,
@@ -57,7 +58,7 @@ import { FetchPostComponent } from './post/fetch-post/fetch-post.component';
         AppRoutesModule,
         RouterModule
     ],
-    providers: [ ProjectService, UserService ],
+    providers: [ ProjectService, UserService, PostsService ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {
