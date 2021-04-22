@@ -12,22 +12,14 @@ export class UserPostComponent implements OnInit {
     comments;
     selectedPost;
     display: boolean = false;
-    spinner = false;
 
     constructor(private postService: PostService) {
-        this.fetchUser = this.fetchUser.bind(this);
     }
 
     ngOnInit() {
-        this.spinner = true;
-        setTimeout(this.fetchUser, 5000);
-    }
-
-    fetchUser() {
         const postObservable = this.postService.fetchUserPosts();
         postObservable.subscribe(posts => {
             this.posts = posts;
-            this.spinner = false;
         });
     }
 
