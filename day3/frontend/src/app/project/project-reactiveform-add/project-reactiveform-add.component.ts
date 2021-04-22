@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ProjectType } from "../../model/project.type";
-import { UserService } from "../../user/user.service";
+import { UserService } from "../../post/user.service";
 
 @Component({
   selector: 'app-project-reactiveform-add',

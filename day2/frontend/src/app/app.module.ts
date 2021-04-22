@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { AppRoutesModule } from './app-routes.module';
 import { UserListComponent } from './user/user-list/user-list.component';
@@ -15,6 +14,14 @@ import { ProjectSummaryComponent } from "./project/project-summary/project-summa
 import { ProjectDetailsComponent } from "./project/project-details/project-details.component";
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
+import {UserDetailsComponent} from "./user/user-details/user-details.component";
+import {UserDashboardComponent} from "../../../../day3/frontend/src/app/user/user-dashboard/user-dashboard.component";
+import {UserSummaryComponent} from "./user/user-summary/user-summary.component";
+import {UserService} from "./user/user.service";
+import {UserFilterComponent} from "./user/user-filter/user-filter.component";
+import {LoginComponent} from "./login/login.component";
+import {AuthenticationService} from "./user/authentication.service";
+
 
 @NgModule({
     declarations: [
@@ -26,16 +33,24 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
         ProjectTypeComponent,
         ProjectSummaryComponent,
         ProjectDetailsComponent,
-        ProjectFilterComponent
+        ProjectFilterComponent,
+        UserDetailsComponent,
+        UserDashboardComponent,
+        UserSummaryComponent,
+        UserFilterComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpClientModule,
         AppRoutesModule,
-        RouterModule
+        RouterModule,
+        ReactiveFormsModule,
+        ReactiveFormsModule
     ],
-    providers: [ ProjectService ],
+    providers: [ ProjectService, UserService, AuthenticationService],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {

@@ -1,0 +1,23 @@
+.user-list {
+    width: 50%;
+    border-right: 3px solid teal;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.user-details {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.logout-btn {
+    background: rgb(1, 29, 51);
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding-bottom: 10px;
+    margin-left: 89%;
+}
