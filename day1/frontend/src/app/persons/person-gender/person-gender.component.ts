@@ -11,7 +11,7 @@ export class PersonGenderComponent implements OnInit {
 
     @Input() personGender;
   @Input() personId;
-  @Output() sendToParent = new EventEmitter<any>();
+  @Output() personSelector = new EventEmitter<any>();
 
     constructor() {
     }
@@ -19,7 +19,7 @@ export class PersonGenderComponent implements OnInit {
     ngOnInit() {
     }
      onPersonGenderClick(){
-    this.sendToParent.emit(this.personId);
+    this.personSelector.emit(this.personId);
 }    
 
 }

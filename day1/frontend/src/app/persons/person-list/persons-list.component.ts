@@ -48,8 +48,14 @@ export class PersonsListComponent {
     
 
   constructor() {}
-  onPersonSelected(personId) {
-    this.selectedPersonId = personId;
+  ngOnInit(){
+
+  }
+  onPersonSelector(personId) {
+    this.selectedPersonId=personId;
+  }
+  getRowColor(person){
+return person.id===this.selectedPersonId ? "teal":"white"
   }
   
 }

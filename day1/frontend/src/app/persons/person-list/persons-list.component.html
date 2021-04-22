@@ -8,11 +8,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let person of personDetails">
+        <tr *ngFor="let person of personDetails" [ngStyle]="{'background-color':getRowColor(person)}">
             <td>{{ person.name | uppercase }}</td>
             <td>{{ person.designation }}</td>
             <td>
-                <app-person-gender (personSelected)="onPersonSelected($event)" [personGender]="person.gender">
+                <app-person-gender (personSelector)="onPersonSelector($event)" [personGender]="person.gender" [personId]="person.id">
                 </app-person-gender>
             </td>
             <td>{{ person.age }}</td>
