@@ -1,3 +1,4 @@
+import { PersonGenderComponent } from './persons/person-gender/person-gender.component';
 import { UserGenderComponent } from './user/user-gender/user-gender.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,8 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { ProjectListComponent } from './project/project-list/project-list.component';
 import { RouterModule } from '@angular/router';
 import { ProjectTypeComponent } from './project/project-type/project-type.component';
+import { PersonsListComponent } from './persons/person-list/persons-list.component';
+import './persons/person-gender/person-gender.component.css';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { ProjectTypeComponent } from './project/project-type/project-type.compon
     UserListComponent,
     UserGenderComponent,
     ProjectListComponent,
-    ProjectTypeComponent
+    ProjectTypeComponent,
+    PersonsListComponent,
+    PersonGenderComponent
     
   ],
   imports: [
