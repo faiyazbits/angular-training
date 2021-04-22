@@ -3,6 +3,8 @@
     <label for="username"><b>Username</b></label>
     <input type="text" formControlName="userName"
     class="form-control"  placeholder="Username" [ngClass]="{ 'is-invalid': submitted && controls.userName.errors }">
+
+
     <div *ngIf="submitted && controls.userName.errors" class="invalid-feedback">
       <div *ngIf="controls.userName.errors.required">UserName is required</div>
     </div>
@@ -10,6 +12,8 @@
     <label for="password"><b>Password</b></label>
     <input type="password" formControlName="password"
     class="form-control"  placeholder="Enter Password" [ngClass]="{ 'is-invalid': submitted && controls.password.errors }" >
+
+
     <div *ngIf="submitted && controls.password.errors" class="invalid-feedback">
       <div *ngIf="controls.password.errors.required">Password is required</div>
       <div *ngIf="controls.password.errors.minlength">Minimum length should be 6 characters</div>

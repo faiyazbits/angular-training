@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     this.projectCreationForm = this.formBuilder.group({
       userName: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]]
+      
     });
   }
 

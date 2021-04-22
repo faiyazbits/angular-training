@@ -26,7 +26,7 @@
 
       <div>
         <ol *ngIf="getActivePost(post)">
-          <li *ngFor="let comment of comments">
+          <li *ngFor="let comment of getComments(post)">
             {{comment.name}}
           </li>
         </ol>

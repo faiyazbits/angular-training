@@ -9,8 +9,8 @@ import { ProjectService } from '../project.service';
 export class ProjectPostComponent implements OnInit {
 
   posts: any = [];
-  comments: any = [];
-  selectedPostId: string = "";
+  commentData: any = {};
+  selectedPostIdList: any = [];
   loading = true;
 
   constructor(private projectService: ProjectService) { }
@@ -24,17 +24,27 @@ export class ProjectPostComponent implements OnInit {
   }
 
   onPostSelected(post) {
-    this.selectedPostId = post.id;
-    console.log(this.selectedPostId);
+    if (!this.selectedPostIdList.includes(post.id)) {
+      this.selectedPostIdList.push(post.id);
 
-    const commentsObsevable = this.projectService.getPostComments(post.id);
-    commentsObsevable.subscribe((comments) => {
-      this.comments = comments;
-    })
+      const commentsObsevable = this.projectService.getPostComments(post.id);
+      commentsObsevable.subscribe((comments) => {
+        this.commentData[post.id] = comments;
+      })
+
+    } else {
+      this.selectedPostIdList = this.selectedPostIdList.filter(id => id !== post.id)
+      this.commentData[post.id] = [];
+    }
+
   }
 
   getActivePost(post) {
-    return this.selectedPostId == post.id;
+    return this.selectedPostIdList.includes(post.id);
+  }
+
+  getComments(post) {
+    return this.commentData[post.id];
   }
 
 }

@@ -27,10 +27,6 @@ ol li {
   position: relative;
 }
 
-.loader.show {
-  opacity: 1;
-}
-
 .loader .sk-circle {
   width: 100%;
   height: 100%;

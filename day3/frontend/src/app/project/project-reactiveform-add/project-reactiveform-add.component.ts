@@ -10,7 +10,7 @@ import { UserService } from "../../user/user.service";
 })
 export class ProjectReactiveformAddComponent implements OnInit {
 
-    projectCreationForm: FormGroup;
+    projectCreationForm: FormGroup; 
     submitted = false;
     projectTypeOptions;
     userOptions;
