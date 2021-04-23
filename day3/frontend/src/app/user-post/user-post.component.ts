@@ -9,26 +9,37 @@ import {PostService} from './post.service';
 })
 export class UserPostComponent implements OnInit {
     posts;
-    comments;
-    selectedPost;
-    display: boolean = false;
+    postComments: any = {};
+    userSelectedPostIdList: any = [];
+    loading: boolean = true;
 
     constructor(private postService: PostService) {
+
     }
 
     ngOnInit() {
         const postObservable = this.postService.fetchUserPosts();
         postObservable.subscribe(posts => {
+            this.loading = false;
             this.posts = posts;
         });
     }
 
     onClickShowPostComments(post) {
-        this.selectedPost = post;
-        const commentsObservable = this.postService.fetchPostsCommentsById(post.id);
-        commentsObservable.subscribe((comments) => {
-            this.comments = comments;
-            this.display = true;
-        });
+        if (!this.userSelectedPostIdList.includes(post.id)) {
+            this.userSelectedPostIdList.push(post.id);
+            const commentsObservable = this.postService.fetchPostsCommentsById(post.id);
+            commentsObservable.subscribe((comments) => {
+                this.postComments[post.id] = comments;
+            });
+        }
+        else {
+            this.userSelectedPostIdList = this.userSelectedPostIdList.filter(id => id !== post.id); //programatically remove id
+            this.postComments[post.id] = [];
+
+        }
+
+
     }
+
 }

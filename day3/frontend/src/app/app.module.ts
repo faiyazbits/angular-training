@@ -27,6 +27,7 @@ import {EditUserComponent} from './user/edit-user/edit-user.component';
 import {UserPostComponent} from './user-post/user-post.component';
 import {PostService} from './user-post/post.service';
 import {AtomSpinnerModule} from 'angular-epic-spinners';
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import {AtomSpinnerModule} from 'angular-epic-spinners';
         HttpClientModule,
         AppRoutesModule,
         RouterModule,
-        AtomSpinnerModule
+        AtomSpinnerModule,
+        CommonModule
     ],
     providers: [ ProjectService, UserService , PostService ],
     bootstrap: [ AppComponent ]

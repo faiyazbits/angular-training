@@ -1,25 +1,17 @@
-<table class="table table-bordered w-50">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Body</th>
-    </tr>
-    </thead>
-    <tbody>
+<div class ="spinner" *ngIf ="loading">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
 
-    <tr *ngFor="let post of posts" (click)="onClickShowPostComments(post)">
-        <td>{{ post.id }}</td>
-        <td>{{post.title}}</td>
-        <td>{{post.body}}</td>
-        <td *ngIf="display && post.id === selectedPost.id">
-        <span *ngFor="let comment of comments">
-            <h6>posted By:</h6>
-        <span class="name">{{comment.name}}</span>
-             <h6>Comments:</h6>
-        <span class="body">{{comment.body}}</span>
-          </span>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<div class="container-box" *ngIf ="!loading">
+    <div class="post-box" *ngFor="let post of posts" (click)="onClickShowPostComments(post)">
+        <span>{{post.id}}</span>
+        <span>{{post.title}}</span>
+        <ol *ngIf="post.id === userSelectedPostIdList.id">
+            <li *ngFor="let comment of postComments">
+                {{comment.name}}
+            </li>
+        </ol>
+    </div>
+</div>
