@@ -3,13 +3,13 @@
 </div>
 
 <div *ngIf="posts.length > 0">
-  <div class="post-box" *ngFor="let post of posts" (click)="onClickShowComments(post)">
+  <div class="post-box" *ngFor="let post of posts" (click)="onPostClick(post)">
     <h6>Title:</h6>
     <span>{{post.title}}</span>
     <h6>Body:</h6>
     <span>{{post.body}}</span>
 
-    <div class="comment-box" *ngIf="showOpenedPost(post)">
+    <div class="comment-box" *ngIf="showOpenedPosts(post)">
 
       <div class="loader" *ngIf="loading">
         <img src="../../../assets/images/spinner.gif" />

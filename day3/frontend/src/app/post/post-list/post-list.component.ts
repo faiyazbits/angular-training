@@ -11,7 +11,7 @@ export class PostListComponent implements OnInit {
   posts: any = [];
   postCommentsMapper: any = {};
   openedPosts: any = [];
-  loading: boolean = false;
+  loading: boolean;
 
   constructor(private postsService: PostsService) { }
 
@@ -22,17 +22,24 @@ export class PostListComponent implements OnInit {
     })
   }
 
-  onClickShowComments(post) {
+  onPostClick(post) {
+    this.togglePostComments(post);
+    this.fetchPostComments(post);
+  }
+
+  togglePostComments(post) {
     this.loading = true;
     if (!this.openedPosts.includes(post.id)) {
       this.openedPosts.push(post.id);
     } else {
-      let index = this.openedPosts.indexOf(post.id);
-      this.openedPosts.splice(index, 1);
+      this.openedPosts = this.openedPosts.filter(id => id !== post.id);
     }
+  }
+
+  fetchPostComments(post) {
     if (this.postCommentsMapper[post.id]) {
       this.loading = false;
-      return
+      return;
     }
     const commentsObservable = this.postsService.fetchCommentsByPostId(post.id);
     commentsObservable.subscribe((postComments) => {
@@ -40,7 +47,8 @@ export class PostListComponent implements OnInit {
       this.loading = false;
     });
   }
-  showOpenedPost(post) {
+
+  showOpenedPosts(post) {
     return this.openedPosts.includes(post.id);
   }
 }  
