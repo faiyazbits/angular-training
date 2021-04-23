@@ -17,6 +17,7 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
 import { ProjectReactiveformAddComponent } from "./project/project-reactiveform-add/project-reactiveform-add.component";
 import { ProjectTemplateformAddComponent } from "./project/project-templateform-add/project-templateform-add.component";
 import { UserReactiveformAddComponent } from "./user/user-reactiveform-add/user-reactiveform-add.component";
+import { UserTemplateformAddComponent } from "./user/user-templateform-add/user-templateform-add.component";
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserService } from "./user/user.service";
 import { UserGenderComponent } from './user/user-gender/user-gender.component';
@@ -28,6 +29,7 @@ import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.com
     declarations: [
         AppComponent,
         UserReactiveformAddComponent,
+        UserTemplateformAddComponent,
         UserListComponent,
         UserGenderComponent,
         UserFilterComponent,
