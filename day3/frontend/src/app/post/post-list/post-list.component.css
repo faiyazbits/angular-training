@@ -1,4 +1,4 @@
-.post-box{
+.post-box {
     width: 97%;
     margin: 20px auto;
     border: 1px solid grey;
@@ -8,22 +8,23 @@
     cursor: pointer;
 }
 
-span{
+span {
     padding-left: 20px;
 }
 
-.comment-box{
+.comment-box {
     width: 97%;
     margin: 20px auto;
     box-sizing: border-box;
     padding: 10px;
 }
 
-.loader{
+.loader {
     display: flex;
     justify-content: center;
 }
-.email{
+
+.email {
     font-weight: 600;
     white-space: nowrap;
     color: #385898;
@@ -31,14 +32,14 @@ span{
     text-decoration: none;
 }
 
-.comment{
+.comment {
     font-size: 14px;
     line-height: 1.358;
     word-break: break-word;
     word-wrap: break-word;
 }
 
-.action-container a{ 
+.action-container a {
     font-size: 12px;
     line-height: 1.358;
     padding-top: 2px;

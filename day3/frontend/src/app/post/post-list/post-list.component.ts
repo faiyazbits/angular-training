@@ -9,11 +9,10 @@ import { PostsService } from '../posts.service';
 export class PostListComponent implements OnInit {
 
   posts: any = [];
-  comments: any = [];
-  selectedPost;
-  show: boolean = false;
+  postCommentsMapper: any = {};
+  openedPosts: any = [];
   loading: boolean = false;
- 
+
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
@@ -24,13 +23,24 @@ export class PostListComponent implements OnInit {
   }
 
   onClickShowComments(post) {
-    this.selectedPost = post;
     this.loading = true;
+    if (!this.openedPosts.includes(post.id)) {
+      this.openedPosts.push(post.id);
+    } else {
+      let index = this.openedPosts.indexOf(post.id);
+      this.openedPosts.splice(index, 1);
+    }
+    if (this.postCommentsMapper[post.id]) {
+      this.loading = false;
+      return
+    }
     const commentsObservable = this.postsService.fetchCommentsByPostId(post.id);
-    commentsObservable.subscribe((comments) => {
-      this.comments = comments;
+    commentsObservable.subscribe((postComments) => {
+      this.postCommentsMapper[post.id] = postComments;
       this.loading = false;
     });
-    this.show = !this.show;
   }
-}
+  showOpenedPost(post) {
+    return this.openedPosts.includes(post.id);
+  }
+}  

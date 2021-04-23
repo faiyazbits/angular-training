@@ -1,20 +1,23 @@
-<div class="loader" *ngIf="posts.length == 0" >
+<div class="loader" *ngIf="posts.length == 0">
   <img src="../../../assets/images/spinner.gif" />
 </div>
-<div *ngIf="posts.length > 0" >
-  <div class="post-box" *ngFor="let post of posts" (click)="onClickShowComments(post)"  >
+
+<div *ngIf="posts.length > 0">
+  <div class="post-box" *ngFor="let post of posts" (click)="onClickShowComments(post)">
     <h6>Title:</h6>
     <span>{{post.title}}</span>
     <h6>Body:</h6>
     <span>{{post.body}}</span>
-    
-    <div class="comment-box" *ngIf="show && post.id == selectedPost.id">
-      <div class="loader" *ngIf="show && loading">
+
+    <div class="comment-box" *ngIf="showOpenedPost(post)">
+
+      <div class="loader" *ngIf="loading">
         <img src="../../../assets/images/spinner.gif" />
       </div>
-      <div *ngIf="!(show && loading)">
-        <h6>{{ comments.length}} Comments</h6>
-        <div *ngFor="let comment of comments">
+
+      <div *ngIf="!loading">
+        <h6>{{ postCommentsMapper[post.id].length}} Comments</h6>
+        <div *ngFor="let comment of postCommentsMapper[post.id]">
           <div class="email">{{comment.email}}:</div>
           <div class="comment">{{comment.body}}</div>
           <div class="action-container">
@@ -23,7 +26,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
-
