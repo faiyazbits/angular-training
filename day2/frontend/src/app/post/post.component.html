@@ -1,4 +1,4 @@
-<div class="post-container" id="post-container">
+<div class="post-container" id="post-container" *ngIf ="!spinnerLoading">
 
   <div *ngFor="let post of post" class="post" (click)="onClickShowPostComments(post)">
     <div class="number">{{ post.id }}</div>
@@ -7,7 +7,7 @@
       <p class="post-content">{{ post.body }}</p>
 
       <!-- Comments Sections -->
-      <td *ngIf="showComments && post.id === selectedPost.id">
+      <td *ngIf="post.id === selectedPost.id">
         <span *ngFor="let comment of comments">
           <h6 class="email">Email</h6>
           <span class="email">{{ comment.email }}</span>
@@ -21,7 +21,7 @@
 </div>
 
 <!-- Loading symbol -->
-<div class="spinner" *ngIf="spinnerLoading">
+<div class="spinner" *ngIf ="spinnerLoading">
 	<div class="bounce1"></div>
 	<div class="bounce2"></div>
 	<div class="bounce3"></div>
