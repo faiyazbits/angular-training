@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { PostService } from "./post.service";
-import { Post } from "../model/post";
-import { Router, NavigationStart, NavigationEnd, Event } from "@angular/router";
+
 
 @Component({
   selector: "app-post",
@@ -13,31 +12,19 @@ export class PostComponent implements OnInit {
   selectedPost;
   comments;
   showComments: boolean = false;
+  // FOR SPINNER 
+  spinnerLoading: boolean = true;
+ 
 
-  timeout;
-  routerChanged: boolean = true;
-
-  constructor(private postService: PostService, private router: Router) {
-    router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationStart) {
-        // Show loading indicator
-        this.routerChanged = true;
-      }
-
-      if (event instanceof NavigationEnd) {
-        // Hide loading indicator
-        this.timeout = setTimeout(() => {
-          clearTimeout(this.timeout);
-          this.routerChanged = false;
-        }, 2000);
-      }
-    });
+  constructor(private postService: PostService) {
+   
   }
 
   ngOnInit() {
     const postData = this.postService.fetchPost();
     postData.subscribe((post) => {
       console.log(post);
+      this.spinnerLoading = false;
       this.post = post;
     });
   }
@@ -50,6 +37,8 @@ export class PostComponent implements OnInit {
       console.log(comments);
       this.comments = comments;
       this.showComments = true;
+     
     });
   }
+
 }

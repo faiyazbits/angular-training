@@ -58,6 +58,7 @@ import { PostService } from "./post/post.service";
         HttpClientModule,
         AppRoutesModule,
         RouterModule
+       
     ],
     
     providers: [ ProjectService , UserService , PostService, AuthGuard],
