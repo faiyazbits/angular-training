@@ -8,7 +8,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let person of personDetails" [ngStyle]="{'background-color':getRowColor(person)}">
+        <tr *ngFor="let person of persons" [ngStyle]="{'background-color':getRowColor(person)}">
             <td>{{ person.name | uppercase }}</td>
             <td>{{ person.designation }}</td>
             <td>
