@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { userGender } from './../../model/user.gender';
+import { User } from '../../model/user';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user-gender',
@@ -6,8 +8,21 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./user-gender.component.css']
 })
 export class UserGenderComponent implements OnInit {
-  @Input() gender;
-  constructor() {}
 
-  ngOnInit() {}
+  @Input() userGender;
+
+  constructor() {
+  }
+
+  ngOnInit() {
+
+  }
+
+  isMaleUser() {
+    return this.userGender == userGender.MALE;
+  }
+
+  isFemaleUser() {
+    return this.userGender == userGender.FEMALE;
+  }
 }

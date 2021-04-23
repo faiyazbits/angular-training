@@ -1,0 +1,52 @@
+<!-- main app container -->
+<div class="container mt-5">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h5 class="mb-4">Add User - Reactive Form with Validation</h5>
+        <form [formGroup]="userCreationForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>User Name</label>
+            <input type="text" formControlName="name" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && controls.name.errors }" />
+            <div *ngIf="submitted && controls.name.errors" class="invalid-feedback">
+              <div *ngIf="controls.name.errors.required">Username is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Designation</label>
+            <input type="text" formControlName="designation" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && controls.designation.errors }" />
+            <div *ngIf="submitted && controls.designation.errors" class="invalid-feedback">
+              <div *ngIf="controls.designation.errors.required">Designation is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select class="custom-select" formControlName="gender">
+              <option value="">Select Gender</option>
+              <option [value]=" userGenderOptions.MALE"> {{userGenderOptions.MALE}}</option>
+              <option [value]="userGenderOptions.FEMALE"> {{userGenderOptions.FEMALE}}</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="submitted && controls.gender.errors?.required">
+              <sup>*</sup>Gender is required
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label>Age</label>
+            <input type="text" formControlName="age" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && controls.age.errors }" />
+            <div *ngIf="submitted && controls.age.errors" class="invalid-feedback">
+              <div *ngIf="controls.age.errors.required">Age is required</div>
+            </div>
+          </div>
+
+          <div class="form-group text-right">
+            <button class="btn btn-primary mt-3">Add user</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

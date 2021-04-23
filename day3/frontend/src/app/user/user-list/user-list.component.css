@@ -1,0 +1,20 @@
+table{
+    border-collapse: collapse;
+}
+
+table thead{
+    background-color: navy;
+    color: white;
+}
+
+th:first-child, td:first-child{
+    padding-left: 15px;
+}
+
+table tbody tr{
+    cursor: pointer;
+}
+
+.active-project{
+    background-color: #f3f3f3;
+}

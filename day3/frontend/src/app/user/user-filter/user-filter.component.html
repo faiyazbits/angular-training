@@ -1,0 +1,46 @@
+<div class="filter-container">
+
+    <div class="search-filter filter">
+        <input type="search" class="form-control" placeholder="Search By Name" [(ngModel)]="searchText"
+            (ngModelChange)="onSearchByName()" />
+    </div>
+
+    <div class="select-filter filter">
+        <select name="userGender" class="form-control" id="userGender" [(ngModel)]="userGenderValue"
+            (change)="onFilterByGender($event)">
+            <option value=""> --Filter By Gender-- </option>
+            <option [value]="userGender.FEMALE"> {{userGender.FEMALE}}</option>
+            <option [value]="userGender.MALE"> {{userGender.MALE}}</option>
+        </select>
+    </div>
+
+    <div class="radio-filter filter">
+        <label for="manager">
+            <input type="radio" name="designation" id="manager" [(ngModel)]="userDesignationHierarchy.userDesignation"
+                (change)="onFilterByDesignation()" value="Project Manager" />
+            <span>Manager</span>
+        </label>
+        <label for="lead">
+            <input type="radio" name="designation" id="lead" [(ngModel)]="userDesignationHierarchy.userDesignation"
+                (change)="onFilterByDesignation()" value="Team Leader" />
+            <span>Team Lead</span>
+        </label>
+        <label for="delivery head">
+            <input type="radio" name="designation" id="delivery head"
+                [(ngModel)]="userDesignationHierarchy.userDesignation" (change)="onFilterByDesignation()"
+                value="Project Delivery Head" />
+            <span>Delivery Head</span>
+        </label>
+        <label for="architect">
+            <input type="radio" name="designation" id="architect" [(ngModel)]="userDesignationHierarchy.userDesignation"
+                (change)="onFilterByDesignation()" value="Project Architect" />
+            <span>Architect</span>
+        </label>
+        <label for="all">
+            <input type="radio" name="desigantion" id="all" [(ngModel)]="userDesignationHierarchy.userDesignation"
+                (change)="onFilterByDesignation()" value="all" />
+            <span>All</span>
+        </label>
+    </div>
+
+</div>
