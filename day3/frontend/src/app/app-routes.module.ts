@@ -6,7 +6,7 @@ import { ProjectTemplateformAddComponent } from "./project/project-templateform-
 import { ProjectReactiveformAddComponent } from "./project/project-reactiveform-add/project-reactiveform-add.component";
 import { UserDashboardComponent } from "./user/user-dashboard/user-dashboard.component";
 import { UserReactiveformAddComponent } from "./user/user-reactiveform-add/user-reactiveform-add.component";
-import { UserTemplateformAddComponent } from "./user/user-templateform-add/user-templateform-add.component";
+import { UserTemplateformAddComponent } from "./user/user-templateform-add/user-templateform-add.component"
 const appRoutes: Routes = [
     { path: '', redirectTo: '/projects', pathMatch: 'full' },
     { path: 'users', component: UserDashboardComponent },
