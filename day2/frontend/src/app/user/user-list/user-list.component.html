@@ -1,22 +1,16 @@
-<app-user-filter (searchUser)="onSearchUser($event)" (filterByGender)="onFilterByGender($event)" (filterByType)="onFilterByType($event)">
-</app-user-filter>
 <table class="u-full-width">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Designation</th>
-            <th>Type</th>
-            <th>Gender</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of users" (click)="onUserClick(user)" [routerLink]="['/users',user.id]">
-            <td>{{ user.name }}</td>
-            <td>{{user.designation}}</td>
-            <td>{{ user.type }}</td>
-            <td>
-                <app-user-gender [gender]="user.gender"></app-user-gender>
-            </td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.designation }}</td>
+      <td><app-user-gender [gender]="user.gender"></app-user-gender></td>
+    </tr>
+  </tbody>
 </table>

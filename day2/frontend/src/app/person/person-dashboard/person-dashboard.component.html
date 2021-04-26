@@ -1,0 +1,15 @@
+<app-person-summary>
+</app-person-summary>
+
+
+
+<div class="person-list">
+    <app-person-list (personSelected)="onPersonSelect($event)" [selectedPerson]="selectedPerson"></app-person-list>
+</div>
+
+
+
+
+<div class="person-detail">
+    <app-person-details [person]="selectedPerson"></app-person-details>
+</div>

@@ -1,0 +1,23 @@
+<app-person-filter (filterByGender)="onFilterByGender($event)"></app-person-filter>
+
+<table class="u-full-width">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of persons" (click)="onPersonClick(person)" [ngStyle]="{'background-color':getRowColor(person)}">
+            <td>{{ person.name | uppercase }}</td>
+            <td>{{ person.designation }}</td>
+            <td>
+                <app-person-gender (personSelector)="onPersonSelector($event)" [personGender]="person.gender" [personId]="person.id">
+                </app-person-gender>
+            </td>
+            <td>{{ person.age }}</td>
+        </tr>
+    </tbody>
+</table>

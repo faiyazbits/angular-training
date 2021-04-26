@@ -1,0 +1,66 @@
+<div class="filter-container">
+
+    <div class="search-filter filter">
+        <input type="search" placeholder="Search By Name" [(ngModel)]="searchText" (ngModelChange)="onSearchByName()" />
+    </div>
+
+    <div class="select-filter filter">
+        <select name="personGender" id="personGender" [(ngModel)]="personGenderValue" (change)="onFilterByGender($event)">
+        <option value=""> --Filter By Gender-- </option>
+        <option [value]="personGender.FEMALE"> {{personGender.FEMALE}}</option>
+        <option [value]="personGender.MALE"> {{personGender.MALE}}</option>
+      </select>
+    </div>
+
+    <div class="radio-filter filter">
+        <label for="trainee">
+        <input type="radio" name="designation"
+               id="trainee"
+               [(ngModel)]="personHierarchy.personDesignation"
+               (change)="onFilterByDesignation()"
+               value="Software Trainee"/>
+        <span >Software Trainee</span>
+      </label>
+        <label for="media">
+        <input type="radio" name="designation"
+               id="media"
+               [(ngModel)]="personHierarchy.personDesignation"
+               (change)="onFilterByDesignation()"
+               value="Media Developer"/>
+        <span >Media Developer</span>
+      </label>
+        <label for="clk">
+        <input type="radio" name="designation"
+               id="clk"
+               [(ngModel)]="personHierarchy.personDesignation"
+               (change)="onFilterByDesignation()"
+               value="Clerk"/>
+        <span >Clerk</span>
+      </label>
+        <label for="developer">
+        <input type="radio" name="designation"
+               id="developer"
+               [(ngModel)]="personHierarchy.personDesignation"
+               (change)="onFilterByDesignation()"
+               value="Software Developer"/>
+        <span >Software Developer</span>
+      </label>
+        <label for="intelligence">
+        <input type="radio" name="designation"
+               id="intelligence"
+               [(ngModel)]="personHierarchy.personDesignation"
+               (change)="onFilterByDesignation()"
+               value="Central Intelligence"/>
+        <span >Central Intelligence</span>
+      </label>
+        <label for="all">
+        <input type="radio" name="desigantion"
+               id="all"
+               [(ngModel)]="personHierarchy.personDesignation"
+               (change)="onFilterByDesignation()"
+               value="all"/>
+        <span >All</span>
+      </label>
+    </div>
+
+</div>
