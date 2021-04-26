@@ -8,6 +8,7 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { AuthGuard } from "./user/auth-guard.service";
 import { PostComponent } from "./post/post.component";
+import { UserProjectComponent } from "./user/user-project/user-project.component";
 
 
 const appRoutes: Routes = [
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'users/:id' , component: UserDetailsComponent , canActivate:[AuthGuard]},
   { path: 'login' , component: UserLoginComponent},
   { path: 'post' , component: PostComponent}
+  { path: 'project', component: UserProjectComponent}
 
 ];
 

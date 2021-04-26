@@ -26,6 +26,7 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { AuthGuard } from "./user/auth-guard.service";
 import { PostComponent } from './post/post.component';
 import { PostService } from "./post/post.service";
+import { UserProjectComponent } from "./user/user-project/user-project.component";
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { PostService } from "./post/post.service";
          UserListComponent,
          UserLoginComponent,
          PostComponent,
+         UserProjectComponent,
 
         AppComponent,
             

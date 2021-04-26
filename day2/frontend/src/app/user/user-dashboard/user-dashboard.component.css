@@ -1,28 +1,29 @@
-.user-list{
-    width: 100%;
-    float: left;
-    box-sizing: border-box;
-    padding: 10px;
+.user-list {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
-.user-detail{
-    width: 50%;
-    float: left;
-    box-sizing: border-box;
-    padding: 10px;
+.user-detail {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .signOut {
-    margin: 0px 10px 0px 10px ;
+  margin: 0px 10px 0px 10px;
 }
 .signOut:hover {
-background-color: black;
-color: white;
-
+  background-color: black;
+  color: white;
 }
 .blog:hover {
-    background-color: black;
-    color: white;
-    
-    }
+  background-color: black;
+  color: white;
+}
 
+.blog {
+    margin-left:10px ;
+}
