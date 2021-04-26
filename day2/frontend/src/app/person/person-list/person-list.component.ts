@@ -28,7 +28,7 @@ export class PersonListComponent {
   }
   onPersonClick(person) {
     this.personSelected.emit(person);
-  }
+}
   onSearchByName(searchTerm) {
     this.persons = this.PersonServices.fetchPersonsBySearchText(searchTerm);
     this.personSelected.emit(this.persons[0]);

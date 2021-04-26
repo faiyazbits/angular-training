@@ -23,6 +23,8 @@ import { ProjectSummaryComponent } from "./project/project-summary/project-summa
 import { ProjectDetailsComponent } from "./project/project-details/project-details.component";
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
+import { LoginComponent } from './login/login.component';
+
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { ProjectFilterComponent } from "./project/project-filter/project-filter.
         PersonGenderComponent,
         PersonDetailsComponent,
         PersonSummaryComponent,
-        PersonFilterComponent 
+        PersonFilterComponent,
+        LoginComponent
+        
        
     ],
     imports: [

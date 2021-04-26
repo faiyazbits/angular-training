@@ -1,0 +1,16 @@
+<div class="login-form">
+    <form>
+        <h2>User Login</h2>
+        <div class="input">
+            <label>Email</label>
+            <input type="email" name="email" [(ngModel)]="email" class="form-control" placeholder="Enter your Email ID">
+        </div>
+        <div class="input">
+            <label>Password</label>
+            <input type="password" name="password" [(ngModel)]="password" class="form-control" placeholder="Enter Your Password">
+        </div>
+        <div class="input">
+            <input type="submit" value="login" class="btn btn-primary btn-block" (click)=loginUser()>
+        </div>
+    </form>
+</div>
