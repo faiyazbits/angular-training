@@ -6,6 +6,7 @@ export interface Project {
     name: string,
     description: string,
     owner: string,
+    userId: number,
     type: ProjectType,
     startDate: string,
     status: ProjectStatus

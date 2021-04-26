@@ -9,6 +9,7 @@ const projects: Project[] = [
         name: 'stock ticker',
         description: 'stock ticker app frontend in angular',
         owner: 'John Watson',
+        userId: 1,
         type: ProjectType.SCRUM,
         startDate: '10-Sep-2019',
         status: ProjectStatus.IN_PROGRESS
@@ -18,6 +19,7 @@ const projects: Project[] = [
         name: 'stock ticker api',
         description: 'stock ticker app api in express.js',
         owner: 'Raja Sekar',
+        userId: 2,
         type: ProjectType.SCRUM,
         startDate: '01-Jan-2019',
         status: ProjectStatus.IN_PROGRESS
@@ -27,6 +29,7 @@ const projects: Project[] = [
         name: 'chartiq reports',
         description: 'reports application in react and chartiq',
         owner: 'Preethi Chawla',
+        userId: 3,
         type: ProjectType.KANBAN,
         startDate: '20-May-2019',
         status: ProjectStatus.IN_PROGRESS
@@ -35,7 +38,8 @@ const projects: Project[] = [
         id: '4',
         name: 'digitall fullstack java',
         description: 'project management application in java and angular',
-        owner: 'David',
+        owner: 'Emma Tom',
+        userId: 6,
         type: ProjectType.KANBAN,
         startDate: '10-Apr-2018',
         status: ProjectStatus.COMPLETED
@@ -44,11 +48,63 @@ const projects: Project[] = [
         id: '5',
         name: 'digitall microservices',
         description: 'project management application in microservices',
-        owner: 'Priyanka',
+        owner: 'Nick',
+        userId: 7,
         type: ProjectType.SCRUM,
         startDate: '23-Dec-2018',
         status: ProjectStatus.COMPLETED
+    },
+    {
+        id: '6',
+        name: 'easy visa',
+        description: 'procuring US visa for dependents',
+        owner: 'Nick',
+        userId: 7,
+        type: ProjectType.SCRUM,
+        startDate: '23-Dec-2018',
+        status: ProjectStatus.IN_PROGRESS
+    },
+    {
+        id: '7',
+        name: 'e-form',
+        description: 'form application in react',
+        owner: 'Emma Tom',
+        userId: 6,
+        type: ProjectType.KANBAN,
+        startDate: '10-Apr-2018',
+        status: ProjectStatus.COMPLETED
+    },
+    {
+        id: '8',
+        name: 'spmt',
+        description: 'application for welding management',
+        owner: 'Preethi Chawla',
+        userId: 3,
+        type: ProjectType.KANBAN,
+        startDate: '20-May-2019',
+        status: ProjectStatus.IN_PROGRESS
+    },
+    {
+        id: '9',
+        name: 'dds',
+        description: 'taxi booking application in ember',
+        owner: 'Raja Sekar',
+        userId: 2,
+        type: ProjectType.SCRUM,
+        startDate: '01-Jan-2019',
+        status: ProjectStatus.IN_PROGRESS
+    },
+    {
+        id: '10',
+        name: 'robocompass',
+        description: 'fun filled way of learing geometry with animations',
+        owner: 'Ashraf',
+        userId: 4,
+        type: ProjectType.KANBAN,
+        startDate: '01-Jan-2019',
+        status: ProjectStatus.IN_PROGRESS
     }
+    
 ];
 
 @Injectable()
@@ -97,5 +153,11 @@ export class ProjectService {
         return projects.filter((project) => {
             return project.type == type;
         });
+    }
+
+    filterdProjectsByUserId(userId){
+        return projects.filter((project) => {
+            return project.userId == userId;
+        })
     }
 }

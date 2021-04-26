@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+//import { NgSelectModule } from '@ng-select/ng-select';
 
 import { AppComponent } from './app.component';
 import { AppRoutesModule } from './app-routes.module';
@@ -27,6 +28,7 @@ import { UserTemplateformAddComponent } from './user/user-templateform-add/user-
 import { UserReactiveformAddComponent } from './user/user-reactiveform-add/user-reactiveform-add.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { PostListComponent } from './post/post-list/post-list.component';
+import { UserProjectsComponent } from './user-projects/user-projects/user-projects.component';
 
 @NgModule({
     declarations: [
@@ -48,7 +50,8 @@ import { PostListComponent } from './post/post-list/post-list.component';
         UserTemplateformAddComponent,
         UserReactiveformAddComponent,
         UserEditComponent,
-        PostListComponent
+        PostListComponent,
+        UserProjectsComponent
     ],
     imports: [
         BrowserModule,
@@ -56,7 +59,7 @@ import { PostListComponent } from './post/post-list/post-list.component';
         FormsModule,
         HttpClientModule,
         AppRoutesModule,
-        RouterModule
+        RouterModule,
     ],
     providers: [ ProjectService, UserService, PostsService ],
     bootstrap: [ AppComponent ]

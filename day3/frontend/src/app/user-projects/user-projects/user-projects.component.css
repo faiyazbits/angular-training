@@ -1,0 +1,48 @@
+.tag-container {
+    width: 650px;
+    margin: 10px;
+    border: 1px solid lightgrey;
+    cursor: auto;
+    color: lightgrey;
+    display: block;
+}
+
+.tag-item{
+    width: fit-content;
+    margin: 10px;
+    padding:3px 8px;
+    border: lightgrey;
+    border-radius: 5px;
+    color: black;
+    background-color: lightgray;
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tag-item:hover{
+    background-color: #fde0e0;
+}
+
+.active-user{
+    background-color: #fde0e0 ;
+    border: 1px solid green;
+}
+
+table{
+    border-collapse: collapse;
+    width: 50%;
+}
+
+table thead{
+    background-color: navy;
+    color: white;
+}
+
+th:first-child, td:first-child{
+    padding-left: 15px;
+}
+
+table tbody tr{
+    cursor: pointer;
+}

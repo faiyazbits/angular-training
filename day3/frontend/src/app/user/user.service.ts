@@ -1,9 +1,58 @@
 import { Injectable } from '@angular/core';
 import { User } from '../model/user'
 import { UserGender } from '../model/user.gender'
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
-let users: User[] = [];
+let users: User[] = [
+  {
+    id: 1,
+    name: 'John Watson',
+    designation: 'Project Manager',
+    gender: UserGender.MALE,
+    age: 35,
+    salary: 700
+  },
+  {
+    id: 2,
+    name: 'Raja Sekar',
+    designation: 'Team Leader',
+    gender: UserGender.MALE,
+    age: 31,
+    salary: 500
+  },
+  {
+    id: 3,
+    name: 'Preethi Chawla',
+    designation: 'Project Manager',
+    gender: UserGender.FEMALE,
+    age: 28,
+    salary: 750
+  },
+  {
+    id: 4,
+    name: 'Ashraf',
+    designation: 'Project Delivery Head',
+    gender: UserGender.MALE,
+    age: 45,
+    salary: 1000
+  },
+  {
+    id: 6,
+    name: 'Emma Tom',
+    designation: 'Project Manager',
+    gender: UserGender.FEMALE,
+    age: 30,
+    salary: 700
+  },
+  {
+    id: 7,
+    name: 'Nick',
+    designation: 'Team Leader',
+    gender: UserGender.MALE,
+    age: 29,
+    salary: 500
+  }
+];
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +69,9 @@ export class UserService {
   }
 
   getUserList() {
-    users = JSON.parse(localStorage.getItem('users'));
-    return users === null ? [] : users;
+    return users;
+    /*users = JSON.parse(localStorage.getItem('users'));
+    return users === null ? [] : users;*/
   }
 
   setLocalStorage(users) {

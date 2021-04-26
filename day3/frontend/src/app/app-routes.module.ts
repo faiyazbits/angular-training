@@ -1,3 +1,4 @@
+import { UserProjectsComponent } from './user-projects/user-projects/user-projects.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserReactiveformAddComponent } from './user/user-reactiveform-add/user-reactiveform-add.component';
 import { UserTemplateformAddComponent } from './user/user-templateform-add/user-templateform-add.component';
@@ -9,6 +10,7 @@ import { ProjectTemplateformAddComponent } from "./project/project-templateform-
 import { ProjectReactiveformAddComponent } from "./project/project-reactiveform-add/project-reactiveform-add.component";
 import { PostListComponent } from './post/post-list/post-list.component';
 
+
 const appRoutes: Routes = [
     { path: '', redirectTo: '/projects', pathMatch: 'full' },
     { path: 'edit/users/:id', component: UserEditComponent },
@@ -18,11 +20,12 @@ const appRoutes: Routes = [
     { path: 'posts', component: PostListComponent },
     { path: 'projects', component: ProjectDashboardComponent },
     { path: 'projects/reactive-form-add', component: ProjectReactiveformAddComponent },
-    { path: 'projects/template-form-add', component: ProjectTemplateformAddComponent }
+    { path: 'projects/template-form-add', component: ProjectTemplateformAddComponent },
+    { path: 'user/projects', component: UserProjectsComponent }
 ];
 
 @NgModule({
-    imports: [ RouterModule.forRoot(appRoutes) ],
+    imports: [ RouterModule.forRoot(appRoutes)],
     exports: [ RouterModule ]
 })
 export class AppRoutesModule {
