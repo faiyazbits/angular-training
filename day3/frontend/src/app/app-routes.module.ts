@@ -8,6 +8,7 @@ import {UserTemplateformAddComponent} from './user/user-templateform-add/user-te
 import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
 import {EditUserComponent} from './user/edit-user/edit-user.component';
 import {UserPostComponent} from './user-post/user-post.component';
+import {UserProjectComponent} from "./user-project/user-project.component";
 
 const appRoutes: Routes = [
     {path: '', redirectTo: '/projects', pathMatch: 'full'},
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
     {path: 'projects', component: ProjectDashboardComponent},
     {path: 'projects/reactive-form-add', component: ProjectReactiveformAddComponent},
     {path: 'projects/template-form-add', component: ProjectTemplateformAddComponent},
-    {path: 'posts', component: UserPostComponent}
+    {path: 'posts', component: UserPostComponent},
+    {path:'users/projects', component:UserProjectComponent}
 ];
 
 @NgModule({

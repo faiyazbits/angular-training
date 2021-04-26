@@ -1,0 +1,9 @@
+span {
+    padding: 5px;
+    border-radius: 9px;
+    display: inline-block;
+}
+
+.active{
+    background-color: #0055aa;
+}

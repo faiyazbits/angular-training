@@ -1,0 +1,26 @@
+<div>
+    <span *ngFor="let user of users" (click)="onUserProjectList(user)"
+          [ngClass]="{'active' : user.id ==selectedUserId }">
+<!--    [ngClass]="{'active':user.active}">-->
+        {{user.name}}
+    </span>
+</div>
+
+<table class="table table-bordered w-100">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let project of projects">
+        <td>{{ project.name }}</td>
+        <td>{{ project.status }}</td>
+        <td>
+            <app-project-type [projectType]="project.type"></app-project-type>
+        </td>
+    </tr>
+    </tbody>
+</table>

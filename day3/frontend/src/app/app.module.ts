@@ -25,6 +25,7 @@ import {UserReactiveformAddComponent} from "./user/user-reactiveform-add/user-re
 import {UserTemplateformAddComponent} from "./user/user-templateform-add/user-templateform-add.component";
 import {EditUserComponent} from './user/edit-user/edit-user.component';
 import {UserPostComponent} from './user-post/user-post.component';
+import {UserProjectComponent} from "./user-project/user-project.component";
 import {PostService} from './user-post/post.service';
 import {AtomSpinnerModule} from 'angular-epic-spinners';
 import {CommonModule} from "@angular/common";
@@ -50,7 +51,8 @@ import {CommonModule} from "@angular/common";
         UserReactiveformAddComponent,
         UserTemplateformAddComponent,
         EditUserComponent,
-        UserPostComponent
+        UserPostComponent,
+        UserProjectComponent
     ],
     imports: [
         BrowserModule,

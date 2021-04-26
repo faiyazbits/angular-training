@@ -5,7 +5,7 @@ import {UserStatus} from '../model/user.status';
 import {UserType} from '../model/user.type';
 
 
-const users: User[] = [
+const users: User []  = [
     {
         id: 1,
         name: 'John Watson',
