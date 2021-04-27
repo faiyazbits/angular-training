@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
+import { ReactiveFormsModule } from '@angular/forms'
 import { PersonService } from './person/person.service';
 import { PersonDashboardComponent } from './person/person-dashboard/person-dashboard.component';
 import { PersonListComponent } from './person/person-list/person-list.component';
@@ -24,6 +26,9 @@ import { ProjectDetailsComponent } from "./project/project-details/project-detai
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
 import { LoginComponent } from './login/login.component';
+import { AuthguardService } from './auth-guard/auth.services';
+
+
 
 
 
@@ -53,11 +58,13 @@ import { LoginComponent } from './login/login.component';
         FormsModule,
         HttpClientModule,
         AppRoutesModule,
-        RouterModule
+        RouterModule,
+        ReactiveFormsModule
     ],
     providers: [
          ProjectService,
-        PersonService
+        PersonService,
+        AuthguardService
      ],
     bootstrap: [ AppComponent ]
 })

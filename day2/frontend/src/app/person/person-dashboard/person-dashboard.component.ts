@@ -1,6 +1,8 @@
 import { Person } from '../../model/person';
 import { PersonService } from '../person.service';
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import { AuthguardService } from 'src/app/auth-guard/auth.services';
 
 @Component({
   selector: 'app-person-dashboard',
@@ -11,7 +13,7 @@ export class PersonDashboardComponent implements OnInit {
   persons: Person[];
   selectedPerson: Person;
 
-  constructor(private personService: PersonService) { }
+  constructor(private authguardService: AuthguardService, private personService: PersonService, private router: Router) { }
 
   ngOnInit() {
     this.persons = this.personService.getPersonList();
@@ -21,4 +23,13 @@ export class PersonDashboardComponent implements OnInit {
   onPersonSelect(person: Person) {
     this.selectedPerson = person;
   }
+  
+  logout() {
+    this.authguardService.logout();
+    this.router.navigateByUrl('/login');
 }
+
+}
+
+
+
