@@ -1,7 +1,7 @@
 
 <div class="users">
     <h1 class="title"> USERS NAME</h1>
-    <button *ngFor="let user of users">
+    <button *ngFor="let user of users" (click)="onUserClicked(user)">
         <span class="names">{{user.name}}</span>  
     </button>
 </div>

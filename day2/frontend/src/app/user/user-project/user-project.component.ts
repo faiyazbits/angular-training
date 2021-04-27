@@ -15,10 +15,19 @@ export class UserProjectComponent  {
 
   users:User[] =[];
   projects:Project[] =[];
+  selectedUser;
+
 
   constructor(private userService:UserService , private projectService : ProjectService) { 
     this.users = this.userService.getUserList();
     this.projects = this.projectService.getProjectList();
   }
    
+  onUserClicked(user) {
+    this.selectedUser = user;
+    console.log(this.selectedUser)
+    this.projects = this.projectService.filteringProjectsByUserId(user.id)
+    console.log(this.projects)
+
+  }
 }
