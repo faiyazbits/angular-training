@@ -11,24 +11,25 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 })
 export class UserProjectsComponent implements OnInit {
   users: User[] = [];
-
+  userProjects: Project[] = [];
   selectedUser;
-  projects: Project[] = [];
 
   constructor(private userService: UserService, private projectService: ProjectService) { }
 
   ngOnInit() {
     this.users = this.userService.getUserList();
-    console.log(this.users);
+    this.selectedUser = this.users[0];
+    this.userProjects = this.projectService.filterdProjectsByUserId(this.selectedUser.id);
+    //console.log(this.users);
   }
 
   onUserClick(user) {
-    console.log(user);
+    //console.log(user);
     this.selectedUser = user;
-    this.projects = this.projectService.filterdProjectsByUserId(user.id);
+    this.userProjects = this.projectService.filterdProjectsByUserId(user.id);
   }
 
-  getActiveUserClass(user) { 
-    return this.selectedUser && user.id === this.selectedUser.id;
+  getActiveUserClass(user) {
+    return user.id === this.selectedUser.id;
   }
 }

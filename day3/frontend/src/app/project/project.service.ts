@@ -104,13 +104,13 @@ const projects: Project[] = [
         startDate: '01-Jan-2019',
         status: ProjectStatus.IN_PROGRESS
     }
-    
+
 ];
 
 @Injectable()
 export class ProjectService {
 
-    selectedProject: Project = projects[ 0 ];
+    selectedProject: Project = projects[0];
 
     constructor() {
     }
@@ -155,7 +155,7 @@ export class ProjectService {
         });
     }
 
-    filterdProjectsByUserId(userId){
+    filterdProjectsByUserId(userId) {
         return projects.filter((project) => {
             return project.userId == userId;
         })
