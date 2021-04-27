@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   { path: 'users' , component: UserDashboard , canActivate:[AuthGuard]},
   { path: 'users/:id' , component: UserDetailsComponent , canActivate:[AuthGuard]},
   { path: 'login' , component: UserLoginComponent},
-  { path: 'post' , component: PostComponent}
+  { path: 'post' , component: PostComponent},
   { path: 'project', component: UserProjectComponent}
 
 ];

@@ -15,7 +15,7 @@ const projects: Project[] = [
     },
     {
         id: '2',
-        name: 'stock ticker api',
+        name: 'stock api',
         description: 'stock ticker app api in express.js',
         owner: 'Raja Sekar',
         type: ProjectType.SCRUM,
@@ -33,7 +33,7 @@ const projects: Project[] = [
     },
     {
         id: '4',
-        name: 'digitall fullstack java',
+        name: 'fullstack java',
         description: 'project management application in java and angular',
         owner: 'David',
         type: ProjectType.KANBAN,
@@ -42,7 +42,7 @@ const projects: Project[] = [
     },
     {
         id: '5',
-        name: 'digitall microservices',
+        name: 'microservices',
         description: 'project management application in microservices',
         owner: 'Priyanka',
         type: ProjectType.SCRUM,

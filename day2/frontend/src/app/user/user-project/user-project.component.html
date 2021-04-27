@@ -6,6 +6,21 @@
     </button>
 </div>
 
-<div class="projects">
-    <h1 class="title">PROJECTS</h1>
-</div>
+<h1 class="title">PROJECTS</h1>
+<div *ngFor= "let project of projects"class="card-wrapper">
+	<div class="card-custom">
+		<div class="card-imgage card-img">
+			<!-- <img class="card-img" src="src/assets/images/kanban.png" alt="project-img"> -->
+      <app-project-type [projectType]="project.type" class="card-img" ></app-project-type>
+	</div>
+			<div class="card-description">
+				<h3 class="card-title">{{project.name | uppercase }}</h3>
+				<h5 class="card-titleDis">{{project.description}}</h5>
+			</div>
+		</div>
+		<div class="card-custom">
+			<div class="pro-status">{{project.status}}</div>
+			<div class="pro-date">{{project.startDate}}</div>
+		</div>
+	</div>
+
