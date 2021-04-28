@@ -17,6 +17,8 @@ export class UserProjectComponent  {
   projects:Project[] =[];
   selectedUser;
 
+  showLayout:boolean = true;
+
 
   constructor(private userService:UserService , private projectService : ProjectService) { 
     this.users = this.userService.getUserList();
@@ -28,6 +30,11 @@ export class UserProjectComponent  {
     console.log(this.selectedUser)
     this.projects = this.projectService.filteringProjectsByUserId(user.id)
     console.log(this.projects)
+
+  }
+
+  toggle() {
+    this.showLayout = !this.showLayout;
 
   }
 }
