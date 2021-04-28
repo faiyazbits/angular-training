@@ -3,8 +3,8 @@
     [ngClass]="{'active-user': getActiveUserClass(user)}">
     {{user.name}}
   </span>
-  <span><i class="fa fa-list-alt" aria-hidden="true" (click)="toggleLayout()"></i></span>
-  <span><i class="fa fa-th" aria-hidden="true" (click)="toggleLayout()"></i></span>
+  <span><i class="fa fa-list-alt" aria-hidden="true" (click)="toggleLayout()" [ngClass]="{'active-button': showTable}"></i></span>
+  <span><i class="fa fa-th" aria-hidden="true" (click)="toggleLayout()" [ngClass]="{'active-button': !showTable}"></i></span>
 </div>
 
 <div class="table-container" *ngIf="showTable">
