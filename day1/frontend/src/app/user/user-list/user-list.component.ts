@@ -1,15 +1,18 @@
 // user should have 4 attributes name,designation,gender,age;
 // name should be capitalized when rendered
 // gender should be an icon (use user-gender component)
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-export class UserListComponent {
+export class UserListComponent implements OnInit {
   selectedUserId = '';
+  usersListDisplay: boolean;
+  usersColumnDisplay: boolean;
+
   users = [
     {
       id: '1',
@@ -45,8 +48,33 @@ export class UserListComponent {
       designation: 'Lecturer',
       gender: 'Female',
       age: '23'
-    }
+    },
+    {
+      id: '5',
+      name: 'Anna Clar',
+      designation: 'Lecturer',
+      gender: 'Female',
+      age: '23'
+    },
+    {
+      id: '5',
+      name: 'Saleem Sayed',
+      designation: 'Lecturer',
+      gender: 'Female',
+      age: '23'
+    },
+    {
+      id: '5',
+      name: 'Prakash Kumar',
+      designation: 'Lecturer',
+      gender: 'Female',
+      age: '23'
+    },
+
   ]
+  ngOnInit() {
+    this.usersListDisplay = true;
+  }
   constructor() { }
 
   onUserGenderSelect(userId) {
@@ -55,5 +83,13 @@ export class UserListComponent {
 
   getRowColor(user) {
     return user.id === this.selectedUserId ? "bisque" : "white";
+  }
+  displayAsLists(button) {
+    this.usersListDisplay = true;
+    this.usersColumnDisplay = false;
+  }
+  displayAsColumns(button) {
+    this.usersListDisplay = false;
+    this.usersColumnDisplay = true;
   }
 }
