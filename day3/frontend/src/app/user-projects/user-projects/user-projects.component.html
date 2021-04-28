@@ -3,25 +3,40 @@
     [ngClass]="{'active-user': getActiveUserClass(user)}">
     {{user.name}}
   </span>
+  <span><i class="fa fa-list-alt" aria-hidden="true" (click)="toggleLayout()"></i></span>
+  <span><i class="fa fa-th" aria-hidden="true" (click)="toggleLayout()"></i></span>
 </div>
 
-<table class="table table-bordered w-100">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Status</th>
-      <th>Type</th>
-      <th>Owner</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let project of userProjects">
-      <td>{{ project.name }}</td>
-      <td>{{ project.status }}</td>
-      <td>
-        <app-project-type [projectType]="project.type"></app-project-type>
-      </td>
-      <td>{{ project.owner }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-container" *ngIf="showTable">
+  <table class="table table-bordered w-100">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Type</th>
+        <th>Owner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of userProjects">
+        <td>{{ project.name }}</td>
+        <td>{{ project.status }}</td>
+        <td>
+          <app-project-type [projectType]="project.type"></app-project-type>
+        </td>
+        <td>{{ project.owner }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="project-container" *ngIf="!showTable">
+  <ul class="project-list" *ngFor="let project of userProjects">
+    <li>Owner: {{project.owner}}</li>
+    <li>Name: {{project.name}}</li>
+    <li>Status: {{project.status}}</li>
+    <li>
+      Project-Type: <app-project-type [projectType]="project.type"></app-project-type>
+    </li>
+  </ul>
+</div>

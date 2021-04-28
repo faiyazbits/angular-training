@@ -13,7 +13,8 @@ export class UserProjectsComponent implements OnInit {
   users: User[] = [];
   userProjects: Project[] = [];
   selectedUser;
-
+  showTable: boolean = true;
+ 
   constructor(private userService: UserService, private projectService: ProjectService) { }
 
   ngOnInit() {
@@ -31,5 +32,9 @@ export class UserProjectsComponent implements OnInit {
 
   getActiveUserClass(user) {
     return user.id === this.selectedUser.id;
+  }
+
+  toggleLayout(){
+    this.showTable = !this.showTable;
   }
 }

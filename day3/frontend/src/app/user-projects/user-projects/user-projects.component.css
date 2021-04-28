@@ -1,6 +1,7 @@
 .tag-container {
-    width: 650px;
-    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
     border: 1px solid lightgrey;
     cursor: auto;
     color: lightgrey;
@@ -23,15 +24,21 @@
 .tag-item:hover {
     background-color: #fde0e0;
 }
-
+.fa{
+    float: right;
+    font-size: 30px;
+    margin: 10px;
+    color: blue;
+    cursor: pointer;
+}
 .active-user {
     background-color: #fde0e0;
-    border: 1px solid green;
 }
 
 table {
     border-collapse: collapse;
-    width: 50%;
+    width: 80%;
+    margin: auto;
 }
 
 table thead {
@@ -45,4 +52,18 @@ th:first-child, td:first-child {
 
 table tbody tr {
     cursor: pointer;
+}
+.project-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.project-list{
+    justify-content: space-around;
+    background-color: aquamarine;
+    margin: 25px;
+    border: 1px solid black;
+    display: inline-block;
+    width: 250px;
+    border-radius: 3px;
 }
