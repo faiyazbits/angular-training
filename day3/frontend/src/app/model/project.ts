@@ -9,4 +9,5 @@ export interface Project {
     type: ProjectType,
     startDate: string,
     status: ProjectStatus
+    userId: number
 }

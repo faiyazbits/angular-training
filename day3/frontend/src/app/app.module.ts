@@ -25,6 +25,11 @@ import { UserFilterComponent } from './user/user-filter/user-filter.component';
 import { UserSummaryComponent } from './user/user-summary/user-summary.component';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { PostListComponent } from './posts/post-list/post-list.component'
+import { PostsService } from './posts/posts.service';
+
+import { UserProjectDashboardComponent } from './user-project/user-projectDashboard/user-projectDashboard.component'
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -43,7 +48,9 @@ import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.com
         ProjectDetailsComponent,
         ProjectFilterComponent,
         ProjectReactiveformAddComponent,
-        ProjectTemplateformAddComponent
+        ProjectTemplateformAddComponent,
+        PostListComponent,
+        UserProjectDashboardComponent
     ],
     imports: [
         BrowserModule,
@@ -53,7 +60,7 @@ import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.com
         AppRoutesModule,
         RouterModule
     ],
-    providers: [ProjectService, UserService],
+    providers: [ProjectService, UserService, PostsService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

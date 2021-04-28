@@ -1,0 +1,37 @@
+.nav-item.active{
+    background-color: #474d52;
+  }
+  li{
+      list-style: none;
+      border-radius: 3px;
+     padding:10px
+      
+  }
+  li:hover{
+     cursor: pointer; 
+     
+    
+  }
+  .list{
+      background-color: bisque;
+  }
+  .active-user{
+    background-color:burlywood
+}
+.project-list{
+    background-color:papayawhip;
+    margin: 25px;
+    border: 1px solid black;
+    display: inline-block;
+    width: 25%;
+    border-radius: 5px;
+}
+span{
+    color:maroon
+}
+.showAlert{
+    text-align: center;
+    min-height: 40vh;
+    font-family: 'Times New Roman', Times, serif;
+
+}

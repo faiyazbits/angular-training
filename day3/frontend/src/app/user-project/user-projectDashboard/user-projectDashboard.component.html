@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="list" *ngFor="let user of users">
+            <li (click)="onUserClick(user)" [ngClass]="{'active-user':getActiveUserClass(user)}">{{user.name}} </li>
+        </ul>
+    </div>
+</nav>
+<div class="project-container">
+    <ul class="project-list" *ngFor="let project of projectsOfUser">
+        <li><span>OWNER:</span> {{project.owner}}</li>
+        <li><span>NAME:</span>{{project.name}}</li>
+        <li><span>STATUS:</span>{{project.status}}</li>
+        <li>
+            <span>PROJECT-TYPE:</span>
+            <app-project-type [projectType]="project.type"></app-project-type>
+        </li>
+
+    </ul>
+</div>
+
+<div *ngIf="hasProject">
+    <h1 class="showAlert">No projects yet</h1>
+</div>
