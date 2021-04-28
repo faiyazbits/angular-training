@@ -155,13 +155,10 @@ export class ProjectService {
     }
     filteringProjectsByUserId(userId) {
         return projects.filter((project) => {
-            return project.userId == userId;
+            return project.userId == userId;  
         })
-    }
-    // filteringProjectsByUserId(userId) {
-    //     return projects.some((project) => {
-    //         return project.userId == userId;
+    } 
+  
 
-    //     })
-    // }
+    
 }

@@ -1,26 +1,53 @@
-
 <div class="users">
-    <h1 class="title"> USERS NAME</h1>
-    <button *ngFor="let user of users" (click)="onUserClicked(user)">
-        <span class="names">{{user.name}}</span>  
-    </button>
+	<h1 class="title">USERS NAME</h1>
+	<button *ngFor="let user of users" (click)="onUserClicked(user)">
+		<span class="names">{{ user.name }}</span>
+	</button>
 </div>
 
 <h1 class="title">PROJECTS</h1>
-<div *ngFor= "let project of projects"class="card-wrapper">
+<!-- Toggole switch starts -->
+<div class="toggleBox">
+	<input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio"/>
+	<label for="toggle-on" class="btn">Card</label>
+	<input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio" />
+	<label for="toggle-off" class="btn">Table</label>
+</div>
+<!-- Tpoggle swicth ends -->
+
+
+<div *ngFor="let project of projects" class="card-wrapper">
 	<div class="card-custom">
 		<div class="card-imgage card-img">
 			<!-- <img class="card-img" src="src/assets/images/kanban.png" alt="project-img"> -->
-      <app-project-type [projectType]="project.type" class="card-img" ></app-project-type>
-	</div>
-			<div class="card-description">
-				<h3 class="card-title">{{project.name | uppercase }}</h3>
-				<h5 class="card-titleDis">{{project.description}}</h5>
-			</div>
+			<app-project-type [projectType]="project.type" class="card-img"></app-project-type>
 		</div>
-		<div class="card-custom">
-			<div class="pro-status">{{project.status}}</div>
-			<div class="pro-date">{{project.startDate}}</div>
+		<div class="card-description">
+			<h3 class="card-title">{{ project.name | uppercase }}</h3>
+			<h5 class="card-titleDis">{{ project.description }}</h5>
 		</div>
 	</div>
+	<div class="card-custom">
+		<div class="pro-status">{{ project.status }}</div>
+		<div class="pro-date">{{ project.startDate }}</div>
+	</div>
+</div>
 
+
+
+<table >
+	<thead>
+	  <tr>
+		<th>Project</th>
+		<th>Description</th>
+		<th>Status</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr *ngFor="let project of projects" >
+		<td>{{ project.name }}</td>
+		<td>{{project.description}}</td>
+		<td>{{ project.status }}</td>
+	  </tr>
+	</tbody>
+  </table>
