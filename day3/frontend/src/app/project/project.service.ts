@@ -103,7 +103,40 @@ const projects: Project[] = [
         type: ProjectType.KANBAN,
         startDate: '01-Jan-2019',
         status: ProjectStatus.IN_PROGRESS
+    },
+    {
+        id: '11',
+        name: 'sagamath',
+        description: 'Creating interactive math worksheets ',
+        owner: 'Ashraf',
+        userId: 4,
+        type: ProjectType.KANBAN,
+        startDate: '01-Jan-2019',
+        status: ProjectStatus.IN_PROGRESS
+    },
+
+    {
+        id: '12',
+        name: 'mathdisk',
+        description: 'a mathematical tool ',
+        owner: 'Ashraf',
+        userId: 4,
+        type: ProjectType.SCRUM,
+        startDate: '01-Jan-2019',
+        status: ProjectStatus.COMPLETED
+    },
+
+    {
+        id: '13',
+        name: 'redcart',
+        description: 'a shopping cart app',
+        owner: 'Ashraf',
+        userId: 4,
+        type: ProjectType.SCRUM,
+        startDate: '01-Jan-2019',
+        status: ProjectStatus.COMPLETED
     }
+    
 
 ];
 
