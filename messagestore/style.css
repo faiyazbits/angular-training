@@ -1,0 +1,27 @@
+#addMessage{
+    margin: 20px;
+}
+
+#messageTextBox{
+    margin: 10px;
+}
+
+#messages{
+    height: 500px;
+    background-color: yellowgreen;
+    margin: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#messageCount{
+    margin: 35px;
+    font-size: 30px;
+}
+
+#colorCode{
+    width: 30px;
+    height: 30px;
+    margin: 30px;  
+    background-color: #a94442;
+}

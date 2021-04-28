@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Emitter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script rel="script" type="text/javascript" src="jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <button id="addMessage" class="btn btn-primary">Add Message</button>
+    <button id="deleteMessage" class="btn btn-danger">Delete Message</button>
+    <input type="text" id="messageTextBox">
+    <div class="row">
+        <div class="col md-4" id="messages">[Messages]</div>
+        <div class="col md-4">
+            <div id="messageCount">0</div>
+            <div id="colorCode"></div>
+        </div>
+        <script src="eventEmitter.js"></script>
+        <script src="messagestore.js"></script>
+        <script src="main.js"></script>
+</body>
+
+</html>
