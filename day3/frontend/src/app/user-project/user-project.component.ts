@@ -11,16 +11,19 @@ import {ProjectService} from "../project/project.service";
 })
 export class UserProjectComponent implements OnInit {
   users: User [] = [];
-  projects:Project [] =[];
+  projects: Project [] = [];
   selectedUserId;
-  constructor(private userService: UserService,private projectService:ProjectService) {
+
+  constructor(private userService: UserService, private projectService: ProjectService) {
     this.users = userService.getUserList();
   }
 
   ngOnInit() {
   }
+
   onUserProjectList(user) {
     // user.active = !user.active;
-    this.selectedUserId =user.id;
+    this.selectedUserId = user.id;
     this.projects = this.projectService.filterProjectByUserId(user.id);
-    }
+  }
+}

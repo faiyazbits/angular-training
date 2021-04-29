@@ -1,0 +1,14 @@
+#message-box {
+    display: inline-block;
+    margin:2em;
+    padding:2em;
+    background-color: yellow;
+    width: 50%;
+}
+#messageCount {
+    display: block;
+    width:30px;
+    height:20px;
+    background-color: green;
+    margin:auto;
+}
