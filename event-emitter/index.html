@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Emitter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-container">
+            <button id="addMessage" class="btn btn-info">Add</button>
+            <button id="deleteMessage" class="btn btn-danger">Remove</button>
+            <input type="text" id="messageTextBox">
+        </div>
+        <div class="output-container">
+            <div id="messages">messages</div>
+            <div id="messageCount">0</div>
+            <div id="colorCode"></div>
+        </div>
+    </div>
+    <script src="eventEmitter.js"></script>
+    <script src="main.js"></script>
+    <script src="messageStore.js"></script>
+</body>
+
+</html>
