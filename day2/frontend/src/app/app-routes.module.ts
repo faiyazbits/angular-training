@@ -4,13 +4,19 @@ import { Routes, RouterModule, Router } from '@angular/router';
 import { ProjectDashboardComponent } from "./project/project-dashboard/project-dashboard.component";
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth-guard/auth';
+import { PersonReactiveformComponent } from './person/person-reactiveform/person-reactiveform.component';
+import { PersonEditComponent } from './person/person-edit/person-edit.component';
+
+
+
+
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'persons', component: PersonDashboardComponent, canActivate:[AuthGuard]},
-  { path: 'projects', component: ProjectDashboardComponent },
+    { path: 'persons/reactive-form-add', component: PersonReactiveformComponent },
   
   
 ];

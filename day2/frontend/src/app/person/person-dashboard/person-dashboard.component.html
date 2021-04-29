@@ -1,7 +1,3 @@
-<button class="logout-btn" (click)="logout()">
-    Logout
-</button>
-
 <app-person-summary>
 </app-person-summary>
 
@@ -15,5 +11,10 @@
 
 
 <div class="person-detail">
+    <button class="btn btn-primary mr-3" [routerLink]="['reactive-form-add']">Add Person Details Using Reactive Form</button>
     <app-person-details [person]="selectedPerson"></app-person-details>
 </div>
+
+<button class="logout-btn" (click)="logout()">
+    Logout
+</button>

@@ -28,15 +28,15 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.userLoginForm = this.formBuilder.group({
-          email: ['', [Validators.required]],
-          password: ['', [Validators.required, Validators.minLength(6)]]
+    this.userLoginForm = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
 
-      });
+  });
   }
-get formControls(){
-  return this.userLoginForm.controls
-}
+  get formControls(){
+    return this.userLoginForm.controls
+  }
 
   onSubmit() {
       this.submitted = true;

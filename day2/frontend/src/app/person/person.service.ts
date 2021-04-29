@@ -44,9 +44,19 @@ const persons = [
   providedIn: 'root'
 })
 export class PersonService {
+    updatePerson(personToBeUpdated: any) {
+        throw new Error('Method not implemented.');
+    }
+    findPersonById(id: number): any {
+        throw new Error('Method not implemented.');
+    }
   selectedPerson: Person ;
 
   constructor() { }
+
+  addPerson(personObj){
+    persons.push(personObj)
+  }
 
   getPersonList() {
     return persons;

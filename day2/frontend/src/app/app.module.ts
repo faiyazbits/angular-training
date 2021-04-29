@@ -12,6 +12,15 @@ import { PersonGenderComponent } from './person/person-gender/person-gender.comp
 import { PersonSummaryComponent } from './person/person-summary/person-summary.component';
 import { PersonDetailsComponent } from './person/person-details/person-details.component';
 import {PersonFilterComponent } from './person/person-filter/person-filter.component';
+import {
+    PersonReactiveformComponent
+} from './person/person-reactiveform/person-reactiveform.component';
+import { PersonEditComponent } from './person/person-edit/person-edit.component';
+
+
+
+
+
 
 import { AppComponent } from './app.component';
 import { AppRoutesModule } from './app-routes.module';
@@ -27,6 +36,7 @@ import { ProjectDashboardComponent } from "./project/project-dashboard/project-d
 import { ProjectFilterComponent } from "./project/project-filter/project-filter.component";
 import { LoginComponent } from './login/login.component';
 import { AuthguardService } from './auth-guard/auth.services';
+import { FormComponent } from './forms/forms.component';
 
 
 
@@ -49,8 +59,10 @@ import { AuthguardService } from './auth-guard/auth.services';
         PersonDetailsComponent,
         PersonSummaryComponent,
         PersonFilterComponent,
-        LoginComponent
-        
+        LoginComponent,
+        FormComponent,
+        PersonReactiveformComponent,
+        PersonEditComponent
        
     ],
     imports: [
