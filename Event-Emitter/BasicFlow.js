@@ -40,9 +40,7 @@ function msgCount(data) {
 
 //  UPDATE WHEN MESSAGE EXCEEDS
 function UpdateCountExceed() {
-  
   let styleBox = document.querySelector(".warningBox");
-
   if (count >= 5) {
     styleBox.style.backgroundColor = "red";
   }
@@ -67,8 +65,11 @@ function deleteMessage(data) {
 }
 
 // EVENT LISTENERS
-const addBtn = document.querySelector("#add");
-addBtn.addEventListener("click", getinputMessage);
+// const addBtn = document.querySelector("#add");
+// addBtn.addEventListener("click", getinputMessage);
+
+$('#add').click(getinputMessage);
 
 const delBtn = document.querySelector("#delete");
 delBtn.addEventListener("click", deleteMessage);
+

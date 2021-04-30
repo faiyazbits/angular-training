@@ -13,8 +13,7 @@
 
 <body>
     <div class="input-group">
-        <input type="text" id="input" class="form-control" placeholder="" aria-label=""
-            aria-describedby="basic-addon1" />
+        <input type="text" id="userInput" class="form-control" placeholder="" />
     </div>
 
     <div class="btns">
@@ -31,9 +30,11 @@
         <div id="messageArea"></div>
     </div>
 
-    <div class="msg_count">0</div>
-
-    <div class="warningBox"></div>
+    <div class="msgNotificationPanel">
+        <div id="msgCount">0</div>
+        <div id="warningBox"></div>
+    </div>
+   
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -47,7 +48,11 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <script src="script.js"></script>
+    <!-- <script src="BasicFlow.js"></script> -->
+   
+    <script src="eventEmitter.js"></script>
+    <script src="messageStore.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
